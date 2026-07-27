@@ -1,0 +1,93 @@
+/*
+ * PeakDrive website design tokens.
+ * Mirrors the app's single source of truth (PeakDrive/constants/theme.ts):
+ * Electric Indigo brand + warm surge/heat scale. Light is the default; dark
+ * follows the OS via prefers-color-scheme.
+ */
+
+:root {
+  /* Brand — Electric Indigo (light theme values) */
+  --primary: #4f46e5;
+  --primary-strong: #6366f1;
+  --primary-deep: #4338ca;
+  --primary-tint: rgba(99, 102, 241, 0.1);
+  --on-primary: #ffffff;
+
+  /* Surface + text (light) */
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --text: #111318;
+  --subtext: #4b5563;
+  --muted: #9aa1ad;
+  --border: #e5e7eb;
+  --hairline: #eef0f3;
+
+  /* Status */
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+
+  /* Surge / demand heat scale (data-viz, not brand) */
+  --surge-low: #facc15;
+  --surge-medium: #fb923c;
+  --surge-high: #f97316;
+  --surge-very-high: #ef4444;
+
+  /* Type */
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Radius scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* Spacing scale (4-based, matches the app) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-base: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-xxxl: 40px;
+  --space-huge: 48px;
+
+  /* Elevation */
+  --shadow-e1: 0 2px 8px rgba(11, 18, 32, 0.08);
+  --shadow-e2: 0 6px 16px rgba(11, 18, 32, 0.12);
+  --shadow-e3: 0 12px 28px rgba(11, 18, 32, 0.18);
+
+  /* Layout */
+  --max-width: 1120px;
+  --header-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #6366f1;
+    --primary-strong: #818cf8;
+    --primary-deep: #4f46e5;
+    --primary-tint: rgba(99, 102, 241, 0.16);
+    --on-primary: #ffffff;
+
+    --bg: #0a0a0f;
+    --surface: #15161c;
+    --surface-elevated: #1d1f27;
+    --text: #f5f6f8;
+    --subtext: #9ba0ab;
+    --muted: #6b7280;
+    --border: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(255, 255, 255, 0.06);
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+
+    --shadow-e1: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-e2: 0 6px 16px rgba(0, 0, 0, 0.45);
+    --shadow-e3: 0 12px 28px rgba(0, 0, 0, 0.55);
+  }
+}

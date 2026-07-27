@@ -1,0 +1,153 @@
+/* Shared shell for legal + support pages */
+.legal {
+  padding: var(--space-xxl) 0 var(--space-huge);
+}
+
+.legal__container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.legal__header {
+  margin-bottom: var(--space-xl);
+}
+
+.legal__header h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-bottom: var(--space-sm);
+}
+
+.legal__updated {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.legal__body h2 {
+  font-size: 1.35rem;
+  margin-top: var(--space-xxl);
+  padding-top: var(--space-sm);
+}
+
+.legal__body h3 {
+  font-size: 1.08rem;
+  margin-top: var(--space-lg);
+}
+
+.legal__body p,
+.legal__body li {
+  color: var(--subtext);
+}
+
+.legal__body ul,
+.legal__body ol {
+  padding-left: var(--space-lg);
+  display: grid;
+  gap: 6px;
+}
+
+.legal__body strong {
+  color: var(--text);
+}
+
+.legal__body a {
+  font-weight: 600;
+}
+
+.legal__toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-xxl);
+}
+
+.legal__toc h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin: 0 0 var(--space-md);
+}
+
+.legal__toc ol {
+  margin: 0;
+  padding-left: var(--space-lg);
+  columns: 2;
+  gap: var(--space-lg);
+}
+
+/* Template review banner (remove once lawyer-reviewed) */
+.review-banner {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  background: color-mix(in srgb, var(--warning) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--warning) 45%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-base);
+  margin-bottom: var(--space-xl);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.review-banner strong {
+  color: var(--text);
+}
+
+/* Data table on the privacy page */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-base) 0 var(--space-lg);
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+
+.data-table th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.data-table td {
+  color: var(--subtext);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* Support contact buttons */
+.contact-row {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-base);
+}
+
+/* Callout box (e.g. deletion steps) */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-lg) 0;
+}
+
+.callout ol {
+  margin: var(--space-sm) 0 0;
+}
+
+@media (max-width: 640px) {
+  .legal__toc ol {
+    columns: 1;
+  }
+}
