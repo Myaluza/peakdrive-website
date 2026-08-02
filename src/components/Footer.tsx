@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { site, mailtoLink } from "../data/site";
+import { site, whatsappLink } from "../data/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -40,7 +40,9 @@ export default function Footer() {
                 <Link to="/support">Support &amp; FAQ</Link>
               </li>
               <li>
-                <a href={mailtoLink}>{site.supportEmail}</a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  WhatsApp support
+                </a>
               </li>
             </ul>
           </div>

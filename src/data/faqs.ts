@@ -42,7 +42,7 @@ export const faqs: Faq[] = [
     id: 6,
     question: "How do I report an incorrect event?",
     answer:
-      "If you spot an incorrect event, use Contact Support at the bottom of this Help screen (WhatsApp or Email) and describe the issue. Our team will review and correct it as soon as possible.",
+      "If you spot an incorrect event, use WhatsApp Support at the bottom of this Help screen and describe the issue. Our team will review and correct it as soon as possible.",
   },
   {
     id: 7,

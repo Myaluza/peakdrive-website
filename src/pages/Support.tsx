@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import FaqAccordion from "../components/FaqAccordion";
 import { faqs } from "../data/faqs";
-import { site, whatsappLink, mailtoLink } from "../data/site";
+import { site, whatsappLink } from "../data/site";
 import "../styles/legal.css";
 
 export default function Support() {
@@ -35,9 +35,6 @@ export default function Support() {
           rel="noopener noreferrer"
         >
           WhatsApp support
-        </a>
-        <a className="btn btn-secondary" href={mailtoLink}>
-          Email {site.supportEmail}
         </a>
       </div>
 
