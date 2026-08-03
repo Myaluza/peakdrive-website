@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
+import JsonLd from "../components/JsonLd";
 import FaqAccordion from "../components/FaqAccordion";
 import { faqs } from "../data/faqs";
 import { site, whatsappLink } from "../data/site";
 import "../styles/legal.css";
+
+// FAQPage rich result — mirrors the visible accordion below (Google requires the
+// structured Q&A to match the on-page content).
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
 
 export default function Support() {
   return (
@@ -14,6 +27,7 @@ export default function Support() {
       path="/support"
       showUpdated={false}
     >
+      <JsonLd data={faqJsonLd} />
       <p>
         Most questions are answered below. If you still need a hand — or you've
         spotted an incorrect event on the map — contact the team directly.

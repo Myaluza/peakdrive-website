@@ -139,6 +139,16 @@ hr {
   color: #05300f;
 }
 
+/* Light button for use on coloured/dark bands (e.g. the CTA band). */
+.btn-light {
+  background: #fff;
+  color: var(--primary-deep);
+}
+
+.btn-light:hover {
+  background: #f2f2ff;
+}
+
 /* ---- Cards & chips ---- */
 .card {
   background: var(--surface);
@@ -216,6 +226,29 @@ hr {
   display: flex;
   align-items: center;
   gap: var(--space-xl);
+}
+
+/* Hamburger — hidden on desktop, shown under 720px (see media query below). */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
 }
 
 /* ---- Brand / logo ---- */
@@ -359,11 +392,41 @@ hr {
   margin: var(--space-md) 0 var(--space-xs);
 }
 
-/* ---- Mobile nav collapse ---- */
+/* ---- Mobile nav ---- */
 @media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Collapse the inline links; reveal them as a dropdown when the toggle is on. */
   .nav-links {
     display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-sm) var(--space-xl) var(--space-base);
+    background: var(--surface);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: var(--shadow-e2);
   }
+
+  .nav-links--open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
   .site-footer__grid {
     grid-template-columns: 1fr;
   }

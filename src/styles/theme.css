@@ -19,7 +19,8 @@
   --surface-elevated: #ffffff;
   --text: #111318;
   --subtext: #4b5563;
-  --muted: #9aa1ad;
+  /* WCAG AA (>=4.5:1) on both --bg and --surface; used on footer/notes/badges. */
+  --muted: #6b7280;
   --border: #e5e7eb;
   --hairline: #eef0f3;
 
@@ -78,7 +79,8 @@
     --surface-elevated: #1d1f27;
     --text: #f5f6f8;
     --subtext: #9ba0ab;
-    --muted: #6b7280;
+    /* Lightened for AA on the dark surface/bg (was #6b7280 ≈ 3.8:1). */
+    --muted: #8b909b;
     --border: rgba(255, 255, 255, 0.08);
     --hairline: rgba(255, 255, 255, 0.06);
 

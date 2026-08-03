@@ -5,12 +5,14 @@ interface Props {
   className?: string;
 }
 
-/** Google Play call-to-action button. */
+/** Google Play call-to-action button. `light` renders a white button for use on
+ *  coloured/dark bands; `primary` is the default indigo button. */
 export default function DownloadBadge({ variant = "primary", className }: Props) {
+  const variantClass = variant === "light" ? "btn-light" : "btn-primary";
   return (
     <a
       href={site.playStoreUrl}
-      className={`btn btn-${variant === "light" ? "primary" : "primary"} ${className ?? ""}`}
+      className={`btn ${variantClass} ${className ?? ""}`}
       target="_blank"
       rel="noopener noreferrer"
     >

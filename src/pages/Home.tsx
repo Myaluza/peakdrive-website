@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import JsonLd from "../components/JsonLd";
 import DownloadBadge from "../components/DownloadBadge";
 import FaqAccordion from "../components/FaqAccordion";
 import Phone from "../components/Phone";
 import { site } from "../data/site";
 import { faqs } from "../data/faqs";
 import "../styles/home.css";
+
+// Rich-result metadata for the app itself. No aggregateRating — we don't invent
+// ratings we don't have.
+const appJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: site.appName,
+  description: site.description,
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Android",
+  url: site.url,
+  downloadUrl: site.playStoreUrl,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
+  publisher: { "@type": "Organization", name: site.legalName, url: site.url },
+};
 
 const steps = [
   {
@@ -66,6 +82,7 @@ export default function Home() {
   return (
     <>
       <Seo title={`${site.appName} — ${site.tagline}`} path="/" />
+      <JsonLd data={appJsonLd} />
 
       {/* Hero */}
       <section className="hero">
