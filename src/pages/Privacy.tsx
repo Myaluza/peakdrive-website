@@ -60,9 +60,8 @@ export default function Privacy() {
             <tr>
               <td>Account &amp; profile</td>
               <td>
-                Email address and authentication identifiers (including Google or Apple sign-in if
-                you use them), display name, home city, and your notification and location
-                preferences.
+                Email address and authentication identifiers (you sign in with Google), display
+                name, home city, and your notification and location preferences.
               </td>
               <td>To create, secure and manage your account.</td>
             </tr>
@@ -150,10 +149,7 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Google</strong> — Maps (map display &amp; geocoding), AdMob (ads), Firebase Cloud
-          Messaging (push delivery) and Google Sign-In (if you use it).
-        </li>
-        <li>
-          <strong>Apple</strong> — Sign in with Apple (if you use it).
+          Messaging (push delivery) and Google Sign-In.
         </li>
         <li>
           <strong>Expo</strong> — push notification delivery.
@@ -240,11 +236,11 @@ export default function Privacy() {
         PeakDrive stores personal information outside South Africa. In particular, our database and
         authentication (Supabase) and our events backend (Render) are hosted in the{" "}
         <strong>European Union (Frankfurt, Germany)</strong>, and other processors named above
-        (Google, Expo, Apple, Sentry) may process data in further countries. Your information is
-        therefore transferred across borders as contemplated by <strong>section 72 of POPIA</strong>
-        . We rely on these recipients being bound by laws or agreements that provide protection
-        substantially similar to POPIA — the European Union's data protection regime (GDPR) offers a
-        comparable standard — and we transfer only the limited data described in this policy.
+        (Google, Expo, Sentry) may process data in further countries. Your information is therefore
+        transferred across borders as contemplated by <strong>section 72 of POPIA</strong>. We rely
+        on these recipients being bound by laws or agreements that provide protection substantially
+        similar to POPIA — the European Union's data protection regime (GDPR) offers a comparable
+        standard — and we transfer only the limited data described in this policy.
       </p>
 
       <h2 id="changes">15. Changes to this policy</h2>
