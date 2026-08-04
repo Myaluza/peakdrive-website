@@ -67,21 +67,36 @@ export default function Privacy() {
             </tr>
             <tr>
               <td>Location</td>
-              <td>Approximate and precise device location while the app is in use.</td>
               <td>
-                To centre the map on you and show nearby surge zones. Used live — we do not keep a
-                history of where you've been.
+                Approximate and precise device location while the app is in use, plus a single
+                stored <strong>approximate</strong> position (roughly which area you're in) held
+                against your device while Location is switched on.
+              </td>
+              <td>
+                To centre the map on you and show nearby surge zones, and to work out how long you'd
+                need to reach an event so a surge alert arrives in time to be useful. We keep only
+                your latest approximate position — never a history of where you've been — and it is
+                deleted the moment you switch Location off.
               </td>
             </tr>
             <tr>
               <td>Community submissions</td>
-              <td>Events you submit and the verification votes you cast.</td>
-              <td>To build and verify the shared event map for all drivers.</td>
+              <td>
+                Events you submit, the verification votes you cast, and your ratings of how busy a
+                surge actually turned out to be.
+              </td>
+              <td>
+                To build and verify the shared event map, and to correct our demand predictions
+                against what drivers actually found.
+              </td>
             </tr>
             <tr>
               <td>Push tokens</td>
-              <td>Your device's push notification token and the city it's registered to.</td>
-              <td>To send surge alerts scoped to your city.</td>
+              <td>
+                Your device's push notification token, the city it's registered to, and — while
+                Location is on — the latest approximate position described above.
+              </td>
+              <td>To send surge alerts scoped to your city and timed to your travel time.</td>
             </tr>
             <tr>
               <td>Advertising identifiers</td>
@@ -108,8 +123,12 @@ export default function Privacy() {
       <ul>
         <li>Operate the live surge map and event feed.</li>
         <li>Authenticate you and keep your account secure.</li>
-        <li>Send the notifications you've enabled.</li>
+        <li>
+          Send the notifications you've enabled, timed — where you've enabled Location — to how long
+          it would take you to reach the event.
+        </li>
         <li>Run community event submission and verification.</li>
+        <li>Improve our demand estimates using drivers' ratings of past surges.</li>
         <li>Show ads on the free tier.</li>
         <li>Diagnose crashes and improve the app.</li>
         <li>Prevent fraud and abuse, and comply with our legal obligations.</li>
@@ -174,16 +193,46 @@ export default function Privacy() {
 
       <h2 id="location">7. Location data</h2>
       <p>
-        We request location only to centre the map and show nearby surge zones while you use the
-        app. You can turn Location off in the app's <strong>Settings</strong> or in your device
-        permissions — the app still works with a manually selected city.
+        We use your location for two things. First, to centre the map on you and show nearby surge
+        zones while you're using the app — that use is live and nothing is retained.
+      </p>
+      <p>
+        Second, if you have both Location and Notifications switched on, we store your{" "}
+        <strong>latest approximate position</strong> against your device so surge alerts can be
+        timed to reach you with enough notice to actually drive there. Without it we can only send
+        the same alert to everyone in a city at the same moment, which is rarely useful to anyone.
+      </p>
+      <p>What that does and doesn't mean:</p>
+      <ul>
+        <li>
+          We keep <strong>one</strong> current position per device, overwritten as it changes — not
+          a trail, journey history or record of where you have been.
+        </li>
+        <li>
+          It is refreshed only when you have moved a meaningful distance or the stored position has
+          become stale, not continuously, and only while the app is open.
+        </li>
+        <li>It is never shown to other drivers and never used to advertise to you.</li>
+        <li>
+          Switching <strong>Location</strong> off in the app's <strong>Settings</strong> deletes it
+          immediately. Revoking the permission in your device settings stops any further collection.
+        </li>
+      </ul>
+      <p>
+        The app still works with Location off — you simply pick your city manually, and surge alerts
+        fall back to a fixed lead time rather than one based on your distance.
       </p>
 
       <h2 id="notifications">8. Push notifications</h2>
       <p>
         If you enable notifications, we store a push token tagged with your city so alerts stay
-        limited to your area. You can turn notifications off at any time in{" "}
-        <strong>Settings</strong>.
+        limited to your area, along with the approximate position described above where you've also
+        enabled Location. We also keep a record of which alerts we've already sent your device, so
+        you aren't sent the same one twice and so we can cap how many you receive in a day.
+      </p>
+      <p>
+        You can turn notifications off at any time in <strong>Settings</strong>, which deletes your
+        push tokens.
       </p>
 
       <h2 id="retention">9. Data retention</h2>
