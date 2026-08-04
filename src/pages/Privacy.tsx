@@ -244,8 +244,14 @@ export default function Privacy() {
 
       <h2 id="transfers">14. International transfers</h2>
       <p>
-        Some of our processors may store or process data outside South Africa. Where they do, we
-        rely on their contractual and technical safeguards and process your data in line with POPIA.
+        PeakDrive stores personal information outside South Africa. In particular, our database and
+        authentication (Supabase) and our events backend (Render) are hosted in the{" "}
+        <strong>European Union (Frankfurt, Germany)</strong>, and other processors named above
+        (Google, Expo, Apple, Sentry) may process data in further countries. Your information is
+        therefore transferred across borders as contemplated by <strong>section 72 of POPIA</strong>
+        . We rely on these recipients being bound by laws or agreements that provide protection
+        substantially similar to POPIA — the European Union's data protection regime (GDPR) offers a
+        comparable standard — and we transfer only the limited data described in this policy.
       </p>
 
       <h2 id="changes">15. Changes to this policy</h2>
