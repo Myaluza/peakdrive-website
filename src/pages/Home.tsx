@@ -120,10 +120,9 @@ export default function Home() {
               <span className="eyebrow">See it in action</span>
               <h2>Every event that moves demand, in one view</h2>
               <p>
-                PeakDrive lists today's concerts, sports and festivals with a demand
-                rating and finish time, and drops a surge circle on the map the
-                moment each one is about to let out — so you're already there when
-                the requests start.
+                PeakDrive lists today's concerts, sports and festivals with a demand rating and
+                finish time, and drops a surge circle on the map the moment each one is about to let
+                out — so you're already there when the requests start.
               </p>
               <p className="hero__note" style={{ marginTop: 0 }}>
                 Live in Durban · Johannesburg, Cape Town &amp; Pretoria coming soon.
@@ -180,8 +179,8 @@ export default function Home() {
             <span className="eyebrow">Read the map at a glance</span>
             <h2>What the circle colours mean</h2>
             <p>
-              Circle colour and size show expected demand. The brighter and larger
-              the circle, the more rides you can expect.
+              Circle colour and size show expected demand. The brighter and larger the circle, the
+              more rides you can expect.
             </p>
           </div>
           <div className="legend">
@@ -234,8 +233,8 @@ export default function Home() {
           <div className="cta-band">
             <h2>Ready to stop guessing?</h2>
             <p>
-              Join the drivers turning event schedules into extra trips. Download
-              PeakDrive and see today's surge zones.
+              Join the drivers turning event schedules into extra trips. Download PeakDrive and see
+              today's surge zones.
             </p>
             <DownloadBadge variant="light" location="cta_band" />
           </div>

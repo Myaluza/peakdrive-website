@@ -6,13 +6,13 @@ app, served at **https://peakdrive.co.za**.
 The PeakDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
 routes below must keep working:
 
-| Route | Purpose |
-|---|---|
-| `/` | Landing page |
-| `/privacy` | Privacy Policy — Play Store requirement, linked from the app's About screen |
-| `/terms` | Terms of Service — linked from the app's About screen |
-| `/delete-account` | Account & data deletion — Google Play data-deletion URL |
-| `/support` | FAQ + WhatsApp/email support |
+| Route             | Purpose                                                                     |
+| ----------------- | --------------------------------------------------------------------------- |
+| `/`               | Landing page                                                                |
+| `/privacy`        | Privacy Policy — Play Store requirement, linked from the app's About screen |
+| `/terms`          | Terms of Service — linked from the app's About screen                       |
+| `/delete-account` | Account & data deletion — Google Play data-deletion URL                     |
+| `/support`        | FAQ + WhatsApp/email support                                                |
 
 ## Stack
 
@@ -113,12 +113,12 @@ it to the build. (It's not a secret — a GA4 id is public in the page.)
 
 At your `.co.za` registrar, point the domain at GitHub Pages:
 
-| Type | Host | Value |
-|---|---|---|
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
+| Type  | Host  | Value               |
+| ----- | ----- | ------------------- |
+| A     | `@`   | `185.199.108.153`   |
+| A     | `@`   | `185.199.109.153`   |
+| A     | `@`   | `185.199.110.153`   |
+| A     | `@`   | `185.199.111.153`   |
 | CNAME | `www` | `myaluza.github.io` |
 
 Then in **Settings → Pages**, set the custom domain to `peakdrive.co.za` (the `CNAME`

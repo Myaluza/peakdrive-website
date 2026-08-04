@@ -29,8 +29,8 @@ export default function Support() {
     >
       <JsonLd data={faqJsonLd} />
       <p>
-        Most questions are answered below. If you still need a hand — or you've
-        spotted an incorrect event on the map — contact the team directly.
+        Most questions are answered below. If you still need a hand — or you've spotted an incorrect
+        event on the map — contact the team directly.
       </p>
 
       <h2 id="faqs">Frequently asked questions</h2>
@@ -38,8 +38,8 @@ export default function Support() {
 
       <h2 id="contact">Contact support</h2>
       <p>
-        We're a small team building for South African drivers. WhatsApp is the
-        fastest way to reach us.
+        We're a small team building for South African drivers. WhatsApp is the fastest way to reach
+        us.
       </p>
       <div className="contact-row">
         <a
@@ -55,8 +55,8 @@ export default function Support() {
       <h2 id="account">Deleting your account</h2>
       <p>
         You can permanently delete your account and data at any time. See the{" "}
-        <Link to="/delete-account">account &amp; data deletion</Link> page for the
-        steps and what gets removed.
+        <Link to="/delete-account">account &amp; data deletion</Link> page for the steps and what
+        gets removed.
       </p>
     </LegalPage>
   );

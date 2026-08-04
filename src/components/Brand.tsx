@@ -7,11 +7,7 @@ export default function Brand() {
     <Link to="/" className="brand" aria-label={`${site.appName} home`}>
       <span className="brand__mark" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M4 18 10 7l4 6 2-3 4 8z"
-            fill="currentColor"
-            opacity="0.95"
-          />
+          <path d="M4 18 10 7l4 6 2-3 4 8z" fill="currentColor" opacity="0.95" />
         </svg>
       </span>
       <span>{site.appName}</span>

@@ -33,27 +33,21 @@ export default function LegalPage({
 }: LegalPageProps) {
   return (
     <div className="legal">
-      <Seo
-        title={seoTitle ?? `${title} · ${site.appName}`}
-        description={description}
-        path={path}
-      />
+      <Seo title={seoTitle ?? `${title} · ${site.appName}`} description={description} path={path} />
       <div className="legal__container">
         <header className="legal__header">
           <h1>{title}</h1>
-          {showUpdated && (
-            <p className="legal__updated">Last updated: {site.lastUpdated}</p>
-          )}
+          {showUpdated && <p className="legal__updated">Last updated: {site.lastUpdated}</p>}
         </header>
 
         {reviewBanner && (
           <div className="review-banner" role="note">
             <span aria-hidden="true">⚠️</span>
             <span>
-              <strong>Template notice:</strong> this document was drafted from
-              PeakDrive's actual data practices but has <strong>not</strong> been
-              reviewed by a lawyer. Have a qualified attorney review it for POPIA
-              compliance before you rely on it, then remove this notice.
+              <strong>Template notice:</strong> this document was drafted from PeakDrive's actual
+              data practices but has <strong>not</strong> been reviewed by a lawyer. Have a
+              qualified attorney review it for POPIA compliance before you rely on it, then remove
+              this notice.
             </span>
           </div>
         )}

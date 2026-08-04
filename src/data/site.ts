@@ -35,8 +35,7 @@ export const site = {
 
   // PLACEHOLDER — confirm the live Play Store listing URL.
   packageId: "com.myaluza.PeakDrive",
-  playStoreUrl:
-    "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
 
   // Keep in sync with the date the legal copy was last edited.
   lastUpdated: "27 July 2026",

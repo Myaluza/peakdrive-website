@@ -9,10 +9,7 @@ export default function NotFound() {
       <div className="container center" style={{ maxWidth: 560, padding: "48px 24px" }}>
         <span className="eyebrow">404</span>
         <h1>This road doesn't exist</h1>
-        <p>
-          The page you're looking for moved or never existed. Let's get you back on
-          the map.
-        </p>
+        <p>The page you're looking for moved or never existed. Let's get you back on the map.</p>
         <p style={{ marginTop: "var(--space-lg)" }}>
           <Link to="/" className="btn btn-primary">
             Back to home
