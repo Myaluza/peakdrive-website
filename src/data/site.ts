@@ -69,3 +69,11 @@ export const site = {
 
 export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
 export const mailtoLink = `mailto:${site.supportEmail}`;
+
+// Play Store URL with an install `referrer` for attribution. Google Play surfaces
+// it in the Play Console (Acquisition) and, when GA4 is linked to Play, as campaign
+// data — so installs coming from the website are distinguishable from organic ones.
+// Keep `site.playStoreUrl` clean (canonical) for JSON-LD; use this for CTA links.
+export const playStoreCtaUrl = `${site.playStoreUrl}&referrer=${encodeURIComponent(
+  "utm_source=peakdrive_web&utm_medium=web&utm_campaign=site_cta",
+)}`;

@@ -86,6 +86,22 @@ data practices (Supabase, Google/AdMob/Firebase, Expo, Sentry, POPIA), but they 
 attorney review them for POPIA compliance, then remove the banner by setting
 `reviewBanner={false}` (in `src/pages/Privacy.tsx` and `Terms.tsx`).
 
+## Analytics (GA4)
+
+Analytics is **off until you set a measurement id** (`.env.example` → `VITE_GA4_MEASUREMENT_ID`,
+inlined at build time). When set, `src/analytics.ts` loads gtag.js, sends one `page_view`
+per client-side route change, and fires a `click_get_app` event on the Play CTAs. Those
+CTAs also carry an install `referrer` (`utm_source=peakdrive_web…`) so installs are
+attributable in the Play Console.
+
+To enable on the live site: **Settings → Secrets and variables → Actions → Variables →
+New variable** `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`. The deploy workflow already passes
+it to the build. (It's not a secret — a GA4 id is public in the page.)
+
+> **POPIA:** enabling GA4 loads Google's tag and sets analytics cookies. Disclose it in the
+> Privacy Policy and add a consent gate before turning it on. This reverses the font
+> self-hosting privacy win, so it's a deliberate opt-in, not on by default.
+
 ## Deploy to GitHub Pages
 
 1. Create a repo (e.g. `Myaluza/peakdrive-website`) and push this folder to `main`.

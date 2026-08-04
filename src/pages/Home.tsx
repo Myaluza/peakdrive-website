@@ -92,7 +92,7 @@ export default function Home() {
             <h1>{site.tagline}</h1>
             <p className="lead">{site.description}</p>
             <div className="hero__cta">
-              <DownloadBadge />
+              <DownloadBadge location="hero" />
               <a href="#how" className="btn btn-secondary">
                 See how it works
               </a>
@@ -237,7 +237,7 @@ export default function Home() {
               Join the drivers turning event schedules into extra trips. Download
               PeakDrive and see today's surge zones.
             </p>
-            <DownloadBadge variant="light" />
+            <DownloadBadge variant="light" location="cta_band" />
           </div>
         </div>
       </section>

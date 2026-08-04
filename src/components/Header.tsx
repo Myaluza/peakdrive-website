@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "./Brand";
-import { site } from "../data/site";
+import { playStoreCtaUrl } from "../data/site";
+import { trackEvent } from "../analytics";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -24,10 +25,11 @@ export default function Header() {
             </Link>
           </div>
           <a
-            href={site.playStoreUrl}
+            href={playStoreCtaUrl}
             className="btn btn-primary site-header__cta"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("click_get_app", { location: "header" })}
           >
             Get the app
           </a>
