@@ -27,7 +27,6 @@ export default function Terms() {
       title="Terms of Service"
       description={`The terms governing your use of the ${site.appName} app and website.`}
       path="/terms"
-      reviewBanner
       toc={toc}
     >
       <h2 id="acceptance">1. Acceptance of these terms</h2>
