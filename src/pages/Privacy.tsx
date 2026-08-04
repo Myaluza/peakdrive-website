@@ -85,11 +85,6 @@ export default function Privacy() {
               <td>To send surge alerts scoped to your city.</td>
             </tr>
             <tr>
-              <td>Membership &amp; vouchers</td>
-              <td>Voucher redemptions and ad-free membership / trial status.</td>
-              <td>To manage your subscription and free trial.</td>
-            </tr>
-            <tr>
               <td>Advertising identifiers</td>
               <td>Your device advertising ID and ad-interaction data, via Google AdMob.</td>
               <td>To display ads and, unless you opt out, personalise them.</td>
@@ -116,7 +111,6 @@ export default function Privacy() {
         <li>Authenticate you and keep your account secure.</li>
         <li>Send the notifications you've enabled.</li>
         <li>Run community event submission and verification.</li>
-        <li>Manage vouchers, membership and your free trial.</li>
         <li>Show ads on the free tier.</li>
         <li>Diagnose crashes and improve the app.</li>
         <li>Prevent fraud and abuse, and comply with our legal obligations.</li>
@@ -178,9 +172,8 @@ export default function Privacy() {
       <p>
         On the free tier, PeakDrive shows ads through Google AdMob. Ads may use your device
         advertising ID to measure performance and — where permitted and with consent — personalise
-        what you see. You can reset or limit ad tracking in your device settings, and you can redeem
-        a voucher for an ad-free experience. Google's handling of advertising data is governed by
-        Google's own privacy policy.
+        what you see. You can reset or limit ad tracking in your device settings. Google's handling
+        of advertising data is governed by Google's own privacy policy.
       </p>
 
       <h2 id="location">7. Location data</h2>

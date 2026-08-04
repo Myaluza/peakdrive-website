@@ -65,9 +65,9 @@ const features = [
     body: "Earn recognition for accurate submissions and climb your city's contributor leaderboard.",
   },
   {
-    icon: "🚫",
-    title: "Ad-free membership",
-    body: "Redeem a voucher from any major retailer for an ad-free experience. Start with a 7-day free trial.",
+    icon: "📴",
+    title: "Works offline",
+    body: "Your last surge map stays cached, so it keeps working when your signal drops mid-shift.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Home() {
                 See how it works
               </a>
             </div>
-            <p className="hero__note">7-day free trial · No card required</p>
+            <p className="hero__note">Free to use · Made for South African e-hailing drivers</p>
           </div>
 
           <Phone

@@ -10,7 +10,7 @@ const toc: TocItem[] = [
   { id: "service", label: "The service" },
   { id: "no-guarantee", label: "No guarantee of earnings" },
   { id: "community", label: "Community content" },
-  { id: "membership", label: "Membership & vouchers" },
+  { id: "membership", label: "Pricing & membership" },
   { id: "acceptable-use", label: "Acceptable use" },
   { id: "ip", label: "Intellectual property" },
   { id: "disclaimers", label: "Disclaimers" },
@@ -49,8 +49,8 @@ export default function Terms() {
       <h2 id="service">3. The service</h2>
       <p>
         {site.appName} tracks local events and displays &ldquo;surge zones&rdquo; on a map to help
-        you anticipate demand. It also lets drivers submit and verify events, view a leaderboard,
-        and manage an ad-free membership. Features and supported cities may change over time.
+        you anticipate demand. It also lets drivers submit and verify events and view a leaderboard.
+        Features and supported cities may change over time.
       </p>
       <p>
         <strong>Drive safely.</strong> Never interact with the app while your vehicle is moving.
@@ -75,13 +75,13 @@ export default function Terms() {
         screening — and may suspend accounts that submit false or abusive content.
       </p>
 
-      <h2 id="membership">6. Membership, vouchers &amp; free trial</h2>
+      <h2 id="membership">6. Pricing &amp; membership</h2>
       <p>
-        {site.appName} offers a 7-day free trial with no card required. After the trial, you can
-        continue using the app with ads or redeem a voucher for an ad-free period. Vouchers are sold
-        through third-party retailers and payment partners; once redeemed they are non-refundable
-        and non-transferable except as required by law. We may change trial length, pricing and
-        voucher availability at any time.
+        {site.appName} is currently free to use and supported by ads. We may introduce paid or
+        ad-free options in future — for example a membership or vouchers redeemable through
+        third-party retailers. If we do, the applicable pricing, trial and redemption terms
+        (including any refund rules) will be presented to you at that time, and we may change or
+        withdraw such offers at any time.
       </p>
 
       <h2 id="acceptable-use">7. Acceptable use</h2>

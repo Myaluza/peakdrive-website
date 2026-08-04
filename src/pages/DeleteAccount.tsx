@@ -59,9 +59,8 @@ export default function DeleteAccount() {
       <ul>
         <li>your account and login credentials;</li>
         <li>your profile (display name, home city, notification and location preferences);</li>
-        <li>your community event submissions and verification votes;</li>
-        <li>your push notification token(s); and</li>
-        <li>your voucher and membership records.</li>
+        <li>your community event submissions and verification votes; and</li>
+        <li>your push notification token(s).</li>
       </ul>
 
       <h2 id="what-we-keep">What we may keep</h2>
