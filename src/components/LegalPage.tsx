@@ -15,8 +15,6 @@ interface LegalPageProps {
   path: string;
   /** Show the "last updated" line under the title. */
   showUpdated?: boolean;
-  /** Show the "template — have a lawyer review" banner. */
-  reviewBanner?: boolean;
   toc?: TocItem[];
   children: ReactNode;
 }
@@ -27,7 +25,6 @@ export default function LegalPage({
   description,
   path,
   showUpdated = true,
-  reviewBanner = false,
   toc,
   children,
 }: LegalPageProps) {
@@ -39,18 +36,6 @@ export default function LegalPage({
           <h1>{title}</h1>
           {showUpdated && <p className="legal__updated">Last updated: {site.lastUpdated}</p>}
         </header>
-
-        {reviewBanner && (
-          <div className="review-banner" role="note">
-            <span aria-hidden="true">⚠️</span>
-            <span>
-              <strong>Template notice:</strong> this document was drafted from PeakDrive's actual
-              data practices but has <strong>not</strong> been reviewed by a lawyer. Have a
-              qualified attorney review it for POPIA compliance before you rely on it, then remove
-              this notice.
-            </span>
-          </div>
-        )}
 
         {toc && toc.length > 0 && (
           <nav className="legal__toc" aria-label="On this page">

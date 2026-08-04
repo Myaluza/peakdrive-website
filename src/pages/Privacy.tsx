@@ -29,7 +29,6 @@ export default function Privacy() {
       title="Privacy Policy"
       description={`How ${site.appName} collects, uses and protects your personal information under POPIA.`}
       path="/privacy"
-      reviewBanner
       toc={toc}
     >
       <h2 id="who-we-are">1. Who we are</h2>
