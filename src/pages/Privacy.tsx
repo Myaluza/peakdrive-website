@@ -11,6 +11,7 @@ const toc: TocItem[] = [
   { id: "legal-basis", label: "Lawful basis" },
   { id: "sharing", label: "How we share it" },
   { id: "ads", label: "Advertising" },
+  { id: "analytics", label: "Analytics" },
   { id: "location", label: "Location data" },
   { id: "notifications", label: "Push notifications" },
   { id: "retention", label: "Data retention" },
@@ -103,6 +104,19 @@ export default function Privacy() {
               <td>To display ads and, unless you opt out, personalise them.</td>
             </tr>
             <tr>
+              <td>Usage analytics</td>
+              <td>
+                The name of an action you take (for example opening the app, submitting an event or
+                rating a surge), the city you have selected, and a random identifier generated on
+                your device — via Google Analytics. Not your account, not your email, not your
+                location.
+              </td>
+              <td>
+                To see which parts of the app are actually used and where drivers get stuck. You can
+                switch this off in the app&rsquo;s Settings.
+              </td>
+            </tr>
+            <tr>
               <td>Diagnostics</td>
               <td>
                 Crash reports, error logs and basic device info (model, OS version), via Sentry.
@@ -129,6 +143,10 @@ export default function Privacy() {
         <li>Run community event submission and verification.</li>
         <li>Improve our demand estimates using drivers' ratings of past surges.</li>
         <li>Show ads on the free tier.</li>
+        <li>
+          Measure which features are used, so we fix what&rsquo;s broken rather than guessing —
+          unless you switch Analytics off.
+        </li>
         <li>Diagnose crashes and improve the app.</li>
         <li>Prevent fraud and abuse, and comply with our legal obligations.</li>
       </ul>
@@ -146,7 +164,9 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Our legitimate interests</strong> — keeping the service secure, preventing abuse
-          and improving the app.
+          and improving the app. This covers the usage analytics described in section 7, which is
+          why you can switch it off without losing any functionality: an interest you can decline is
+          the only kind we think is legitimate.
         </li>
         <li>
           <strong>Legal obligations</strong> where the law requires us to process or retain data.
@@ -166,8 +186,8 @@ export default function Privacy() {
           <strong>Render</strong> — hosting for our events backend.
         </li>
         <li>
-          <strong>Google</strong> — Maps (map display &amp; geocoding), AdMob (ads), Firebase Cloud
-          Messaging (push delivery) and Google Sign-In.
+          <strong>Google</strong> — Maps (map display &amp; geocoding), AdMob (ads), Analytics
+          (usage measurement), Firebase Cloud Messaging (push delivery) and Google Sign-In.
         </li>
         <li>
           <strong>Expo</strong> — push notification delivery.
@@ -190,7 +210,45 @@ export default function Privacy() {
         of advertising data is governed by Google's own privacy policy.
       </p>
 
-      <h2 id="location">7. Location data</h2>
+      <h2 id="analytics">7. Analytics</h2>
+      <p>
+        We use <strong>Google Analytics</strong> to count how the app is used — which screens get
+        opened, whether sign-in succeeds, whether people who start submitting an event finish. It
+        tells us what is broken or ignored. It is not used to advertise to you, and it is kept
+        separate from the advertising identifier described above.
+      </p>
+      <p>What is sent, precisely:</p>
+      <ul>
+        <li>
+          The <strong>name of an action</strong> — one of a short fixed list such as opening the
+          app, signing in, selecting a city, submitting or confirming an event, tapping
+          &ldquo;I&rsquo;m going&rdquo;, or answering one of the post-surge questions.
+        </li>
+        <li>
+          A little context about that action: the city you selected, whether a submission was
+          accepted, the rating you gave a surge, or how long you waited.
+        </li>
+        <li>
+          A <strong>random identifier</strong> created on your device the first time the app runs,
+          so separate actions can be recognised as one session. It is not your account, your email
+          or your device advertising ID, and it is never linked to them.
+        </li>
+      </ul>
+      <p>
+        What is not sent: your location, your name or email, the text of anything you submit, or any
+        identifier that points back to you as a person.
+      </p>
+      <p>
+        You can switch <strong>Analytics</strong> off at any time under <strong>Settings</strong> in
+        the app. It stops immediately — not at the next restart — and every feature keeps working
+        exactly as before. Nothing is sent from that device again unless you switch it back on.
+      </p>
+      <p>
+        Google processes this on our behalf under its own terms, and the data may be handled outside
+        South Africa — see <a href="#transfers">International transfers</a>.
+      </p>
+
+      <h2 id="location">8. Location data</h2>
       <p>
         We use your location for two things. First, to centre the map on you and show nearby surge
         zones while you're using the app — that use is live and nothing is retained.
@@ -222,7 +280,7 @@ export default function Privacy() {
         fall back to a fixed lead time rather than one based on your distance.
       </p>
 
-      <h2 id="notifications">8. Push notifications</h2>
+      <h2 id="notifications">9. Push notifications</h2>
       <p>
         If you enable notifications, we store a push token tagged with your city so alerts stay
         limited to your area, along with the approximate position described above where you've also
@@ -234,7 +292,7 @@ export default function Privacy() {
         push tokens.
       </p>
 
-      <h2 id="retention">9. Data retention</h2>
+      <h2 id="retention">10. Data retention</h2>
       <p>
         We keep your account and profile data while your account is active. When you delete your
         account, we delete your personal data (see{" "}
@@ -243,14 +301,14 @@ export default function Privacy() {
         are kept for a limited period only.
       </p>
 
-      <h2 id="security">10. Security</h2>
+      <h2 id="security">11. Security</h2>
       <p>
         We use reputable processors, encryption of data in transit, and access controls. Access to
         user data in our database is protected by row-level security. No method of transmission or
         storage is completely secure, but we work continuously to protect your information.
       </p>
 
-      <h2 id="your-rights">11. Your rights under POPIA</h2>
+      <h2 id="your-rights">12. Your rights under POPIA</h2>
       <p>You have the right to:</p>
       <ul>
         <li>access a copy of the personal information we hold about you;</li>
@@ -266,20 +324,20 @@ export default function Privacy() {
         <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
-      <h2 id="deletion">12. Deleting your account</h2>
+      <h2 id="deletion">13. Deleting your account</h2>
       <p>
         You can permanently delete your account and associated data in-app (
         <strong>Settings → Delete Account</strong>) or by emailing us. Full details are on the{" "}
         <Link to="/delete-account">Account &amp; Data Deletion</Link> page.
       </p>
 
-      <h2 id="children">13. Children</h2>
+      <h2 id="children">14. Children</h2>
       <p>
         PeakDrive is intended for licensed e-hailing drivers and is not directed at children under
         18. We do not knowingly collect personal information from children.
       </p>
 
-      <h2 id="transfers">14. International transfers</h2>
+      <h2 id="transfers">15. International transfers</h2>
       <p>
         PeakDrive stores personal information outside South Africa. In particular, our database and
         authentication (Supabase) and our events backend (Render) are hosted in the{" "}
@@ -291,13 +349,13 @@ export default function Privacy() {
         standard — and we transfer only the limited data described in this policy.
       </p>
 
-      <h2 id="changes">15. Changes to this policy</h2>
+      <h2 id="changes">16. Changes to this policy</h2>
       <p>
         We may update this policy from time to time. We'll revise the &ldquo;Last updated&rdquo;
         date above and, for material changes, notify you in the app.
       </p>
 
-      <h2 id="contact">16. Contact us</h2>
+      <h2 id="contact">17. Contact us</h2>
       <p>
         Responsible party: {site.legalName}, operated by {site.operator}. Questions about this
         policy or your data? Email <a href={mailtoLink}>{site.supportEmail}</a>.
