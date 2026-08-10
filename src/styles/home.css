@@ -237,14 +237,11 @@
   margin: 0 auto var(--space-lg);
 }
 
-.cta-band .btn-primary {
-  background: #fff;
-  color: var(--primary-deep);
-}
-
-.cta-band .btn-primary:hover {
-  background: #f2f2ff;
-}
+/* The CTA band's button is <DownloadBadge variant="light">, which renders
+   .btn-light — the white-on-indigo treatment lives there, in global.css. A
+   `.cta-band .btn-primary` override used to sit here duplicating those exact
+   declarations; it never applied, and would have diverged from .btn-light
+   unnoticed if either were restyled. */
 
 /* ---- Responsive ---- */
 @media (max-width: 860px) {

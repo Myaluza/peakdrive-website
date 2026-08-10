@@ -31,6 +31,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # The quality gate runs here, not only in ci.yml.
+      #
+      # ci.yml and this workflow both trigger independently on push to main, and
+      # nothing sequenced them — so a commit that failed format:check or
+      # typecheck still deployed to production, as long as the build itself
+      # succeeded. GitHub Actions has no cross-workflow `needs:`, so the checks
+      # run inline: a failure here stops the deploy.
+      - name: Format check
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
       - name: Build (static pre-render)
         run: npm run build
         env:

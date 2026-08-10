@@ -40,11 +40,18 @@ export const site = {
   // Keep in sync with the date the legal copy was last edited.
   lastUpdated: "4 August 2026",
 
+  // The single statement of coverage on this site — the home page reads these
+  // flags rather than restating coverage in prose.
+  //
+  // All four are live. Checked against the events table on 2026-08-10: every one
+  // carried 80+ upcoming events (Durban 151, Johannesburg 118, Cape Town 100,
+  // Pretoria 80), while this file still advertised three of them as "coming
+  // soon" and directly contradicted the in-app FAQ.
   cities: [
     { name: "Durban", live: true },
-    { name: "Johannesburg", live: false },
-    { name: "Cape Town", live: false },
-    { name: "Pretoria", live: false },
+    { name: "Johannesburg", live: true },
+    { name: "Cape Town", live: true },
+    { name: "Pretoria", live: true },
   ] as City[],
 
   socials: [

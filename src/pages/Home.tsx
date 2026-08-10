@@ -23,6 +23,20 @@ const appJsonLd = {
   publisher: { "@type": "Organization", name: site.legalName, url: site.url },
 };
 
+/**
+ * Coverage stated once, from `site.cities`.
+ *
+ * Two separate hand-written sentences used to assert it independently ("Live in
+ * Durban · … coming soon" and "Live in Durban now, …"), and both went stale when
+ * the other three cities went live. Derive it instead, so the flags are the only
+ * thing to update.
+ */
+const liveCityNames = (() => {
+  const names = site.cities.filter((c) => c.live).map((c) => c.name);
+  if (names.length <= 1) return names[0] ?? "selected South African cities";
+  return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
+})();
+
 const steps = [
   {
     title: "Open the live map",
@@ -125,7 +139,7 @@ export default function Home() {
                 out — so you're already there when the requests start.
               </p>
               <p className="hero__note" style={{ marginTop: 0 }}>
-                Live in Durban · Johannesburg, Cape Town &amp; Pretoria coming soon.
+                Live in {liveCityNames}.
               </p>
             </div>
           </div>
@@ -200,7 +214,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">Coverage</span>
             <h2>Where PeakDrive works</h2>
-            <p>Live in Durban now, with more South African cities on the way.</p>
+            <p>Live in {liveCityNames}, with more South African cities on the way.</p>
           </div>
           <div className="cities">
             {site.cities.map((c) => (

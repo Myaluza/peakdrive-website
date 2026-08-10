@@ -10,7 +10,10 @@
   --primary: #4f46e5;
   --primary-strong: #6366f1;
   --primary-deep: #4338ca;
-  --primary-tint: rgba(99, 102, 241, 0.1);
+  /* Matches the app's LIGHT theme primaryTint. This previously carried the dark
+     theme's base RGB (99,102,241) at the light alpha; the dark block below was
+     already correct, so only this one had drifted. */
+  --primary-tint: rgba(79, 70, 229, 0.1);
   --on-primary: #ffffff;
 
   /* Surface + text (light) */
