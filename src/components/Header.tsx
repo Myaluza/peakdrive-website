@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "./Brand";
-import { playStoreCtaUrl } from "../data/site";
-import { trackEvent } from "../analytics";
+import DownloadBadge from "./DownloadBadge";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -24,15 +23,12 @@ export default function Header() {
               Support
             </Link>
           </div>
-          <a
-            href={playStoreCtaUrl}
-            className="btn btn-primary site-header__cta"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("click_get_app", { location: "header" })}
-          >
-            Get the app
-          </a>
+          <DownloadBadge
+            className="site-header__cta"
+            location="header"
+            label="Get the app"
+            showIcon={false}
+          />
           {/* Shown only under 720px (CSS); reveals the links above as a dropdown. */}
           <button
             type="button"

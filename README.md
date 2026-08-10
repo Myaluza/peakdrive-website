@@ -28,11 +28,18 @@ routes below must keep working:
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
-npm run typecheck  # tsc --noEmit
-npm run build      # static site -> dist/
-npm run preview    # preview the built site
+npm run dev           # http://localhost:5173
+npm run typecheck     # tsc --noEmit
+npm run lint          # eslint
+npm run format:check  # prettier --check  (CI fails on this)
+npm run format        # prettier --write
+npm run build         # static site -> dist/
+npm run preview       # preview the built site
 ```
+
+CI (`.github/workflows/ci.yml`) runs `format:check`, `lint`, `typecheck` and
+`build` on every push and PR to `main`, and the deploy job waits on it — a red
+build does not ship. Running those four locally is the same gate.
 
 ## Project layout
 
@@ -40,51 +47,62 @@ npm run preview    # preview the built site
 src/
   main.tsx            vite-react-ssg entry
   routes.tsx          route table (Layout + pages)
-  components/         Layout, Header, Footer, Brand, Seo, DownloadBadge,
-                      FaqAccordion, LegalPage
-  pages/             Home, Privacy, Terms, DeleteAccount, Support, NotFound
+  analytics.ts        GA4 gtag wrapper; no-op unless VITE_GA4_MEASUREMENT_ID is set
+  components/         Layout, Header, Footer, Brand, Seo, JsonLd, Phone,
+                      DownloadBadge, FaqAccordion, LegalPage
+  pages/             Home, Privacy, Terms, DeleteAccount, Support, NotFound (/404)
   data/
     site.ts           site-wide constants (edit placeholders here)
-    faqs.ts           FAQs, copied verbatim from the app
+    faqs.ts           FAQs, copied verbatim from the app — do not edit here
   styles/            theme.css (tokens), global.css, home.css, legal.css
 public/              CNAME, .nojekyll, robots.txt, sitemap.xml, favicon.svg, og-image.png
-.github/workflows/   deploy.yml (GitHub Pages)
+.github/workflows/   ci.yml (quality gate), deploy.yml (GitHub Pages)
 ```
 
-## ⚠️ Before you publish — placeholders to confirm
+Every Play Store link goes through `DownloadBadge`, which is the only place the
+referrer-tagged URL, `rel="noopener noreferrer"` and the `click_get_app` event
+are assembled. Don't hand-roll a Play link — the header and footer both used to,
+and the footer's was silently untracked.
 
-Edit **`src/data/site.ts`** (single source of truth):
+## Unconfirmed values
 
-- [x] **`supportWhatsApp`** — set to `27671884585` (+27 67 188 4585).
-- [ ] **`playStoreUrl`** / **`packageId`** — confirm the live Play Store listing URL
-      (built from the package id `com.myaluza.PeakDrive`; correct once published).
-- [ ] **`socials`** — TikTok / Instagram / X handles are assumed to be `@peakdrive`
-      (from the app's About screen). Confirm they exist or update them.
-- [ ] **`legalName`** / **`operator`** — real legal/company name (and, if you have
-      one, a registered address) for the responsible-party block in the legal pages.
-- [ ] **`lastUpdated`** — bump whenever you change the legal copy.
+`src/data/site.ts` is the single source of truth for site-wide constants, and a
+few of its values are still assumptions. Each is marked `PLACEHOLDER` at its
+definition — that marker is the live record; this list is only a summary.
 
-Assets (in `public/` and `public/screenshots/`):
+| Value                        | Why it's unconfirmed                                                                                                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `playStoreUrl` / `packageId` | Built from the package id `com.myaluza.PeakDrive`; correct once the listing is published.                                                                         |
+| `socials`                    | TikTok / Instagram / X handles assumed to be `@peakdrive`, taken from the app's About screen. Duplicated verbatim in the app — confirm they exist, then fix both. |
+| `legalName` / `operator`     | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages.                                   |
+| `lastUpdated`                | Bumped by hand; nothing enforces it when legal copy changes.                                                                                                      |
+| `public/og-image.png`        | Auto-generated placeholder; swap for a real social card.                                                                                                          |
 
-- [x] App **screenshots** — real ones added: `surge-circle.jpg` (hero) and
-      `events-list.jpg` (showcase). Replace with fresh captures anytime.
-- [ ] **`og-image.png`** — auto-generated placeholder; swap for a real social card.
-
-### 🎨 Brand colour — please confirm
-
-The site uses **Electric Indigo `#6366F1`**, the brand accent documented in the app's
-`constants/theme.ts` (its UI primary). But the app's **splash and login screens use a
-cyan/teal wordmark**. Decide which is the real PeakDrive brand and tell me — I'll
-recolour the site (and the favicon/OG image) to match. Right now they're inconsistent
-with each other in the app itself.
+**Brand colour is genuinely undecided.** The site uses Electric Indigo `#6366F1`,
+the accent documented in the app's `constants/theme.ts`, but the app's own splash
+and login screens use a cyan/teal wordmark. The app is inconsistent with itself,
+so this is a decision to make, not a bug to fix — the site follows whatever the
+app settles on.
 
 ### 🧑‍⚖️ Legal review (important)
 
 The Privacy Policy, Terms and Deletion pages were drafted from the app's **actual**
 data practices (Supabase, Google/AdMob/Firebase, Expo, Sentry, POPIA), but they are a
-**template, not legal advice**. Each page shows a review banner — have a qualified
-attorney review them for POPIA compliance, then remove the banner by setting
-`reviewBanner={false}` (in `src/pages/Privacy.tsx` and `Terms.tsx`).
+**template, not legal advice**. Have a qualified attorney review them for POPIA
+compliance before relying on them.
+
+> Earlier revisions of this file described a review banner on each page and a
+> `reviewBanner={false}` prop to remove it. There is no such prop on `LegalPage`
+> and no banner in `src/` — the instruction was dead. If the banner was removed
+> before the legal review happened, that review is still outstanding.
+
+**Section numbers are not stable.** Headings in `Privacy.tsx` and `Terms.tsx`
+carry hardcoded numbers in both the heading text and the `toc` array, so
+inserting a clause renumbers everything after it. This has already broken one
+external cross-reference: the app's `docs/play-store-submission.md` pointed at
+Privacy "§7" for Location, which became §8 when an Analytics section was
+inserted. **Cross-reference legal sections by their `id`** (`#location`,
+`#analytics`), never by number.
 
 ## Analytics (GA4)
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { site, whatsappLink } from "../data/site";
+import { site, whatsappLink, playStoreCtaUrl } from "../data/site";
+import { trackEvent } from "../analytics";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -32,7 +33,15 @@ export default function Footer() {
             <h4>Product</h4>
             <ul>
               <li>
-                <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer">
+                {/* playStoreCtaUrl, not the canonical playStoreUrl — this is a
+                    CTA, so it carries the install referrer and is tracked like
+                    every other one. */}
+                <a
+                  href={playStoreCtaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("click_get_app", { location: "footer" })}
+                >
                   Download
                 </a>
               </li>
