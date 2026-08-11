@@ -83,11 +83,35 @@ export default function Privacy() {
               <td>Community submissions</td>
               <td>
                 Events you submit, the verification votes you cast, and your ratings of how busy a
-                surge actually turned out to be.
+                surge actually turned out to be. Where you place a pin when submitting an event,
+                that location is saved with the submission.
               </td>
               <td>
                 To build and verify the shared event map, and to correct our demand predictions
                 against what drivers actually found.
+              </td>
+            </tr>
+            <tr>
+              <td>Ride reports</td>
+              <td>
+                If you answer the follow-up prompt after an event, we record whether you went,
+                whether you got a ride, and roughly how long you waited — linked to your account and
+                to that event. You can skip the prompt, and skipping is recorded as a skip.
+              </td>
+              <td>
+                To measure whether a predicted surge was real, which is how the predictions get
+                better. Answers are aggregated per event; they are never shown to other drivers.
+              </td>
+            </tr>
+            <tr>
+              <td>&quot;I&apos;m going&quot; declarations</td>
+              <td>
+                When you tap &quot;I&apos;m going&quot; on an event, we record that against your
+                account and that event.
+              </td>
+              <td>
+                To show other drivers how many are heading to the same place, so you can judge
+                whether a surge is worth chasing. Other drivers see only the count, never who.
               </td>
             </tr>
             <tr>
@@ -155,8 +179,9 @@ export default function Privacy() {
       <p>Depending on the activity, we rely on:</p>
       <ul>
         <li>
-          <strong>Your consent</strong> — for example, location access, push notifications and
-          personalised ads. You can withdraw consent at any time.
+          <strong>Your consent</strong> — for example, location access and push notifications. You
+          can withdraw consent at any time. We do not rely on consent for advertising, because we do
+          not personalise ads (see section 6).
         </li>
         <li>
           <strong>Performance of our agreement</strong> with you (our Terms of Service) to provide
@@ -190,7 +215,7 @@ export default function Privacy() {
           (usage measurement), Firebase Cloud Messaging (push delivery) and Google Sign-In.
         </li>
         <li>
-          <strong>Expo</strong> — push notification delivery.
+          <strong>Anthropic</strong> — automated screening of events you submit.
         </li>
         <li>
           <strong>Sentry</strong> — crash and error reporting.
@@ -198,16 +223,31 @@ export default function Privacy() {
       </ul>
       <p>
         We may also disclose information where required by law, or to protect the rights, safety and
-        property of PeakDrive and our users. Our backend uses SerpAPI and Google Gemini to build the
-        public event feed; these process event data, not your personal account information.
+        property of PeakDrive and our users.
+      </p>
+      <p>
+        Two separate automated systems are involved, and they see different things.{" "}
+        <strong>SerpAPI</strong> and <strong>Google Gemini</strong> build the public event feed from
+        publicly listed events; they do not process your personal account information. When{" "}
+        <strong>you submit an event yourself</strong>, the details you type — event name, venue,
+        address, date and expected finish time — are sent to <strong>Anthropic</strong> to check for
+        duplicates and spam before your submission reaches the review queue. That check also sees
+        the names and venues of other pending submissions, so it can recognise a duplicate. It is
+        not sent your name, your email address or your account identifier.
       </p>
 
       <h2 id="ads">6. Advertising</h2>
       <p>
-        On the free tier, PeakDrive shows ads through Google AdMob. Ads may use your device
-        advertising ID to measure performance and — where permitted and with consent — personalise
-        what you see. You can reset or limit ad tracking in your device settings. Google's handling
-        of advertising data is governed by Google's own privacy policy.
+        On the free tier, PeakDrive shows ads through Google AdMob.{" "}
+        <strong>We request non-personalised ads only.</strong> Every ad the app asks for is flagged
+        this way, so what you are shown is not based on a profile of your interests or your
+        behaviour in other apps. There is no setting to turn personalisation on, because we never
+        turn it on.
+      </p>
+      <p>
+        Non-personalised ads still use your device advertising ID for frequency capping and to
+        measure whether an ad worked. You can reset or limit that identifier in your device
+        settings. Google's handling of advertising data is governed by Google's own privacy policy.
       </p>
 
       <h2 id="analytics">7. Analytics</h2>
@@ -250,11 +290,21 @@ export default function Privacy() {
 
       <h2 id="location">8. Location data</h2>
       <p>
-        We use your location for two things. First, to centre the map on you and show nearby surge
+        We use your location for three things. First, to centre the map on you and show nearby surge
         zones while you're using the app — that use is live and nothing is retained.
       </p>
       <p>
-        Second, if you have both Location and Notifications switched on, we store your{" "}
+        Second, when you <strong>submit an event</strong>, the screen opens with a map pin already
+        placed at your current position so you don't have to hunt for the venue. You can drag that
+        pin anywhere before submitting, and{" "}
+        <strong>wherever you leave it is saved with the submission</strong> — that is the point of
+        it, since the pin is what puts the event on other drivers' maps. If you submit without
+        moving the pin, the location saved is where you were at the time. It is stored with the
+        event, not as a record of your movements, and it stays with the event for as long as the
+        submission does.
+      </p>
+      <p>
+        Third, if you have both Location and Notifications switched on, we store your{" "}
         <strong>latest approximate position</strong> against your device so surge alerts can be
         timed to reach you with enough notice to actually drive there. Without it we can only send
         the same alert to everyone in a city at the same moment, which is rarely useful to anyone.
@@ -285,7 +335,13 @@ export default function Privacy() {
         If you enable notifications, we store a push token tagged with your city so alerts stay
         limited to your area, along with the approximate position described above where you've also
         enabled Location. We also keep a record of which alerts we've already sent your device, so
-        you aren't sent the same one twice and so we can cap how many you receive in a day.
+        you aren't sent the same one twice.
+      </p>
+      <p>
+        How many alerts you receive is governed by your own settings, not by a daily limit we
+        impose. In <strong>Alert preferences</strong> you choose whether to get the early and nearby
+        alerts, the minimum busyness worth alerting you about, and which kinds of event count. There
+        is no cap beyond those choices.
       </p>
       <p>
         You can turn notifications off at any time in <strong>Settings</strong>, which deletes your
@@ -297,8 +353,32 @@ export default function Privacy() {
         We keep your account and profile data while your account is active. When you delete your
         account, we delete your personal data (see{" "}
         <Link to="/delete-account">Deleting your account</Link>), except where we must retain
-        limited records to comply with the law, resolve disputes or prevent abuse. Diagnostic logs
-        are kept for a limited period only.
+        limited records to comply with the law, resolve disputes or prevent abuse.
+      </p>
+      <p>Specific periods, where we can state one:</p>
+      <ul>
+        <li>
+          <strong>Events and the record of alerts sent about them</strong> — deleted once the event
+          is more than 7 days past.
+        </li>
+        <li>
+          <strong>Your stored approximate position</strong> — held only while Location is on. It is
+          overwritten rather than accumulated, and deleted the moment you switch Location off, turn
+          notifications off, or delete your account.
+        </li>
+        <li>
+          <strong>Ride reports and surge ratings</strong> — kept while your account exists, and
+          deleted with it. They are retained rather than expired because their whole purpose is a
+          demand history that outlives the individual events.
+        </li>
+        <li>
+          <strong>Diagnostic and crash logs</strong> — retained by Sentry under its own retention
+          schedule, which is currently 90 days for errors.
+        </li>
+      </ul>
+      <p>
+        Where we have not stated a period, the data is kept for as long as your account exists and
+        deleted when you delete it.
       </p>
 
       <h2 id="security">11. Security</h2>

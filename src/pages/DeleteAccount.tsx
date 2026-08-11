@@ -59,9 +59,21 @@ export default function DeleteAccount() {
       <ul>
         <li>your account and login credentials;</li>
         <li>your profile (display name, home city, notification and location preferences);</li>
-        <li>your community event submissions and verification votes; and</li>
-        <li>your push notification token(s).</li>
+        <li>your community event submissions and verification votes;</li>
+        <li>your ride reports and surge ratings;</li>
+        <li>
+          your &quot;I&apos;m going&quot; declarations, and the record of which alerts we sent you;
+          and
+        </li>
+        <li>
+          your push notification token(s), including any approximate position stored against them.
+        </li>
       </ul>
+      <p>
+        Where you verified another driver&apos;s submission, the submission itself remains — it is
+        part of the shared event map other drivers rely on — but the record that it was <em>you</em>{" "}
+        who verified it is removed along with your account.
+      </p>
 
       <h2 id="what-we-keep">What we may keep</h2>
       <p>
