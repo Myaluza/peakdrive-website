@@ -20,9 +20,9 @@ routes below must keep working:
 - **[vite-react-ssg](https://github.com/Daydreamer-riri/vite-react-ssg)** — statically
   pre-renders each route to its own HTML file (`dirStyle: 'flat'` → `/privacy` →
   `dist/privacy.html`, `/404` → `dist/404.html`). Real files mean deep links resolve
-  directly on GitHub Pages (no SPA redirect hack) and are crawlable.
+  directly on Netlify (no SPA redirect hack) and are crawlable.
 - Hand-written CSS design system mirroring the app's tokens (`src/styles/theme.css`).
-- Deployed to **GitHub Pages** via GitHub Actions.
+- Deployed to **Netlify** (`netlify.toml`), building on every push to `main`.
 
 ## Develop
 
@@ -55,8 +55,9 @@ src/
     site.ts           site-wide constants (edit placeholders here)
     faqs.ts           FAQs, copied verbatim from the app — do not edit here
   styles/            theme.css (tokens), global.css, home.css, legal.css
-public/              CNAME, .nojekyll, robots.txt, sitemap.xml, favicon.svg, og-image.png
-.github/workflows/   ci.yml (quality gate), deploy.yml (GitHub Pages)
+public/              robots.txt, sitemap.xml, favicon.svg, og-image.png
+.github/workflows/   ci.yml (quality gate on PRs)
+netlify.toml         build command (same quality gate), publish dir, headers
 ```
 
 Every Play Store link goes through `DownloadBadge`, which is the only place the
@@ -112,37 +113,31 @@ per client-side route change, and fires a `click_get_app` event on the Play CTAs
 CTAs also carry an install `referrer` (`utm_source=peakdrive_web…`) so installs are
 attributable in the Play Console.
 
-To enable on the live site: **Settings → Secrets and variables → Actions → Variables →
-New variable** `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`. The deploy workflow already passes
-it to the build. (It's not a secret — a GA4 id is public in the page.)
+To enable on the live site: in Netlify, **Site configuration → Environment variables →
+Add a variable** `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`, then trigger a redeploy (it is
+inlined at build time). (It's not a secret — a GA4 id is public in the page.)
 
 > **POPIA:** enabling GA4 loads Google's tag and sets analytics cookies. Disclose it in the
 > Privacy Policy and add a consent gate before turning it on. This reverses the font
 > self-hosting privacy win, so it's a deliberate opt-in, not on by default.
 
-## Deploy to GitHub Pages
+## Deploy to Netlify
 
-1. Create a repo (e.g. `Myaluza/peakdrive-website`) and push this folder to `main`.
-2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. The workflow in `.github/workflows/deploy.yml` builds and deploys on every push to
-   `main`.
+1. In Netlify, **Add new site → Import an existing project → GitHub →
+   `Myaluza/peakdrive-website`**. Netlify reads `netlify.toml`, so leave the build
+   settings as detected (command runs format, lint, typecheck, then build; publish
+   directory `dist`).
+2. Set `VITE_GA4_MEASUREMENT_ID` under **Site configuration → Environment variables**
+   if analytics should be on.
+3. Every push to `main` deploys; pull requests get deploy previews.
 
 ### DNS for `peakdrive.co.za`
 
-At your `.co.za` registrar, point the domain at GitHub Pages:
+In Netlify, **Domain management → Add a domain → `peakdrive.co.za`**, then follow its
+DNS instructions at whoever hosts the domain's DNS — either point the apex `A` record
+at Netlify's load balancer and `www` as a `CNAME` to `<site>.netlify.app`, or move the
+nameservers to Netlify DNS. Netlify issues the HTTPS certificate once DNS resolves;
+the app links use `https://`, so wait for that before announcing the URL.
 
-| Type  | Host  | Value               |
-| ----- | ----- | ------------------- |
-| A     | `@`   | `185.199.108.153`   |
-| A     | `@`   | `185.199.109.153`   |
-| A     | `@`   | `185.199.110.153`   |
-| A     | `@`   | `185.199.111.153`   |
-| CNAME | `www` | `myaluza.github.io` |
-
-Then in **Settings → Pages**, set the custom domain to `peakdrive.co.za` (the `CNAME`
-file in `public/` already does this on deploy) and enable **Enforce HTTPS**. The app
-links use `https://`, so HTTPS must be on.
-
-> If you deploy under a project path instead of a custom domain
-> (`myaluza.github.io/peakdrive-website/`), set `base` in `vite.config.ts` to
-> `/peakdrive-website/` and remove `public/CNAME`.
+Then turn off GitHub Pages (**Settings → Pages → Source: None**) so the old
+`myaluza.github.io` copy stops redirecting.
