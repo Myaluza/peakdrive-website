@@ -80,7 +80,7 @@ export const faqs: Faq[] = [
     id: 11,
     question: "Which cities does PeakDrive cover?",
     answer:
-      "Durban and the surrounding areas for now — Umhlanga, Ballito, Pinetown, Westville, Amanzimtoti and everywhere in between. Johannesburg, Cape Town and Pretoria are coming soon: we're getting Durban right first.",
+      "Durban and surrounding areas for now — including Umhlanga, Ballito, Pinetown, Westville and Amanzimtoti. Johannesburg, Cape Town and Pretoria are coming soon; you'll see them in the menu, marked as such, until they go live.",
   },
   {
     id: 12,
