@@ -1,0 +1,32 @@
+# Netlify build for peakdrive.co.za.
+#
+# The quality gate runs as part of the build, as it did in the old GitHub Pages
+# workflow: a commit that fails format, lint or typecheck must not reach
+# production just because `vite build` itself succeeded. Netlify only publishes
+# when the whole command exits 0.
+[build]
+  command = "npm run format:check && npm run lint && npm run typecheck && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Set VITE_GA4_MEASUREMENT_ID under Site configuration → Environment variables
+  # to enable GA4; unset means analytics is off. Not a secret — the id ends up in
+  # the page either way.
+
+# vite-react-ssg writes flat files (`/privacy` -> `dist/privacy.html`). Netlify
+# serves `privacy.html` at the clean URL `/privacy`, which the app hardcodes,
+# and uses `dist/404.html` as the not-found page — no redirect rules needed.
+
+# Hashed build assets never change under the same name, so cache them hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
