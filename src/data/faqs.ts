@@ -80,7 +80,7 @@ export const faqs: Faq[] = [
     id: 11,
     question: "Which cities does PeakDrive cover?",
     answer:
-      "Durban, Johannesburg, Pretoria and Cape Town so far, and the app picks up the city you're in automatically. You can switch cities from the menu if you're driving somewhere else for the day. More are coming.",
+      "Durban and surrounding areas for now — including Umhlanga, Ballito, Pinetown, Westville and Amanzimtoti. Johannesburg, Cape Town and Pretoria are coming soon; you'll see them in the menu, marked as such, until they go live.",
   },
   {
     id: 12,
