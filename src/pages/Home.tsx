@@ -20,6 +20,9 @@ const appJsonLd = {
   url: site.url,
   downloadUrl: site.playStoreUrl,
   offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
+  areaServed: site.cities
+    .filter((c) => c.live)
+    .map((c) => ({ "@type": "City", name: c.name, containedInPlace: "South Africa" })),
   publisher: { "@type": "Organization", name: site.legalName, url: site.url },
 };
 
@@ -33,7 +36,9 @@ const appJsonLd = {
  */
 const liveCityNames = (() => {
   const names = site.cities.filter((c) => c.live).map((c) => c.name);
-  if (names.length <= 1) return names[0] ?? "selected South African cities";
+  // One live city reads as a region, not a lone dot on the map.
+  if (names.length === 1) return `${names[0]} & surrounds`;
+  if (names.length === 0) return "selected South African cities";
   return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
 })();
 
@@ -102,7 +107,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__inner">
           <div>
-            <span className="eyebrow">For Uber &amp; Bolt drivers · South Africa</span>
+            <span className="eyebrow">For Uber &amp; Bolt drivers · {liveCityNames}</span>
             <h1>{site.tagline}</h1>
             <p className="lead">{site.description}</p>
             <div className="hero__cta">
@@ -214,7 +219,10 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">Coverage</span>
             <h2>Where PeakDrive works</h2>
-            <p>Live in {liveCityNames}, with more South African cities on the way.</p>
+            <p>
+              Live in {liveCityNames} — {site.serviceArea.join(", ")}. More South African cities are
+              coming soon.
+            </p>
           </div>
           <div className="cities">
             {site.cities.map((c) => (

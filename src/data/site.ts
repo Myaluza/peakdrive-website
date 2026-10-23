@@ -19,7 +19,7 @@ export const site = {
   tagline: "Stop guessing. Start earning.",
   // Blurb reused from the app's About screen (app/(main)/about.tsx).
   description:
-    "PeakDrive helps Uber and Bolt drivers in South Africa find high-demand areas by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
+    "PeakDrive helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
   domain: "peakdrive.co.za",
   url: "https://peakdrive.co.za",
@@ -43,16 +43,20 @@ export const site = {
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
   //
-  // All four are live. Checked against the events table on 2026-08-10: every one
-  // carried 80+ upcoming events (Durban 151, Johannesburg 118, Cape Town 100,
-  // Pretoria 80), while this file still advertised three of them as "coming
-  // soon" and directly contradicted the in-app FAQ.
+  // Durban only, from 2026-10-23: PeakDrive is getting Durban and its
+  // surrounds working properly before it expands. The other three are paused
+  // in the backend and shown as "coming soon" in the app — keep this file
+  // matching that, and `serviceArea` below matching the backend's 60 km
+  // service area.
   cities: [
     { name: "Durban", live: true },
-    { name: "Johannesburg", live: true },
-    { name: "Cape Town", live: true },
-    { name: "Pretoria", live: true },
+    { name: "Johannesburg", live: false },
+    { name: "Cape Town", live: false },
+    { name: "Pretoria", live: false },
   ] as City[],
+
+  // What "Durban and surrounding areas" means on the ground.
+  serviceArea: ["Durban CBD", "Umhlanga", "Ballito", "Pinetown", "Westville", "Amanzimtoti"],
 
   socials: [
     {
