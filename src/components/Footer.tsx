@@ -46,6 +46,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <Link to="/plus">PeakDrive Plus</Link>
+              </li>
+              <li>
                 <Link to="/support">Support &amp; FAQ</Link>
               </li>
               <li>

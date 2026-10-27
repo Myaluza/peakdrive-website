@@ -24,9 +24,27 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Content-Security-Policy, matched to what the built site actually loads:
+#   - scripts: same-origin only. vite-react-ssg's inline scripts are moved into
+#     /assets/inline-*.js at build time (see vite.config.ts), so no
+#     'unsafe-inline'. JSON-LD blocks are data, not script, and CSP ignores them.
+#     GA4's gtag.js comes from googletagmanager.com, and only when
+#     VITE_GA4_MEASUREMENT_ID is set; it reports to google-analytics.com and
+#     analytics.google.com (Google's published GA4 CSP list).
+#   - styles: same-origin stylesheet, plus 'unsafe-inline' for the style="..."
+#     attributes React's `style` prop renders into the pre-built HTML. Styles
+#     can't run script, so this is the usual trade.
+#   - fonts: Poppins is self-hosted via @fontsource — no Google Fonts.
+#   - images: same-origin screenshots and favicon, data: URIs, and GA4's
+#     fallback pixel.
+# If you add a third-party embed or script, add its origin here or it will be
+# blocked in production (it still works under `npm run dev`, which sends no CSP).
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"

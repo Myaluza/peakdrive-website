@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import type { TocItem } from "../components/LegalPage";
-import { site, mailtoLink } from "../data/site";
+import { site, mailtoLink, plusPlans } from "../data/site";
 import "../styles/legal.css";
 
 const toc: TocItem[] = [
@@ -10,7 +10,7 @@ const toc: TocItem[] = [
   { id: "service", label: "The service" },
   { id: "no-guarantee", label: "No guarantee of earnings" },
   { id: "community", label: "Community content" },
-  { id: "membership", label: "Pricing & membership" },
+  { id: "membership", label: "PeakDrive Plus" },
   { id: "acceptable-use", label: "Acceptable use" },
   { id: "ip", label: "Intellectual property" },
   { id: "disclaimers", label: "Disclaimers" },
@@ -74,13 +74,60 @@ export default function Terms() {
         screening — and may suspend accounts that submit false or abusive content.
       </p>
 
-      <h2 id="membership">6. Pricing &amp; membership</h2>
+      <h2 id="membership">6. PeakDrive Plus (coming soon)</h2>
       <p>
-        {site.appName} is currently free to use and supported by ads. We may introduce paid or
-        ad-free options in future — for example a membership or vouchers redeemable through
-        third-party retailers. If we do, the applicable pricing, trial and redemption terms
-        (including any refund rules) will be presented to you at that time, and we may change or
-        withdraw such offers at any time.
+        <strong>PeakDrive Plus isn&rsquo;t available yet.</strong> {site.appName} is free to use and
+        supported by ads, and the free tier keeps every feature that helps you earn: the live surge
+        map, event alerts, community submissions and verification. When Plus launches, these terms
+        will apply to it:
+      </p>
+      <ul>
+        <li>
+          <strong>Prepaid credit.</strong> You pay for Plus with {site.appName} credit. You add
+          credit by buying a third-party prepaid voucher (Blu Voucher, OTT Voucher or 1Voucher) from
+          a shop or spaza and entering its PIN in the app. Nothing is sold in the app or on our
+          website. The voucher itself is sold by its retailer and governed by its issuer&rsquo;s
+          terms.
+        </li>
+        <li>
+          <strong>Prices.</strong> Plus costs{" "}
+          {plusPlans.map((p, i) => (
+            <span key={p.period}>
+              {i > 0 && (i === plusPlans.length - 1 ? " or " : ", ")}
+              <strong>
+                R{p.priceRand} for {p.period}
+              </strong>
+            </span>
+          ))}
+          , paid from your credit. We&rsquo;ll show any price change in the app before it applies to
+          you.
+        </li>
+        <li>
+          <strong>No auto-renew.</strong> Plus runs for the period you choose and then stops. We
+          never take credit for a new period unless you choose it.
+        </li>
+        <li>
+          <strong>Credit doesn&rsquo;t expire.</strong> Unused credit stays on your account for as
+          long as the account exists.
+        </li>
+        <li>
+          <strong>No refunds once redeemed.</strong> Once a voucher PIN has been redeemed for
+          credit, it can&rsquo;t be refunded, reversed or exchanged for cash. This doesn&rsquo;t
+          limit any right you have under the Consumer Protection Act. If a redemption fails or
+          credits the wrong amount, contact us and we&rsquo;ll put it right.
+        </li>
+        <li>
+          <strong>What Plus includes:</strong> no ads, earlier surge alerts (about 90 minutes ahead
+          instead of an hour) and extra alert filters.
+        </li>
+        <li>
+          <strong>Ad-free time without paying.</strong> You can also earn ad-free time by
+          contributing to the map or by choosing to watch a rewarded ad.
+        </li>
+      </ul>
+      <p>
+        See <Link to="/plus">PeakDrive Plus</Link> for a plain-language summary, and our{" "}
+        <Link to="/privacy#plus">Privacy Policy</Link> for what we keep when you redeem a voucher.
       </p>
 
       <h2 id="acceptable-use">7. Acceptable use</h2>

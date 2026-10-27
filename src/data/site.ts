@@ -38,7 +38,7 @@ export const site = {
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "11 August 2026",
+  lastUpdated: "27 October 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
@@ -76,6 +76,14 @@ export const site = {
     },
   ] as Social[],
 };
+
+// PeakDrive Plus (coming soon), paid from voucher credit. Read by the /plus page
+// and Terms §6 so the two can't quote different prices.
+export const plusPlans = [
+  { period: "1 day", priceRand: 5 },
+  { period: "1 week", priceRand: 15 },
+  { period: "1 month", priceRand: 50 },
+];
 
 export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
 export const mailtoLink = `mailto:${site.supportEmail}`;
