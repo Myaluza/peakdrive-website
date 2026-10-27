@@ -14,6 +14,7 @@ const toc: TocItem[] = [
   { id: "analytics", label: "Analytics" },
   { id: "location", label: "Location data" },
   { id: "notifications", label: "Push notifications" },
+  { id: "plus", label: "PeakDrive Plus and vouchers" },
   { id: "retention", label: "Data retention" },
   { id: "security", label: "Security" },
   { id: "your-rights", label: "Your rights" },
@@ -125,7 +126,7 @@ export default function Privacy() {
             <tr>
               <td>Advertising identifiers</td>
               <td>Your device advertising ID and ad-interaction data, via Google AdMob.</td>
-              <td>To display ads and, unless you opt out, personalise them.</td>
+              <td>To display non-personalised ads on the free tier (see section 6).</td>
             </tr>
             <tr>
               <td>Usage analytics</td>
@@ -227,13 +228,14 @@ export default function Privacy() {
       </p>
       <p>
         Two separate automated systems are involved, and they see different things.{" "}
-        <strong>SerpAPI</strong> and <strong>Google Gemini</strong> build the public event feed from
-        publicly listed events; they do not process your personal account information. When{" "}
-        <strong>you submit an event yourself</strong>, the details you type — event name, venue,
-        address, date and expected finish time — are sent to <strong>Anthropic</strong> to check for
-        duplicates and spam before your submission reaches the review queue. That check also sees
-        the names and venues of other pending submissions, so it can recognise a duplicate. It is
-        not sent your name, your email address or your account identifier.
+        <strong>DataForSEO</strong> (Google Events results) and <strong>Google Gemini</strong> build
+        the public event feed from publicly listed events; they do not process your personal account
+        information. When <strong>you submit an event yourself</strong>, the details you type —
+        event name, venue, address, date and expected finish time — are sent to{" "}
+        <strong>Anthropic</strong> to check for duplicates and spam before your submission reaches
+        the review queue. That check also sees the names and venues of other pending submissions, so
+        it can recognise a duplicate. It is not sent your name, your email address or your account
+        identifier.
       </p>
 
       <h2 id="ads">6. Advertising</h2>
@@ -348,7 +350,34 @@ export default function Privacy() {
         push tokens.
       </p>
 
-      <h2 id="retention">10. Data retention</h2>
+      <h2 id="plus">10. PeakDrive Plus and vouchers (coming soon)</h2>
+      <p>
+        <strong>PeakDrive Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll
+        pay for it with PeakDrive credit, which you add by buying a prepaid voucher (Blu Voucher,
+        OTT Voucher or 1Voucher) at a shop or spaza and entering its PIN in the app. Nothing is sold
+        in the app or on this website, and we never ask for card or bank details.
+      </p>
+      <p>
+        When you redeem a voucher, the PIN is sent to the <strong>voucher provider</strong> that
+        issued it, which checks and processes it. We don&rsquo;t keep the PIN. We keep only:
+      </p>
+      <ul>
+        <li>
+          the <strong>last 4 digits</strong> and a <strong>one-way hash</strong> of the PIN, so we
+          can stop the same voucher being redeemed twice and help you if a redemption goes wrong;
+        </li>
+        <li>the amount of credit the voucher added; and</li>
+        <li>
+          a <strong>ledger</strong> of your credit and plans: credit added, Plus days, weeks or
+          months bought, and when each started and ends.
+        </li>
+      </ul>
+      <p>
+        The ledger is linked to your account and kept while your account exists, except where the
+        law requires us to keep transaction records for longer.
+      </p>
+
+      <h2 id="retention">11. Data retention</h2>
       <p>
         We keep your account and profile data while your account is active. When you delete your
         account, we delete your personal data (see{" "}
@@ -381,14 +410,14 @@ export default function Privacy() {
         deleted when you delete it.
       </p>
 
-      <h2 id="security">11. Security</h2>
+      <h2 id="security">12. Security</h2>
       <p>
         We use reputable processors, encryption of data in transit, and access controls. Access to
         user data in our database is protected by row-level security. No method of transmission or
         storage is completely secure, but we work continuously to protect your information.
       </p>
 
-      <h2 id="your-rights">12. Your rights under POPIA</h2>
+      <h2 id="your-rights">13. Your rights under POPIA</h2>
       <p>You have the right to:</p>
       <ul>
         <li>access a copy of the personal information we hold about you;</li>
@@ -404,20 +433,20 @@ export default function Privacy() {
         <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
-      <h2 id="deletion">13. Deleting your account</h2>
+      <h2 id="deletion">14. Deleting your account</h2>
       <p>
         You can permanently delete your account and associated data in-app (
         <strong>Settings → Delete Account</strong>) or by emailing us. Full details are on the{" "}
         <Link to="/delete-account">Account &amp; Data Deletion</Link> page.
       </p>
 
-      <h2 id="children">14. Children</h2>
+      <h2 id="children">15. Children</h2>
       <p>
         PeakDrive is intended for licensed e-hailing drivers and is not directed at children under
         18. We do not knowingly collect personal information from children.
       </p>
 
-      <h2 id="transfers">15. International transfers</h2>
+      <h2 id="transfers">16. International transfers</h2>
       <p>
         PeakDrive stores personal information outside South Africa. In particular, our database and
         authentication (Supabase) and our events backend (Render) are hosted in the{" "}
@@ -429,13 +458,13 @@ export default function Privacy() {
         standard — and we transfer only the limited data described in this policy.
       </p>
 
-      <h2 id="changes">16. Changes to this policy</h2>
+      <h2 id="changes">17. Changes to this policy</h2>
       <p>
         We may update this policy from time to time. We'll revise the &ldquo;Last updated&rdquo;
         date above and, for material changes, notify you in the app.
       </p>
 
-      <h2 id="contact">17. Contact us</h2>
+      <h2 id="contact">18. Contact us</h2>
       <p>
         Responsible party: {site.legalName}, operated by {site.operator}. Questions about this
         policy or your data? Email <a href={mailtoLink}>{site.supportEmail}</a>.
