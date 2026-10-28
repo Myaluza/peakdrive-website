@@ -39,10 +39,10 @@ export default function Terms() {
 
       <h2 id="eligibility">2. Eligibility</h2>
       <p>
-        The Service is intended for licensed e-hailing drivers in South Africa. You must be at least
-        18 years old and able to enter into a binding agreement to use it. You are responsible for
-        complying with the rules of any ride-hailing platform you drive for and with all applicable
-        traffic and safety laws.
+        The Service is intended for licensed e-hailing drivers and for event organisers in South
+        Africa. You must be at least 18 years old and able to enter into a binding agreement to use
+        it. You are responsible for complying with the rules of any ride-hailing platform you drive
+        for and with all applicable traffic and safety laws.
       </p>
 
       <h2 id="service">3. The service</h2>
@@ -72,6 +72,16 @@ export default function Terms() {
         non-exclusive, royalty-free licence to use, display and distribute your submissions within
         the Service. We may moderate, edit or remove submissions — including through automated
         screening — and may suspend accounts that submit false or abusive content.
+      </p>
+
+      <p>
+        <strong>Event organisers.</strong> If you use {site.appName} as an event organiser, you
+        confirm that you organise, or are authorised to list, every event you add, and you agree to
+        keep its date, times and expected crowd accurate and to cancel it in the app if it
+        won&rsquo;t go ahead. Drivers rely on these listings to plan their work. We verify
+        organisers before their events go live without review, show your organisation name on your
+        events once you&rsquo;re verified, and may withdraw verification, remove listings or suspend
+        your account for false, misleading or duplicate listings.
       </p>
 
       <h2 id="membership">6. PeakDrive Plus (coming soon)</h2>

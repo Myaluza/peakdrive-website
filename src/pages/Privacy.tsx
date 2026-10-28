@@ -62,7 +62,8 @@ export default function Privacy() {
               <td>Account &amp; profile</td>
               <td>
                 Email address and authentication identifiers (you sign in with Google), display
-                name, home city, and your notification and location preferences.
+                name, home city, whether you use PeakDrive as a driver or an event organiser, and
+                your notification and location preferences.
               </td>
               <td>To create, secure and manage your account.</td>
             </tr>
@@ -93,6 +94,21 @@ export default function Privacy() {
               </td>
             </tr>
             <tr>
+              <td>Event organiser profile &amp; listings</td>
+              <td>
+                If you use PeakDrive as an event organiser: your organisation name, a contact
+                person, phone number and email address, an optional website and description, and
+                whether we have verified you. For each event you list: its name, venue, address,
+                date, start and end times, expected attendance, type and map pin.
+              </td>
+              <td>
+                To confirm you are a genuine organiser and to publish your events on drivers&rsquo;
+                maps. Drivers see your events and, once you are verified, your organisation name.
+                Your contact details are seen only by PeakDrive staff, for verification, and are
+                never shown to drivers or shared for marketing.
+              </td>
+            </tr>
+            <tr>
               <td>Ride reports</td>
               <td>
                 If you answer the follow-up prompt after an event, we record whether you went,
@@ -114,7 +130,8 @@ export default function Privacy() {
               </td>
               <td>
                 To show other drivers how many are heading to the same place, so you can judge
-                whether a surge is worth chasing. Other drivers see only the count, never who.
+                whether a surge is worth chasing. Other drivers, and the organiser of an event
+                listed by its organiser, see only the count, never who.
               </td>
             </tr>
             <tr>
@@ -439,6 +456,11 @@ export default function Privacy() {
           demand history that outlives the individual events.
         </li>
         <li>
+          <strong>Organiser profile and listed events</strong> — kept while your account exists. A
+          cancelled event comes off drivers&rsquo; maps immediately; past events leave the map about
+          a week after they happen.
+        </li>
+        <li>
           <strong>Diagnostic and crash logs</strong> — retained by Sentry under its own retention
           schedule, which is currently 90 days for errors.
         </li>
@@ -480,8 +502,9 @@ export default function Privacy() {
 
       <h2 id="children">15. Children</h2>
       <p>
-        PeakDrive is intended for licensed e-hailing drivers and is not directed at children under
-        18. We do not knowingly collect personal information from children.
+        PeakDrive is intended for licensed e-hailing drivers and event organisers and is not
+        directed at children under 18. We do not knowingly collect personal information from
+        children.
       </p>
 
       <h2 id="transfers">16. International transfers</h2>

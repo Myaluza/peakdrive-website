@@ -235,6 +235,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Organisers */}
+      <section className="section">
+        <div className="container" style={{ maxWidth: 780 }}>
+          <div className="section-head">
+            <span className="eyebrow">For event organisers</span>
+            <h2>Organising an event in Durban?</h2>
+            <p>
+              List it on PeakDrive and drivers will be waiting when your crowd heads home. Choose
+              &ldquo;I organise events&rdquo; when you sign up in the app, fill in your organiser
+              profile, and once we&rsquo;ve verified you, your events go live on drivers&rsquo; maps
+              straight away. You&rsquo;ll see how many drivers plan to be there, and you can change
+              times or cancel at any point. It&rsquo;s free.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ teaser */}
       <section className="section">
         <div className="container" style={{ maxWidth: 780 }}>
