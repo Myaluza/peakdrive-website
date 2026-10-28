@@ -101,7 +101,9 @@ export default function Privacy() {
               </td>
               <td>
                 To measure whether a predicted surge was real, which is how the predictions get
-                better. Answers are aggregated per event; they are never shown to other drivers.
+                better. Answers are also averaged per venue and shown to other drivers as a
+                venue&rsquo;s track record (&ldquo;usually busy&rdquo;), but only once at least
+                three different drivers have rated it, and never with who said what.
               </td>
             </tr>
             <tr>
@@ -113,6 +115,29 @@ export default function Privacy() {
               <td>
                 To show other drivers how many are heading to the same place, so you can judge
                 whether a surge is worth chasing. Other drivers see only the count, never who.
+              </td>
+            </tr>
+            <tr>
+              <td>Live reports</td>
+              <td>
+                When you tap Report on the map, whether it&rsquo;s busy or dead where you are, the
+                time, and your position rounded to about 110 metres — linked to your account.
+              </td>
+              <td>
+                To show other drivers what it&rsquo;s like there right now. They see only a dot and
+                a count for the area, for 30 minutes, never your name. Your account is used to limit
+                how often you can report and to credit your ad-free time.
+              </td>
+            </tr>
+            <tr>
+              <td>Invite codes</td>
+              <td>
+                Your invite code and, if you joined with someone&rsquo;s code, which account invited
+                you.
+              </td>
+              <td>
+                To give you both the ad-free day and to stop the same invite being used twice.
+                Neither of you can see the other&rsquo;s details through it.
               </td>
             </tr>
             <tr>
@@ -156,6 +181,12 @@ export default function Privacy() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        <strong>Not collected:</strong> the shift and earnings log in the app is stored only on your
+        phone. We never receive your shifts, hours or earnings, and uninstalling the app deletes
+        them. Read-aloud alerts use your phone&rsquo;s own text-to-speech.
+      </p>
 
       <h2 id="how-we-use">3. How we use your information</h2>
       <ul>
@@ -236,6 +267,10 @@ export default function Privacy() {
         the review queue. That check also sees the names and venues of other pending submissions, so
         it can recognise a duplicate. It is not sent your name, your email address or your account
         identifier.
+      </p>
+      <p>
+        Rain alerts use the <strong>MET Norway</strong> weather forecast. Our server asks it for the
+        forecast at Durban&rsquo;s city centre; your location and account are never sent to it.
       </p>
 
       <h2 id="ads">6. Advertising</h2>
@@ -394,6 +429,9 @@ export default function Privacy() {
           <strong>Your stored approximate position</strong> — held only while Location is on. It is
           overwritten rather than accumulated, and deleted the moment you switch Location off, turn
           notifications off, or delete your account.
+        </li>
+        <li>
+          <strong>Live reports</strong> — shown for 30 minutes and deleted after 24 hours.
         </li>
         <li>
           <strong>Ride reports and surge ratings</strong> — kept while your account exists, and

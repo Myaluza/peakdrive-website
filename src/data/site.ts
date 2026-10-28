@@ -38,7 +38,7 @@ export const site = {
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "27 October 2026",
+  lastUpdated: "28 October 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
