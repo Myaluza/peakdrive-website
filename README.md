@@ -21,6 +21,12 @@ routes below must keep working:
   pre-renders each route to its own HTML file (`dirStyle: 'flat'` → `/privacy` →
   `dist/privacy.html`, `/404` → `dist/404.html`). Real files mean deep links resolve
   directly on Netlify (no SPA redirect hack) and are crawlable.
+- **React Router 7** — vite-react-ssg 0.9.2 only supports v6, so
+  `patches/vite-react-ssg+0.9.2.patch` (applied by `patch-package` on `postinstall`)
+  points its static render at v7's main entry instead of the removed
+  `react-router-dom/server.js`. The `overrides` entry in `package.json` silences its v6
+  peer range. If you upgrade vite-react-ssg, check whether it supports v7 natively and
+  drop the patch; `npm install` fails loudly if the patch no longer applies.
 - Hand-written CSS design system mirroring the app's tokens (`src/styles/theme.css`).
 - Deployed to **Netlify** (`netlify.toml`), building on every push to `main`.
 
