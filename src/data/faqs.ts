@@ -100,6 +100,12 @@ export const faqs: Faq[] = [
     answer:
       "Menu → Settings → Delete Account. You'll be asked to confirm, and then your account and everything associated with it is permanently deleted, in line with POPIA.",
   },
+  {
+    id: 15,
+    question: "I organise events. Can I list them?",
+    answer:
+      "Yes. Choose 'I organise events' when you sign up in the app, or switch in Settings. Fill in your organiser profile and we'll verify you once; after that your events go live on drivers' maps as soon as you add them, and you can change times or cancel. Drivers only see your organisation name.",
+  },
 ];
 
 export default faqs;
