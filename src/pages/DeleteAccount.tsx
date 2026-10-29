@@ -60,7 +60,13 @@ export default function DeleteAccount() {
         <li>your account and login credentials;</li>
         <li>your profile (display name, home city, notification and location preferences);</li>
         <li>your community event submissions and verification votes;</li>
-        <li>your ride reports and surge ratings;</li>
+        <li>
+          your event organiser profile (organisation name, contact details, website and description)
+          and the events you listed, if you used {site.appName} as an organiser;
+        </li>
+        <li>your ride reports, live reports and surge ratings;</li>
+        <li>your invite code and the record of who invited you;</li>
+        <li>your PeakDrive credit ledger and any ad-free time you were granted;</li>
         <li>
           your &quot;I&apos;m going&quot; declarations, and the record of which alerts we sent you;
           and
@@ -82,6 +88,10 @@ export default function DeleteAccount() {
         <Link to="/terms">Terms of Service</Link>. Any retained data is kept only for as long as
         necessary and then deleted. Anonymised or aggregated data that no longer identifies you may
         be retained.
+      </p>
+      <p>
+        Copies of deleted data can remain in our encrypted database backups until those backups age
+        out, which happens within 90 days.
       </p>
 
       <h2 id="more">More information</h2>

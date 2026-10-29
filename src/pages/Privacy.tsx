@@ -78,7 +78,7 @@ export default function Privacy() {
                 To centre the map on you and show nearby surge zones, and to work out how long you'd
                 need to reach an event so a surge alert arrives in time to be useful. We keep only
                 your latest approximate position — never a history of where you've been — and it is
-                deleted the moment you switch Location off.
+                deleted the moment you switch Location off, or after 7 days without an update.
               </td>
             </tr>
             <tr>
@@ -91,6 +91,18 @@ export default function Privacy() {
               <td>
                 To build and verify the shared event map, and to correct our demand predictions
                 against what drivers actually found.
+              </td>
+            </tr>
+            <tr>
+              <td>Contributors leaderboard</td>
+              <td>
+                Your display name and the points you earn by contributing — submitting and verifying
+                events, and rating how busy a surge turned out.
+              </td>
+              <td>
+                To credit the drivers who keep the map accurate. Other signed-in users see your
+                display name and points on the Contributors leaderboard; your account identifier and
+                email address are never shown.
               </td>
             </tr>
             <tr>
@@ -269,7 +281,36 @@ export default function Privacy() {
         <li>
           <strong>Sentry</strong> — crash and error reporting.
         </li>
+        <li>
+          <strong>Netlify</strong> — hosting for this website. It receives the standard request
+          details any website sees (your IP address, browser and the page requested).
+        </li>
+        <li>
+          <strong>GitHub</strong> — storage for encrypted backups of our database, which include
+          account data. Backups are kept for up to 90 days and then deleted.
+        </li>
+        <li>
+          <strong>Expo</strong> — push notification relay for older versions of the app. It receives
+          your device&rsquo;s push token and the alert text.
+        </li>
+        <li>
+          <strong>Google Gemini</strong> — enriching events found in public event listings (for
+          example estimating a finish time). It is sent only public event details, never user data.
+        </li>
+        <li>
+          <strong>DataForSEO</strong> — searching public event listings. It is sent only search
+          terms such as a city and date, never user data.
+        </li>
+        <li>
+          <strong>WhatsApp (Meta)</strong> — only if you contact support there. Meta then processes
+          your phone number and the messages you send us under its own terms.
+        </li>
       </ul>
+      <p>
+        <strong>Other drivers</strong> see a limited amount too: the events you submit, and your
+        display name and points on the Contributors leaderboard (visible to signed-in users only).
+        Your account identifier and email address are not shared with them.
+      </p>
       <p>
         We may also disclose information where required by law, or to protect the rights, safety and
         property of PeakDrive and our users.
@@ -284,6 +325,12 @@ export default function Privacy() {
         the review queue. That check also sees the names and venues of other pending submissions, so
         it can recognise a duplicate. It is not sent your name, your email address or your account
         identifier.
+      </p>
+      <p>
+        Some submissions are screened automatically and can be turned away without a person looking
+        at them — for example a likely duplicate of an event already on the map, or an event without
+        a reliable end time. If you think one of yours was wrongly turned away, email{" "}
+        <a href={mailtoLink}>{site.supportEmail}</a> and ask for a human review.
       </p>
       <p>
         Rain alerts use the <strong>MET Norway</strong> weather forecast. Our server asks it for the
@@ -376,7 +423,8 @@ export default function Privacy() {
         <li>It is never shown to other drivers and never used to advertise to you.</li>
         <li>
           Switching <strong>Location</strong> off in the app's <strong>Settings</strong> deletes it
-          immediately. Revoking the permission in your device settings stops any further collection.
+          immediately. Revoking the permission in your device settings stops any further collection,
+          and a position that hasn&rsquo;t been updated for 7 days is cleared automatically.
         </li>
       </ul>
       <p>
@@ -426,7 +474,8 @@ export default function Privacy() {
       </ul>
       <p>
         The ledger is linked to your account and kept while your account exists, except where the
-        law requires us to keep transaction records for longer.
+        law requires us to keep transaction records for longer. Each redemption attempt is also
+        logged, to stop PIN guessing, and that log is deleted after 90 days.
       </p>
 
       <h2 id="retention">11. Data retention</h2>
@@ -444,8 +493,18 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Your stored approximate position</strong> — held only while Location is on. It is
-          overwritten rather than accumulated, and deleted the moment you switch Location off, turn
-          notifications off, or delete your account.
+          overwritten rather than accumulated, cleared after 7 days without an update, and deleted
+          the moment you switch Location off, turn notifications off, or delete your account.
+        </li>
+        <li>
+          <strong>Rejected or cancelled event submissions</strong> — deleted after 30 days.
+        </li>
+        <li>
+          <strong>Voucher redemption attempts</strong> — deleted after 90 days.
+        </li>
+        <li>
+          <strong>Database backups</strong> — encrypted, and deleted after at most 90 days, so data
+          you delete ages out of our backups within that time.
         </li>
         <li>
           <strong>Live reports</strong> — shown for 30 minutes and deleted after 24 hours.
@@ -516,7 +575,9 @@ export default function Privacy() {
         transferred across borders as contemplated by <strong>section 72 of POPIA</strong>. We rely
         on these recipients being bound by laws or agreements that provide protection substantially
         similar to POPIA — the European Union's data protection regime (GDPR) offers a comparable
-        standard — and we transfer only the limited data described in this policy.
+        standard — and we transfer only the limited data described in this policy. Our encrypted
+        database backups are stored with GitHub, and this website is served by Netlify, both of
+        which may process data in the United States and elsewhere.
       </p>
 
       <h2 id="changes">17. Changes to this policy</h2>
