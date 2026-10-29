@@ -28,6 +28,9 @@ export const site = {
   legalName: "PeakDrive",
   operator: "Myaluza",
   jurisdiction: "the Republic of South Africa",
+  // Registered with the Information Regulator (POPIA s55). Reached through the
+  // support address.
+  informationOfficer: "Thuthukani Ngubane",
 
   supportEmail: "support@peakdrive.co.za",
   // International format, no leading "+", for wa.me links.
@@ -38,7 +41,7 @@ export const site = {
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "28 October 2026",
+  lastUpdated: "29 October 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
