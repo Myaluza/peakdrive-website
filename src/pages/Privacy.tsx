@@ -42,8 +42,9 @@ export default function Privacy() {
         under the <strong>Protection of Personal Information Act, 2013 (POPIA)</strong>.
       </p>
       <p>
-        The responsible party for your personal information is {site.legalName}. You can reach us at{" "}
-        <a href={mailtoLink}>{site.supportEmail}</a>.
+        The responsible party for your personal information is {site.legalName}. Our Information
+        Officer, registered with the Information Regulator, is {site.informationOfficer}. You can
+        reach them, and us, at <a href={mailtoLink}>{site.supportEmail}</a>.
       </p>
 
       <h2 id="data-we-collect">2. Information we collect</h2>
@@ -547,8 +548,8 @@ export default function Privacy() {
         <li>lodge a complaint with the Information Regulator (South Africa).</li>
       </ul>
       <p>
-        To exercise any of these, email <a href={mailtoLink}>{site.supportEmail}</a>. You can
-        contact the Information Regulator at{" "}
+        To exercise any of these, email our Information Officer, {site.informationOfficer}, at{" "}
+        <a href={mailtoLink}>{site.supportEmail}</a>. You can contact the Information Regulator at{" "}
         <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
@@ -588,8 +589,9 @@ export default function Privacy() {
 
       <h2 id="contact">18. Contact us</h2>
       <p>
-        Responsible party: {site.legalName}, operated by {site.operator}. Questions about this
-        policy or your data? Email <a href={mailtoLink}>{site.supportEmail}</a>.
+        Responsible party: {site.legalName}, operated by {site.operator}. Information Officer:{" "}
+        {site.informationOfficer}. Questions about this policy or your data? Email{" "}
+        <a href={mailtoLink}>{site.supportEmail}</a>.
       </p>
     </LegalPage>
   );
