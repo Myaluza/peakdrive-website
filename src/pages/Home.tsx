@@ -4,7 +4,7 @@ import JsonLd from "../components/JsonLd";
 import DownloadBadge from "../components/DownloadBadge";
 import FaqAccordion from "../components/FaqAccordion";
 import Phone from "../components/Phone";
-import { site } from "../data/site";
+import { site, downloadUrl } from "../data/site";
 import { faqs } from "../data/faqs";
 import "../styles/home.css";
 
@@ -18,7 +18,7 @@ const appJsonLd = {
   applicationCategory: "TravelApplication",
   operatingSystem: "Android",
   url: site.url,
-  downloadUrl: site.playStoreUrl,
+  downloadUrl,
   offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
   areaServed: site.cities
     .filter((c) => c.live)
@@ -117,6 +117,12 @@ export default function Home() {
               </a>
             </div>
             <p className="hero__note">Free to use · Made for South African e-hailing drivers</p>
+            {/* Not from Google Play, so Android asks first. Saying so here
+                means the prompt isn't a surprise. */}
+            <p className="hero__note">
+              Android APK, {site.apkSizeMb} MB. When you open it, allow your browser to install apps
+              if Android asks.
+            </p>
           </div>
 
           <Phone

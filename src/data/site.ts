@@ -36,9 +36,14 @@ export const site = {
   // International format, no leading "+", for wa.me links.
   supportWhatsApp: "27671884585",
 
-  // PLACEHOLDER — confirm the live Play Store listing URL.
   packageId: "com.myaluza.PeakDrive",
-  playStoreUrl: "https://play.google.com/store/apps/details?id=com.myaluza.PeakDrive",
+  // Not on Google Play yet: drivers download the APK directly. `/download` is
+  // a redirect in netlify.toml to the newest GitHub Release asset on this
+  // repo, so a new version is a new release, not a site change.
+  downloadPath: "/download",
+  // Shown next to the buttons, so drivers know what they're getting. Update
+  // with each release.
+  apkSizeMb: 34,
 
   // Keep in sync with the date the legal copy was last edited.
   lastUpdated: "29 October 2026",
@@ -91,10 +96,5 @@ export const plusPlans = [
 export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
 export const mailtoLink = `mailto:${site.supportEmail}`;
 
-// Play Store URL with an install `referrer` for attribution. Google Play surfaces
-// it in the Play Console (Acquisition) and, when GA4 is linked to Play, as campaign
-// data — so installs coming from the website are distinguishable from organic ones.
-// Keep `site.playStoreUrl` clean (canonical) for JSON-LD; use this for CTA links.
-export const playStoreCtaUrl = `${site.playStoreUrl}&referrer=${encodeURIComponent(
-  "utm_source=peakdrive_web&utm_medium=web&utm_campaign=site_cta",
-)}`;
+// Absolute, for JSON-LD; the buttons use the relative `site.downloadPath`.
+export const downloadUrl = `${site.url}${site.downloadPath}`;

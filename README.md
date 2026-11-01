@@ -66,10 +66,22 @@ public/              robots.txt, sitemap.xml, favicon.svg, og-image.png
 netlify.toml         build command (same quality gate), publish dir, headers
 ```
 
-Every Play Store link goes through `DownloadBadge`, which is the only place the
-referrer-tagged URL, `rel="noopener noreferrer"` and the `click_get_app` event
-are assembled. Don't hand-roll a Play link — the header and footer both used to,
-and the footer's was silently untracked.
+Every download link goes through `DownloadBadge` (or, for the footer's text
+link, uses `site.downloadPath` with the same `click_get_app` event). Don't
+hand-roll one — the header and footer both used to, and the footer's was
+silently untracked.
+
+## Releasing the app
+
+PeakDrive isn't on Google Play yet; drivers download the APK. `/download` is a
+302 in `netlify.toml` to
+`https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk`,
+so a new version needs no site change:
+
+1. Build `production-apk` in the app repo (`eas build -p android --profile production-apk`).
+2. Create a release on this repo with the APK attached as exactly `PeakDrive.apk`,
+   marked latest. Tag it `app-<version>-<build>`, e.g. `app-1.0.0-3`.
+3. If the size changed by a megabyte or more, update `apkSizeMb` in `site.ts`.
 
 ## Unconfirmed values
 
@@ -77,13 +89,12 @@ and the footer's was silently untracked.
 few of its values are still assumptions. Each is marked `PLACEHOLDER` at its
 definition — that marker is the live record; this list is only a summary.
 
-| Value                        | Why it's unconfirmed                                                                                                                                              |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `playStoreUrl` / `packageId` | Built from the package id `com.myaluza.PeakDrive`; correct once the listing is published.                                                                         |
-| `socials`                    | TikTok / Instagram / X handles assumed to be `@peakdrive`, taken from the app's About screen. Duplicated verbatim in the app — confirm they exist, then fix both. |
-| `legalName` / `operator`     | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages.                                   |
-| `lastUpdated`                | Bumped by hand; nothing enforces it when legal copy changes.                                                                                                      |
-| `public/og-image.png`        | Auto-generated placeholder; swap for a real social card.                                                                                                          |
+| Value                    | Why it's unconfirmed                                                                                                                                              |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `socials`                | TikTok / Instagram / X handles assumed to be `@peakdrive`, taken from the app's About screen. Duplicated verbatim in the app — confirm they exist, then fix both. |
+| `legalName` / `operator` | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages.                                   |
+| `lastUpdated`            | Bumped by hand; nothing enforces it when legal copy changes.                                                                                                      |
+| `public/og-image.png`    | Auto-generated placeholder; swap for a real social card.                                                                                                          |
 
 **Brand colour is genuinely undecided.** The site uses Electric Indigo `#6366F1`,
 the accent documented in the app's `constants/theme.ts`, but the app's own splash

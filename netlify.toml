@@ -18,6 +18,16 @@
 # serves `privacy.html` at the clean URL `/privacy`, which the app hardcodes,
 # and uses `dist/404.html` as the not-found page — no redirect rules needed.
 
+# The app download. Not on Google Play yet, so every download button links
+# here, and this sends it to the newest GitHub Release on this repo. Releasing
+# a new APK is a new release with an asset named exactly `PeakDrive.apk`; the
+# site doesn't change. 302, not 301: browsers cache a 301 for good, and this
+# target will move when the app reaches the Play Store.
+[[redirects]]
+  from = "/download"
+  to = "https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk"
+  status = 302
+
 # Hashed build assets never change under the same name, so cache them hard.
 [[headers]]
   for = "/assets/*"
