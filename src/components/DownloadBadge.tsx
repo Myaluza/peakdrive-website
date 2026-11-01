@@ -1,4 +1,4 @@
-import { playStoreCtaUrl } from "../data/site";
+import { site } from "../data/site";
 import { trackEvent } from "../analytics";
 
 interface Props {
@@ -6,22 +6,23 @@ interface Props {
   className?: string;
   /** Where on the page this badge sits, for click attribution (e.g. "hero"). */
   location?: string;
-  /** Button text. Defaults to the full Play Store wording. */
+  /** Button text. Defaults to the full download wording. */
   label?: string;
-  /** Whether to render the Play glyph. Off for tight spots like the header. */
+  /** Whether to render the download glyph. Off for tight spots like the header. */
   showIcon?: boolean;
 }
 
 /**
- * Google Play call-to-action button, and the single place a Play Store link is
- * built.
+ * The download call-to-action button, and the single place the download link
+ * is built.
  *
- * Every CTA on the site goes through here so the four things that must travel
- * together — the referrer-tagged `playStoreCtaUrl`, `target="_blank"`,
- * `rel="noopener noreferrer"`, and the `click_get_app` event — cannot drift
- * apart. They previously did: the header hand-rolled its own copy of all four,
- * and the footer linked the canonical URL with no tracking at all, so footer
- * installs were both unattributed and uncounted.
+ * Every CTA on the site goes through here so the link and the `click_get_app`
+ * event travel together. They previously drifted: the header hand-rolled its
+ * own copy, and the footer linked with no tracking at all, so footer downloads
+ * were uncounted.
+ *
+ * The link is `site.downloadPath`, which Netlify redirects to the newest APK.
+ * Same tab, no `target`: it starts a file download rather than opening a page.
  *
  * `light` renders a white button for use on coloured/dark bands; `primary` is
  * the default indigo button.
@@ -30,21 +31,29 @@ export default function DownloadBadge({
   variant = "primary",
   className,
   location,
-  label = "Get it on Google Play",
+  label = "Download for Android",
   showIcon = true,
 }: Props) {
   const variantClass = variant === "light" ? "btn-light" : "btn-primary";
   return (
     <a
-      href={playStoreCtaUrl}
+      href={site.downloadPath}
       className={`btn ${variantClass} ${className ?? ""}`}
-      target="_blank"
-      rel="noopener noreferrer"
       onClick={() => trackEvent("click_get_app", { location: location ?? "unknown" })}
     >
       {showIcon && (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M3.6 2.3 13 12 3.6 21.7A1.5 1.5 0 0 1 3 20.5v-17c0-.5.2-.9.6-1.2Zm11 10.8 2.8 2.9-9.2 5.3 6.4-8.2Zm0-2.2L8.2 2.9l9.2 5.3-2.8 2.7Zm1.5 1.1 3.4-2 .1.1c1 .6 1 2 0 2.6l-3.5 2-2.1-2.3 2.1-2.4Z" />
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" />
         </svg>
       )}
       {label}
