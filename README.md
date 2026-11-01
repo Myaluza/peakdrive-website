@@ -82,6 +82,17 @@ so a new version needs no site change:
 2. Create a release on this repo with the APK attached as exactly `PeakDrive.apk`,
    marked latest. Tag it `app-<version>-<build>`, e.g. `app-1.0.0-3`.
 3. If the size changed by a megabyte or more, update `apkSizeMb` in `site.ts`.
+4. If older builds must not keep running, raise the minimum in Supabase. From
+   1.1.0, builds below it show only an update screen, which downloads this APK
+   and opens Android's installer. Use the versioned URL, not `latest`:
+   ```sql
+   update public.app_release set min_version_code = 5, version_name = '1.1.0 (5)',
+     apk_url = 'https://github.com/Myaluza/peakdrive-website/releases/download/app-1.1.0-5/PeakDrive.apk',
+     apk_size_bytes = <size in bytes>, updated_at = now()
+   where platform = 'android';
+   ```
+   Skip this for optional releases: drivers on older builds keep working and
+   get the new APK from `/download` whenever they like.
 
 ## Unconfirmed values
 
