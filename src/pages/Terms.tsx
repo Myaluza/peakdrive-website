@@ -93,10 +93,10 @@ export default function Terms() {
       </p>
       <ul>
         <li>
-          <strong>Prepaid credit.</strong> You pay for Plus with {site.appName} credit. You add
-          credit by buying a third-party prepaid voucher (Blu Voucher, OTT Voucher or 1Voucher) from
-          a shop or spaza and entering its PIN in the app. Nothing is sold in the app or on our
-          website. The voucher itself is sold by its retailer and governed by its issuer&rsquo;s
+          <strong>Paying.</strong> You pay for Plus in the app, on the secure page of Peach
+          Payments, our payment provider: by bank card, 1Voucher or directly from your bank. Peach
+          Payments processes the payment under its own terms, and we never see your card, voucher or
+          bank details. A 1Voucher itself is sold by its retailer and governed by its issuer&rsquo;s
           terms.
         </li>
         <li>
@@ -109,22 +109,19 @@ export default function Terms() {
               </strong>
             </span>
           ))}
-          , paid from your credit. We&rsquo;ll show any price change in the app before it applies to
-          you.
+          , paid when you choose the plan. We&rsquo;ll show any price change in the app before it
+          applies to you.
         </li>
         <li>
           <strong>No auto-renew.</strong> Plus runs for the period you choose and then stops. We
-          never take credit for a new period unless you choose it.
+          never charge you for a new period unless you choose and pay for it.
         </li>
         <li>
-          <strong>Credit doesn&rsquo;t expire.</strong> Unused credit stays on your account for as
-          long as the account exists.
-        </li>
-        <li>
-          <strong>No refunds once redeemed.</strong> Once a voucher PIN has been redeemed for
-          credit, it can&rsquo;t be refunded, reversed or exchanged for cash. This doesn&rsquo;t
-          limit any right you have under the Consumer Protection Act. If a redemption fails or
-          credits the wrong amount, contact us and we&rsquo;ll put it right.
+          <strong>Refunds.</strong> Plus starts as soon as your payment is confirmed, so a period
+          that has already started isn&rsquo;t refunded. This doesn&rsquo;t limit any right you have
+          under the Consumer Protection Act or the Electronic Communications and Transactions Act.
+          If you&rsquo;re charged but Plus doesn&rsquo;t switch on, or you&rsquo;re charged twice,
+          contact us and we&rsquo;ll put it right.
         </li>
         <li>
           <strong>What Plus includes:</strong> no ads, earlier surge alerts (about 90 minutes ahead
@@ -137,7 +134,7 @@ export default function Terms() {
       </ul>
       <p>
         See <Link to="/plus">PeakDrive Plus</Link> for a plain-language summary, and our{" "}
-        <Link to="/privacy#plus">Privacy Policy</Link> for what we keep when you redeem a voucher.
+        <Link to="/privacy#plus">Privacy Policy</Link> for what we keep when you pay.
       </p>
 
       <h2 id="acceptable-use">7. Acceptable use</h2>
