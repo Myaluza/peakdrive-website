@@ -12,21 +12,6 @@ export default function Footer() {
           <div>
             <h4>{site.appName}</h4>
             <p style={{ maxWidth: "32ch" }}>{site.tagline}</p>
-            <div className="social-row">
-              {site.socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d={s.icon} />
-                  </svg>
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -43,7 +28,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/plus">PeakDrive Plus</Link>
+                <Link to="/plus">SurgeDrive Plus</Link>
               </li>
               <li>
                 <Link to="/support">Support &amp; FAQ</Link>

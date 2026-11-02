@@ -37,7 +37,7 @@ p {
 }
 
 a {
-  color: var(--primary);
+  color: var(--link, var(--primary));
   text-decoration: none;
 }
 
@@ -225,6 +225,12 @@ hr {
   text-decoration: none;
 }
 
+/* The header CTA is a filled button; the nav link colour above must not reach it. */
+.site-header nav .site-header__cta,
+.site-header nav .site-header__cta:hover {
+  color: var(--on-primary);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -259,9 +265,20 @@ hr {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 17px;
+  letter-spacing: -0.3px;
   color: var(--text);
+}
+
+.brand__accent {
+  color: var(--highlight);
+}
+
+h1 {
+  font-family: var(--font-display);
+  letter-spacing: -0.5px;
 }
 
 .brand:hover {
@@ -272,7 +289,7 @@ hr {
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--primary-strong), var(--primary-deep));
+  background: linear-gradient(135deg, #7c3aed, #ff3d8b);
   display: grid;
   place-items: center;
   color: #fff;
@@ -326,27 +343,6 @@ hr {
   color: var(--muted);
 }
 
-.social-row {
-  display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-sm);
-}
-
-.social-row a {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  color: var(--subtext);
-}
-
-.social-row a:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-}
-
 /* ---- FAQ accordion ---- */
 .faq {
   display: grid;
@@ -397,6 +393,27 @@ hr {
 
 /* ---- Mobile nav ---- */
 @media (max-width: 720px) {
+  /* The display-font wordmark is wide; make room so the CTA keeps its shape. */
+  .site-header nav {
+    gap: var(--space-md);
+  }
+
+  .brand {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .brand__mark {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-header nav .site-header__cta {
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
   .nav-toggle {
     display: inline-flex;
   }

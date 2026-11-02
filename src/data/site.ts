@@ -7,26 +7,19 @@ export interface City {
   live: boolean;
 }
 
-export interface Social {
-  label: string;
-  href: string;
-  // Inline SVG path data (24x24 viewBox) so we ship no icon dependency.
-  icon: string;
-}
-
 export const site = {
-  appName: "PeakDrive",
+  appName: "SurgeDrive",
   tagline: "Stop guessing. Start earning.",
   // Blurb reused from the app's About screen (app/(main)/about.tsx).
   description:
-    "PeakDrive helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
+    "SurgeDrive helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
-  // Netlify's default address until PeakDrive has a domain of its own.
-  domain: "peakdrive-app.netlify.app",
-  url: "https://peakdrive-app.netlify.app",
+  // Netlify's default address until SurgeDrive has a domain of its own.
+  domain: "surgedrive.netlify.app",
+  url: "https://surgedrive.netlify.app",
 
   // Legal / responsible-party details — PLACEHOLDER, confirm before publishing.
-  legalName: "PeakDrive",
+  legalName: "SurgeDrive",
   operator: "Myaluza",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
@@ -53,7 +46,7 @@ export const site = {
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
   //
-  // Durban only, from 2026-10-23: PeakDrive is getting Durban and its
+  // Durban only, from 2026-10-23: SurgeDrive is getting Durban and its
   // surrounds working properly before it expands. The other three are paused
   // in the backend and shown as "coming soon" in the app — keep this file
   // matching that, and `serviceArea` below matching the backend's 60 km
@@ -67,27 +60,9 @@ export const site = {
 
   // What "Durban and surrounding areas" means on the ground.
   serviceArea: ["Durban CBD", "Umhlanga", "Ballito", "Pinetown", "Westville", "Amanzimtoti"],
-
-  socials: [
-    {
-      label: "TikTok",
-      href: "https://www.tiktok.com/@peakdrive",
-      icon: "M16.5 3c.3 2.1 1.6 3.7 3.5 4v2.4c-1.3.1-2.5-.3-3.6-1v6.3a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.5a3.2 3.2 0 1 0 2.3 3V3h2.6Z",
-    },
-    {
-      label: "Instagram",
-      href: "https://www.instagram.com/peakdrive",
-      icon: "M12 7.6A4.4 4.4 0 1 0 12 16.4 4.4 4.4 0 0 0 12 7.6Zm0 7.2A2.8 2.8 0 1 1 12 9.2a2.8 2.8 0 0 1 0 5.6Zm4.6-7.4a1 1 0 1 1-1-1 1 1 0 0 1 1 1ZM20 7.6a5 5 0 0 0-1.4-3.6A5 5 0 0 0 15 2.6C13.7 2.5 10.3 2.5 9 2.6a5 5 0 0 0-3.6 1.4A5 5 0 0 0 4 7.6c-.1 1.3-.1 4.7 0 6a5 5 0 0 0 1.4 3.6A5 5 0 0 0 9 18.6c1.3.1 4.7.1 6 0a5 5 0 0 0 3.6-1.4 5 5 0 0 0 1.4-3.6c.1-1.3.1-4.7 0-6Zm-1.9 7.4a2.8 2.8 0 0 1-1.6 1.6c-1.1.4-3.7.3-4.5.3s-3.4.1-4.5-.3a2.8 2.8 0 0 1-1.6-1.6c-.4-1.1-.3-3.7-.3-4.5s-.1-3.4.3-4.5A2.8 2.8 0 0 1 7.5 5.9c1.1-.4 3.7-.3 4.5-.3s3.4-.1 4.5.3a2.8 2.8 0 0 1 1.6 1.6c.4 1.1.3 3.7.3 4.5s.1 3.4-.3 4.5Z",
-    },
-    {
-      label: "X",
-      href: "https://twitter.com/peakdrive",
-      icon: "M17.5 3h3l-6.6 7.5L21.7 21h-5.9l-4.3-5.6L6.5 21H3.4l7-8L2.7 3h6l3.9 5.1L17.5 3Zm-1 16h1.7L7.6 4.7H5.8L16.5 19Z",
-    },
-  ] as Social[],
 };
 
-// PeakDrive Plus (coming soon), paid from voucher credit. Read by the /plus page
+// SurgeDrive Plus (coming soon), paid in the app. Read by the /plus page
 // and Terms §6 so the two can't quote different prices.
 export const plusPlans = [
   { period: "1 day", priceRand: 5 },

@@ -5,6 +5,7 @@ import { routes } from "./routes";
 import "@fontsource/poppins/latin-400.css";
 import "@fontsource/poppins/latin-600.css";
 import "@fontsource/poppins/latin-700.css";
+import "@fontsource/unbounded/latin-700.css";
 import "./styles/global.css";
 
 // vite-react-ssg owns hydration (dev) and static generation (build). It renders
