@@ -3,15 +3,15 @@ import LegalPage from "../components/LegalPage";
 import { site, plusPlans } from "../data/site";
 import "../styles/legal.css";
 
-// Information only. Plus is paid for with voucher credit redeemed in the app —
-// nothing is sold on this site, so this page must never grow a checkout,
-// price button or payment link.
+// Information only. Plus is paid for in the app, on Peach Payments' hosted
+// page — nothing is sold on this site, so this page must never grow a
+// checkout, price button or payment link.
 export default function Plus() {
   return (
     <LegalPage
       title="PeakDrive Plus"
       seoTitle={`PeakDrive Plus (coming soon) · ${site.appName}`}
-      description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day with a prepaid voucher. Coming soon.`}
+      description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day, paid by card, 1Voucher or bank. Coming soon.`}
       path="/plus"
       showUpdated={false}
     >
@@ -64,18 +64,23 @@ export default function Plus() {
         choose another one.
       </p>
 
-      <h2 id="vouchers">How to pay: prepaid vouchers</h2>
+      <h2 id="paying">How to pay</h2>
       <p>
-        Buy a <strong>Blu Voucher</strong>, <strong>OTT Voucher</strong> or{" "}
-        <strong>1Voucher</strong> at any shop or spaza, then enter the PIN in the {site.appName}{" "}
-        app. The voucher&rsquo;s value becomes {site.appName} credit, which you spend on Plus.
+        In the {site.appName} app, choose a plan and pay on the secure page of{" "}
+        <strong>Peach Payments</strong>, our payment provider. You can pay with:
       </p>
       <ul>
-        <li>No card, no bank account and no debit order.</li>
-        <li>Credit doesn&rsquo;t expire.</li>
-        <li>Vouchers can&rsquo;t be refunded once redeemed.</li>
-        <li>Nothing is sold in the app or on this website. You buy the voucher in a shop.</li>
+        <li>a bank card;</li>
+        <li>
+          <strong>1Voucher</strong>, bought with cash at any shop or spaza, so no card or bank
+          account is needed; or
+        </li>
+        <li>straight from your bank account.</li>
       </ul>
+      <p>
+        You enter your card, voucher or bank details on Peach&rsquo;s page, not ours. {site.appName}{" "}
+        never sees them. There&rsquo;s no debit order: you pay once for each plan.
+      </p>
 
       <h2 id="earn">Earn ad-free time for free</h2>
       <p>You don&rsquo;t have to pay to drive without ads. You can also earn ad-free time by:</p>
@@ -87,8 +92,7 @@ export default function Plus() {
       <h2 id="small-print">The small print</h2>
       <p>
         The full rules are in section 6 of our <Link to="/terms#membership">Terms of Service</Link>,
-        and what we keep when you redeem a voucher is in our{" "}
-        <Link to="/privacy#plus">Privacy Policy</Link>.
+        and what we keep when you pay is in our <Link to="/privacy#plus">Privacy Policy</Link>.
       </p>
     </LegalPage>
   );

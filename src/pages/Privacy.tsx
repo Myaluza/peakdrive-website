@@ -14,7 +14,7 @@ const toc: TocItem[] = [
   { id: "analytics", label: "Analytics" },
   { id: "location", label: "Location data" },
   { id: "notifications", label: "Push notifications" },
-  { id: "plus", label: "PeakDrive Plus and vouchers" },
+  { id: "plus", label: "PeakDrive Plus and payments" },
   { id: "retention", label: "Data retention" },
   { id: "security", label: "Security" },
   { id: "your-rights", label: "Your rights" },
@@ -287,6 +287,10 @@ export default function Privacy() {
           <strong>Sentry</strong> — crash and error reporting.
         </li>
         <li>
+          <strong>Peach Payments</strong> — takes payment for PeakDrive Plus. You enter your card,
+          voucher or bank details on its page, so it processes them and we never receive them.
+        </li>
+        <li>
           <strong>Netlify</strong> — hosting for this website. It receives the standard request
           details any website sees (your IP address, browser and the page requested).
         </li>
@@ -458,32 +462,27 @@ export default function Privacy() {
         push tokens.
       </p>
 
-      <h2 id="plus">10. PeakDrive Plus and vouchers (coming soon)</h2>
+      <h2 id="plus">10. PeakDrive Plus and payments (coming soon)</h2>
       <p>
         <strong>PeakDrive Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll
-        pay for it with PeakDrive credit, which you add by buying a prepaid voucher (Blu Voucher,
-        OTT Voucher or 1Voucher) at a shop or spaza and entering its PIN in the app. Nothing is sold
-        in the app or on this website, and we never ask for card or bank details.
-      </p>
-      <p>
-        When you redeem a voucher, the PIN is sent to the <strong>voucher provider</strong> that
-        issued it, which checks and processes it. We don&rsquo;t keep the PIN. We keep only:
+        pay for it in the app on the secure page of <strong>Peach Payments</strong>, our payment
+        provider, by bank card, 1Voucher or directly from your bank. You enter those details on
+        Peach&rsquo;s page, not ours, so we never see or keep your card number, voucher PIN or bank
+        login. We keep only:
       </p>
       <ul>
         <li>
-          the <strong>last 4 digits</strong> and a <strong>one-way hash</strong> of the PIN, so we
-          can stop the same voucher being redeemed twice and help you if a redemption goes wrong;
+          a record of each <strong>payment</strong>: the plan, the amount, when it was made, whether
+          it went through, and Peach Payments&rsquo; reference for it; and
         </li>
-        <li>the amount of credit the voucher added; and</li>
         <li>
-          a <strong>ledger</strong> of your credit and plans: credit added, Plus days, weeks or
-          months bought, and when each started and ends.
+          a <strong>ledger</strong> of your plans: Plus days, weeks or months bought, and when each
+          started and ends.
         </li>
       </ul>
       <p>
-        The ledger is linked to your account and kept while your account exists, except where the
-        law requires us to keep transaction records for longer. Each redemption attempt is also
-        logged, to stop PIN guessing, and that log is deleted after 90 days.
+        These records are linked to your account and kept while your account exists, except where
+        the law requires us to keep transaction records for longer.
       </p>
 
       <h2 id="retention">11. Data retention</h2>
@@ -506,9 +505,6 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Rejected or cancelled event submissions</strong> — deleted after 30 days.
-        </li>
-        <li>
-          <strong>Voucher redemption attempts</strong> — deleted after 90 days.
         </li>
         <li>
           <strong>Database backups</strong> — encrypted, and deleted after at most 90 days, so data
