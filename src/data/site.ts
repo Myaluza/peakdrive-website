@@ -21,20 +21,22 @@ export const site = {
   description:
     "PeakDrive helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
-  domain: "peakdrive.co.za",
-  url: "https://peakdrive.co.za",
+  // Netlify's default address until PeakDrive has a domain of its own.
+  domain: "peakdrive-app.netlify.app",
+  url: "https://peakdrive-app.netlify.app",
 
   // Legal / responsible-party details — PLACEHOLDER, confirm before publishing.
   legalName: "PeakDrive",
   operator: "Myaluza",
   jurisdiction: "the Republic of South Africa",
-  // Registered with the Information Regulator (POPIA s55). Reached through the
-  // support address.
+  // Registered with the Information Regulator (POPIA s55). Reached through
+  // WhatsApp support.
   informationOfficer: "Thuthukani Ngubane",
 
-  supportEmail: "support@peakdrive.co.za",
-  // International format, no leading "+", for wa.me links.
+  // WhatsApp is the only support channel for now: there's no domain to send
+  // email from. International format, no leading "+", for wa.me links.
   supportWhatsApp: "27671884585",
+  supportWhatsAppDisplay: "+27 67 188 4585",
 
   packageId: "com.myaluza.PeakDrive",
   // Not on Google Play yet: drivers download the APK directly. `/download` is
@@ -94,7 +96,6 @@ export const plusPlans = [
 ];
 
 export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
-export const mailtoLink = `mailto:${site.supportEmail}`;
 
 // Absolute, for JSON-LD; the buttons use the relative `site.downloadPath`.
 export const downloadUrl = `${site.url}${site.downloadPath}`;

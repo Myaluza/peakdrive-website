@@ -1,4 +1,4 @@
-# Netlify build for peakdrive.co.za.
+# Netlify build for the PeakDrive website.
 #
 # The quality gate runs as part of the build, as it did in the old GitHub Pages
 # workflow: a commit that fails format, lint or typecheck must not reach

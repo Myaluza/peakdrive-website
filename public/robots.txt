@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peakdrive.co.za/sitemap.xml
+Sitemap: https://peakdrive-app.netlify.app/sitemap.xml

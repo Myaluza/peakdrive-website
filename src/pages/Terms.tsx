@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import type { TocItem } from "../components/LegalPage";
-import { site, mailtoLink, plusPlans } from "../data/site";
+import { site, whatsappLink, plusPlans } from "../data/site";
 import "../styles/legal.css";
 
 const toc: TocItem[] = [
@@ -199,8 +199,11 @@ export default function Terms() {
 
       <h2 id="contact">14. Contact</h2>
       <p>
-        Questions about these Terms? Email <a href={mailtoLink}>{site.supportEmail}</a>. See also
-        our <Link to="/privacy">Privacy Policy</Link>.
+        Questions about these Terms? Message us on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp {site.supportWhatsAppDisplay}
+        </a>
+        . See also our <Link to="/privacy">Privacy Policy</Link>.
       </p>
     </LegalPage>
   );

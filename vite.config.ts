@@ -42,7 +42,7 @@ async function externaliseInlineScripts(outDir: string) {
   }
 }
 
-// The site is served from the apex domain (peakdrive.co.za) on Netlify, so the
+// The site is served from the root of its Netlify address, so the
 // base is the site root. If you ever host under a sub-path, change `base`.
 export default defineConfig({
   base: "/",
