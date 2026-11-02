@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Marketing + legal website for the PeakDrive app (peakdrive.co.za).",
+  "description": "Marketing + legal website for the SurgeDrive app.",
   "scripts": {
     "postinstall": "patch-package",
     "dev": "vite",

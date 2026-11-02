@@ -45,7 +45,7 @@ const liveCityNames = (() => {
 const steps = [
   {
     title: "Open the live map",
-    body: "PeakDrive tracks concerts, sports and festivals across your city and drops surge zones on the map in real time.",
+    body: "SurgeDrive tracks concerts, sports and festivals across your city and drops surge zones on the map in real time.",
   },
   {
     title: "Spot demand before it spikes",
@@ -127,7 +127,7 @@ export default function Home() {
 
           <Phone
             src="/screenshots/surge-circle.jpg"
-            alt="PeakDrive app showing a live surge circle around Moses Mabhida Stadium in Durban"
+            alt="SurgeDrive app showing a live surge circle around Moses Mabhida Stadium in Durban"
             priority
           />
         </div>
@@ -139,13 +139,13 @@ export default function Home() {
           <div className="showcase">
             <Phone
               src="/screenshots/events-list.jpg"
-              alt="PeakDrive upcoming events list for Durban with expected demand and finish times"
+              alt="SurgeDrive upcoming events list for Durban with expected demand and finish times"
             />
             <div className="showcase__text">
               <span className="eyebrow">See it in action</span>
               <h2>Every event that moves demand, in one view</h2>
               <p>
-                PeakDrive lists today's concerts, sports and festivals with a demand rating and
+                SurgeDrive lists today's concerts, sports and festivals with a demand rating and
                 finish time, and drops a surge circle on the map the moment each one is about to let
                 out — so you're already there when the requests start.
               </p>
@@ -180,7 +180,7 @@ export default function Home() {
       <section className="section" id="features" style={{ background: "var(--surface)" }}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Why PeakDrive</span>
+            <span className="eyebrow">Why SurgeDrive</span>
             <h2>Everything you need to chase demand, not luck</h2>
           </div>
           <div className="features">
@@ -224,7 +224,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Coverage</span>
-            <h2>Where PeakDrive works</h2>
+            <h2>Where SurgeDrive works</h2>
             <p>
               Live in {liveCityNames} — {site.serviceArea.join(", ")}. More South African cities are
               coming soon.
@@ -248,7 +248,7 @@ export default function Home() {
             <span className="eyebrow">For event organisers</span>
             <h2>Organising an event in Durban?</h2>
             <p>
-              List it on PeakDrive and drivers will be waiting when your crowd heads home. Choose
+              List it on SurgeDrive and drivers will be waiting when your crowd heads home. Choose
               &ldquo;I organise events&rdquo; when you sign up in the app, fill in your organiser
               profile, and once we&rsquo;ve verified you, your events go live on drivers&rsquo; maps
               straight away. You&rsquo;ll see how many drivers plan to be there, and you can change
@@ -278,7 +278,7 @@ export default function Home() {
           <div className="cta-band">
             <h2>Ready to stop guessing?</h2>
             <p>
-              Join the drivers turning event schedules into extra trips. Download PeakDrive and see
+              Join the drivers turning event schedules into extra trips. Download SurgeDrive and see
               today's surge zones.
             </p>
             <DownloadBadge variant="light" location="cta_band" />

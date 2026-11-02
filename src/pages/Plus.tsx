@@ -9,8 +9,8 @@ import "../styles/legal.css";
 export default function Plus() {
   return (
     <LegalPage
-      title="PeakDrive Plus"
-      seoTitle={`PeakDrive Plus (coming soon) · ${site.appName}`}
+      title="SurgeDrive Plus"
+      seoTitle={`SurgeDrive Plus (coming soon) · ${site.appName}`}
       description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day, paid by card, 1Voucher or bank. Coming soon.`}
       path="/plus"
       showUpdated={false}

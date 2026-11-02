@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peakdrive-app.netlify.app/sitemap.xml
+Sitemap: https://surgedrive.netlify.app/sitemap.xml

@@ -10,7 +10,7 @@ const toc: TocItem[] = [
   { id: "service", label: "The service" },
   { id: "no-guarantee", label: "No guarantee of earnings" },
   { id: "community", label: "Community content" },
-  { id: "membership", label: "PeakDrive Plus" },
+  { id: "membership", label: "SurgeDrive Plus" },
   { id: "acceptable-use", label: "Acceptable use" },
   { id: "ip", label: "Intellectual property" },
   { id: "disclaimers", label: "Disclaimers" },
@@ -84,12 +84,12 @@ export default function Terms() {
         your account for false, misleading or duplicate listings.
       </p>
 
-      <h2 id="membership">6. PeakDrive Plus (coming soon)</h2>
+      <h2 id="membership">6. SurgeDrive Plus (coming soon)</h2>
       <p>
-        <strong>PeakDrive Plus isn&rsquo;t available yet.</strong> {site.appName} is free to use and
-        supported by ads, and the free tier keeps every feature that helps you earn: the live surge
-        map, event alerts, community submissions and verification. When Plus launches, these terms
-        will apply to it:
+        <strong>SurgeDrive Plus isn&rsquo;t available yet.</strong> {site.appName} is free to use
+        and supported by ads, and the free tier keeps every feature that helps you earn: the live
+        surge map, event alerts, community submissions and verification. When Plus launches, these
+        terms will apply to it:
       </p>
       <ul>
         <li>
@@ -133,7 +133,7 @@ export default function Terms() {
         </li>
       </ul>
       <p>
-        See <Link to="/plus">PeakDrive Plus</Link> for a plain-language summary, and our{" "}
+        See <Link to="/plus">SurgeDrive Plus</Link> for a plain-language summary, and our{" "}
         <Link to="/privacy#plus">Privacy Policy</Link> for what we keep when you pay.
       </p>
 

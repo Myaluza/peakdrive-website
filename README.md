@@ -1,10 +1,10 @@
-# PeakDrive Website
+# SurgeDrive Website
 
-Marketing + legal website for the [PeakDrive](https://github.com/Myaluza/PeakDrive)
-app, served at **https://peakdrive-app.netlify.app** (Netlify's default address;
-PeakDrive has no domain of its own yet).
+Marketing + legal website for the [SurgeDrive](https://github.com/Myaluza/PeakDrive)
+app, served at **https://surgedrive.netlify.app** (Netlify's default address;
+SurgeDrive has no domain of its own yet).
 
-The PeakDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
+The SurgeDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
 routes below must keep working:
 
 | Route             | Purpose                                                                     |
@@ -74,7 +74,7 @@ silently untracked.
 
 ## Releasing the app
 
-PeakDrive isn't on Google Play yet; drivers download the APK. `/download` is a
+SurgeDrive isn't on Google Play yet; drivers download the APK. `/download` is a
 302 in `netlify.toml` to
 `https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk`,
 so a new version needs no site change:
@@ -101,12 +101,11 @@ so a new version needs no site change:
 few of its values are still assumptions. Each is marked `PLACEHOLDER` at its
 definition — that marker is the live record; this list is only a summary.
 
-| Value                    | Why it's unconfirmed                                                                                                                                              |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `socials`                | TikTok / Instagram / X handles assumed to be `@peakdrive`, taken from the app's About screen. Duplicated verbatim in the app — confirm they exist, then fix both. |
-| `legalName` / `operator` | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages.                                   |
-| `lastUpdated`            | Bumped by hand; nothing enforces it when legal copy changes.                                                                                                      |
-| `public/og-image.png`    | Auto-generated placeholder; swap for a real social card.                                                                                                          |
+| Value                    | Why it's unconfirmed                                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `legalName` / `operator` | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages. |
+| `lastUpdated`            | Bumped by hand; nothing enforces it when legal copy changes.                                                                    |
+| `public/og-image.png`    | Auto-generated placeholder; swap for a real social card.                                                                        |
 
 **Brand colour is genuinely undecided.** The site uses Electric Indigo `#6366F1`,
 the accent documented in the app's `constants/theme.ts`, but the app's own splash
@@ -160,7 +159,7 @@ inlined at build time). (It's not a secret — a GA4 id is public in the page.)
    if analytics should be on.
 3. Every push to `main` deploys; pull requests get deploy previews.
 
-### When PeakDrive gets a domain
+### When SurgeDrive gets a domain
 
 `peakdrive.co.za` is registered to someone else, so pick another. In Netlify,
 **Domain management → Add a domain**, then follow its
