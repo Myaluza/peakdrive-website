@@ -1,7 +1,8 @@
 # PeakDrive Website
 
 Marketing + legal website for the [PeakDrive](https://github.com/Myaluza/PeakDrive)
-app, served at **https://peakdrive.co.za**.
+app, served at **https://peakdrive-app.netlify.app** (Netlify's default address;
+PeakDrive has no domain of its own yet).
 
 The PeakDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
 routes below must keep working:
@@ -159,13 +160,16 @@ inlined at build time). (It's not a secret — a GA4 id is public in the page.)
    if analytics should be on.
 3. Every push to `main` deploys; pull requests get deploy previews.
 
-### DNS for `peakdrive.co.za`
+### When PeakDrive gets a domain
 
-In Netlify, **Domain management → Add a domain → `peakdrive.co.za`**, then follow its
+`peakdrive.co.za` is registered to someone else, so pick another. In Netlify,
+**Domain management → Add a domain**, then follow its
 DNS instructions at whoever hosts the domain's DNS — either point the apex `A` record
 at Netlify's load balancer and `www` as a `CNAME` to `<site>.netlify.app`, or move the
 nameservers to Netlify DNS. Netlify issues the HTTPS certificate once DNS resolves;
-the app links use `https://`, so wait for that before announcing the URL.
+the app links use `https://`, so wait for that before announcing the URL. Then change
+`domain`/`url` in `src/data/site.ts`, `public/robots.txt`, `public/sitemap.xml`, and
+the app's `constants/config.ts`.
 
 Then turn off GitHub Pages (**Settings → Pages → Source: None**) so the old
 `myaluza.github.io` copy stops redirecting.

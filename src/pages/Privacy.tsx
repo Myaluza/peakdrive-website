@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import type { TocItem } from "../components/LegalPage";
-import { site, mailtoLink } from "../data/site";
+import { site, whatsappLink } from "../data/site";
 import "../styles/legal.css";
 
 const toc: TocItem[] = [
@@ -44,7 +44,11 @@ export default function Privacy() {
       <p>
         The responsible party for your personal information is {site.legalName}. Our Information
         Officer, registered with the Information Regulator, is {site.informationOfficer}. You can
-        reach them, and us, at <a href={mailtoLink}>{site.supportEmail}</a>.
+        reach them, and us, on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp {site.supportWhatsAppDisplay}
+        </a>
+        .
       </p>
 
       <h2 id="data-we-collect">2. Information we collect</h2>
@@ -330,8 +334,11 @@ export default function Privacy() {
       <p>
         Some submissions are screened automatically and can be turned away without a person looking
         at them — for example a likely duplicate of an event already on the map, or an event without
-        a reliable end time. If you think one of yours was wrongly turned away, email{" "}
-        <a href={mailtoLink}>{site.supportEmail}</a> and ask for a human review.
+        a reliable end time. If you think one of yours was wrongly turned away, message us on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp {site.supportWhatsAppDisplay}
+        </a>{" "}
+        and ask for a human review.
       </p>
       <p>
         Rain alerts use the <strong>MET Norway</strong> weather forecast. Our server asks it for the
@@ -548,8 +555,11 @@ export default function Privacy() {
         <li>lodge a complaint with the Information Regulator (South Africa).</li>
       </ul>
       <p>
-        To exercise any of these, email our Information Officer, {site.informationOfficer}, at{" "}
-        <a href={mailtoLink}>{site.supportEmail}</a>. You can contact the Information Regulator at{" "}
+        To exercise any of these, contact our Information Officer, {site.informationOfficer}, on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp {site.supportWhatsAppDisplay}
+        </a>
+        . You can contact the Information Regulator at{" "}
         <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
@@ -590,8 +600,11 @@ export default function Privacy() {
       <h2 id="contact">18. Contact us</h2>
       <p>
         Responsible party: {site.legalName}, operated by {site.operator}. Information Officer:{" "}
-        {site.informationOfficer}. Questions about this policy or your data? Email{" "}
-        <a href={mailtoLink}>{site.supportEmail}</a>.
+        {site.informationOfficer}. Questions about this policy or your data? Message us on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp {site.supportWhatsAppDisplay}
+        </a>
+        .
       </p>
     </LegalPage>
   );

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
-import { site, mailtoLink } from "../data/site";
+import { site, whatsappLink } from "../data/site";
 import "../styles/legal.css";
 
 export default function DeleteAccount() {
@@ -35,23 +35,23 @@ export default function DeleteAccount() {
         action cannot be undone.
       </p>
 
-      <h2 id="by-email">Option 2 — Request deletion by email</h2>
+      <h2 id="by-whatsapp">Option 2 — Ask us on WhatsApp</h2>
       <p>
-        If you can't access the app, email us from the address on your account and we'll delete it
-        for you:
+        If you can't access the app, message us on WhatsApp and we'll delete your account for you:
       </p>
       <p>
         <a
-          className="btn btn-primary"
-          href={`${mailtoLink}?subject=Delete%20my%20PeakDrive%20account`}
+          className="btn btn-whatsapp"
+          href={`${whatsappLink}?text=Please%20delete%20my%20PeakDrive%20account`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Email {site.supportEmail}
+          WhatsApp {site.supportWhatsAppDisplay}
         </a>
       </p>
       <p>
-        Please send the request from your account's email address (or include enough detail for us
-        to verify you own the account) so we can confirm it's really you. We'll action verified
-        requests within 30 days and confirm once it's done.
+        Include the email address you sign in with, so we can find the account and confirm it's
+        really yours. We'll action verified requests within 30 days and confirm once it's done.
       </p>
 
       <h2 id="what-is-deleted">What gets deleted</h2>
@@ -97,7 +97,11 @@ export default function DeleteAccount() {
       <h2 id="more">More information</h2>
       <p>
         For how we handle your data generally, see our <Link to="/privacy">Privacy Policy</Link>.
-        Questions? Contact <a href={mailtoLink}>{site.supportEmail}</a>.
+        Questions? Message us on{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          WhatsApp
+        </a>
+        .
       </p>
     </LegalPage>
   );
