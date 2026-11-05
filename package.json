@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Marketing + legal website for the SurgeDrive app.",
+  "description": "Marketing + legal website for the Phanda app.",
   "scripts": {
     "postinstall": "patch-package",
     "dev": "vite",

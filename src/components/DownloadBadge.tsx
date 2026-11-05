@@ -21,7 +21,7 @@ interface Props {
  * own copy, and the footer linked with no tracking at all, so footer downloads
  * were uncounted.
  *
- * The link is `site.downloadPath`, which Netlify redirects to the newest APK.
+ * The link is `site.downloadPath`, which redirects to the newest APK.
  * Same tab, no `target`: it starts a file download rather than opening a page.
  *
  * `light` renders a white button for use on coloured/dark bands; `primary` is

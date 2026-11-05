@@ -18,7 +18,7 @@ export interface Faq {
 export const faqs: Faq[] = [
   {
     id: 1,
-    question: "How does SurgeDrive work?",
+    question: "How does Phanda work?",
     answer:
       "We track events across your city and work out when each one lets out. That moment — a stadium emptying, a flight landing, a club closing — is when a crowd needs rides all at once. The map shows you where those moments are about to happen so you can already be there, instead of driving towards a surge that's over by the time you arrive.",
   },
@@ -78,7 +78,7 @@ export const faqs: Faq[] = [
   },
   {
     id: 11,
-    question: "Which cities does SurgeDrive cover?",
+    question: "Which cities does Phanda cover?",
     answer:
       "Durban and surrounding areas for now — including Umhlanga, Ballito, Pinetown, Westville and Amanzimtoti. Johannesburg, Cape Town and Pretoria are coming soon; you'll see them in the menu, marked as such, until they go live.",
   },

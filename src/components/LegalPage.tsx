@@ -9,7 +9,7 @@ export interface TocItem {
 
 interface LegalPageProps {
   title: string;
-  /** Overrides the <title> tag; defaults to `${title} · SurgeDrive`. */
+  /** Overrides the <title> tag; defaults to `${title} · Phanda`. */
   seoTitle?: string;
   description?: string;
   path: string;

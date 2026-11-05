@@ -19,7 +19,7 @@ export const routes: RouteRecord[] = [
       { path: "delete-account", element: <DeleteAccount /> },
       { path: "support", element: <Support /> },
       { path: "plus", element: <Plus /> },
-      // Static route so SSG emits dist/404.html (Netlify's custom 404).
+      // Static route so SSG emits dist/404.html (the custom 404 in public/.htaccess).
       { path: "404", element: <NotFound /> },
       // Client-side catch-all: any unknown URL renders the same NotFound page.
       { path: "*", element: <NotFound /> },

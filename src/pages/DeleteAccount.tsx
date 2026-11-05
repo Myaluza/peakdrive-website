@@ -42,7 +42,7 @@ export default function DeleteAccount() {
       <p>
         <a
           className="btn btn-whatsapp"
-          href={`${whatsappLink}?text=Please%20delete%20my%20SurgeDrive%20account`}
+          href={`${whatsappLink}?text=Please%20delete%20my%20Phanda%20account`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -66,7 +66,7 @@ export default function DeleteAccount() {
         </li>
         <li>your ride reports, live reports and surge ratings;</li>
         <li>your invite code and the record of who invited you;</li>
-        <li>your SurgeDrive credit ledger and any ad-free time you were granted;</li>
+        <li>your Phanda credit ledger and any ad-free time you were granted;</li>
         <li>
           your &quot;I&apos;m going&quot; declarations, and the record of which alerts we sent you;
           and

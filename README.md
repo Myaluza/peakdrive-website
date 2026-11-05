@@ -1,10 +1,9 @@
-# SurgeDrive Website
+# Phanda Website
 
-Marketing + legal website for the [SurgeDrive](https://github.com/Myaluza/PeakDrive)
-app, served at **https://surgedrive.netlify.app** (Netlify's default address;
-SurgeDrive has no domain of its own yet).
+Marketing + legal website for the [Phanda](https://github.com/Myaluza/PeakDrive)
+app, served at **https://phandadrive.co.za**.
 
-The SurgeDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
+The Phanda app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
 routes below must keep working:
 
 | Route             | Purpose                                                                     |
@@ -21,7 +20,7 @@ routes below must keep working:
 - **[vite-react-ssg](https://github.com/Daydreamer-riri/vite-react-ssg)** — statically
   pre-renders each route to its own HTML file (`dirStyle: 'flat'` → `/privacy` →
   `dist/privacy.html`, `/404` → `dist/404.html`). Real files mean deep links resolve
-  directly on Netlify (no SPA redirect hack) and are crawlable.
+  directly on the server (no SPA redirect hack) and are crawlable.
 - **React Router 7** — vite-react-ssg 0.9.2 only supports v6, so
   `patches/vite-react-ssg+0.9.2.patch` (applied by `patch-package` on `postinstall`)
   points its static render at v7's main entry instead of the removed
@@ -29,7 +28,7 @@ routes below must keep working:
   peer range. If you upgrade vite-react-ssg, check whether it supports v7 natively and
   drop the patch; `npm install` fails loudly if the patch no longer applies.
 - Hand-written CSS design system mirroring the app's tokens (`src/styles/theme.css`).
-- Deployed to **Netlify** (`netlify.toml`), building on every push to `main`.
+- Hosted on **Cyber Circuit**. `.github/workflows/deploy.yml` uploads every push to `main`.
 
 ## Develop
 
@@ -62,9 +61,9 @@ src/
     site.ts           site-wide constants (edit placeholders here)
     faqs.ts           FAQs, copied verbatim from the app — do not edit here
   styles/            theme.css (tokens), global.css, home.css, legal.css
-public/              robots.txt, sitemap.xml, favicon.svg, og-image.png
-.github/workflows/   ci.yml (quality gate on PRs)
-netlify.toml         build command (same quality gate), publish dir, headers
+public/              robots.txt, sitemap.xml, favicon.svg, og-image.png,
+                     .htaccess (clean URLs, /download, headers)
+.github/workflows/   ci.yml (quality gate on PRs), deploy.yml (upload from main)
 ```
 
 Every download link goes through `DownloadBadge` (or, for the footer's text
@@ -74,8 +73,8 @@ silently untracked.
 
 ## Releasing the app
 
-SurgeDrive isn't on Google Play yet; drivers download the APK. `/download` is a
-302 in `netlify.toml` to
+Phanda isn't on Google Play yet; drivers download the APK. `/download` is a
+302 in `public/.htaccess` to
 `https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk`,
 so a new version needs no site change:
 
@@ -141,34 +140,26 @@ per client-side route change, and fires a `click_get_app` event on the Play CTAs
 CTAs also carry an install `referrer` (`utm_source=peakdrive_web…`) so installs are
 attributable in the Play Console.
 
-To enable on the live site: in Netlify, **Site configuration → Environment variables →
-Add a variable** `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`, then trigger a redeploy (it is
-inlined at build time). (It's not a secret — a GA4 id is public in the page.)
+To enable on the live site: in this GitHub repo, **Settings → Secrets and variables →
+Actions → Variables**, add `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`, then re-run the
+Deploy workflow (it is inlined at build time). (It's not a secret — a GA4 id is public in the page.)
 
 > **POPIA:** enabling GA4 loads Google's tag and sets analytics cookies. Disclose it in the
 > Privacy Policy and add a consent gate before turning it on. This reverses the font
 > self-hosting privacy win, so it's a deliberate opt-in, not on by default.
 
-## Deploy to Netlify
+## Deploy
 
-1. In Netlify, **Add new site → Import an existing project → GitHub →
-   `Myaluza/peakdrive-website`**. Netlify reads `netlify.toml`, so leave the build
-   settings as detected (command runs format, lint, typecheck, then build; publish
-   directory `dist`).
-2. Set `VITE_GA4_MEASUREMENT_ID` under **Site configuration → Environment variables**
-   if analytics should be on.
-3. Every push to `main` deploys; pull requests get deploy previews.
+`phandadrive.co.za` is registered and hosted with Cyber Circuit (LiteSpeed, and the plan
+has no SSH). Every push to `main` runs the quality gate, builds and uploads `dist` over
+encrypted FTP. Run the **Deploy** workflow by hand to redeploy.
 
-### When SurgeDrive gets a domain
+The upload needs two repo secrets, `FTP_USERNAME` and `FTP_PASSWORD`, for an FTP account
+whose home folder is `public_html`. Files are only added or replaced, so old hashed
+assets stay on the server until someone clears them.
 
-`peakdrive.co.za` is registered to someone else, so pick another. In Netlify,
-**Domain management → Add a domain**, then follow its
-DNS instructions at whoever hosts the domain's DNS — either point the apex `A` record
-at Netlify's load balancer and `www` as a `CNAME` to `<site>.netlify.app`, or move the
-nameservers to Netlify DNS. Netlify issues the HTTPS certificate once DNS resolves;
-the app links use `https://`, so wait for that before announcing the URL. Then change
-`domain`/`url` in `src/data/site.ts`, `public/robots.txt`, `public/sitemap.xml`, and
-the app's `constants/config.ts`.
+### The domain
 
-Then turn off GitHub Pages (**Settings → Pages → Source: None**) so the old
-`myaluza.github.io` copy stops redirecting.
+If the address changes, update `domain`/`url` in `src/data/site.ts`,
+`public/robots.txt`, `public/sitemap.xml`, the app's `constants/config.ts` and the
+backend's bot descriptions.
