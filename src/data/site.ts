@@ -22,13 +22,13 @@ export const site = {
   operator: "Myaluza",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
-  // WhatsApp support.
+  // WhatsApp or email support.
   informationOfficer: "Thuthukani Ngubane",
 
-  // WhatsApp is the only support channel for now: there's no domain to send
-  // email from. International format, no leading "+", for wa.me links.
+  // International format, no leading "+", for wa.me links.
   supportWhatsApp: "27671884585",
   supportWhatsAppDisplay: "+27 67 188 4585",
+  supportEmail: "support@phandadrive.co.za",
 
   packageId: "com.myaluza.PeakDrive",
   // Not on Google Play yet: drivers download the APK directly. `/download` is
@@ -70,6 +70,7 @@ export const plusPlans = [
 ];
 
 export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
+export const emailLink = `mailto:${site.supportEmail}`;
 
 // Absolute, for JSON-LD; the buttons use the relative `site.downloadPath`.
 export const downloadUrl = `${site.url}${site.downloadPath}`;

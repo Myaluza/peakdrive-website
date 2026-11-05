@@ -151,12 +151,12 @@ Deploy workflow (it is inlined at build time). (It's not a secret — a GA4 id i
 ## Deploy
 
 `phandadrive.co.za` is registered and hosted with Cyber Circuit (LiteSpeed, and the plan
-has no SSH). Every push to `main` runs the quality gate, builds and uploads `dist` over
-encrypted FTP. Run the **Deploy** workflow by hand to redeploy.
+has no SSH). Every push to `main` runs the quality gate, builds and uploads `dist`
+through cPanel's upload API. Run the **Deploy** workflow by hand to redeploy.
 
-The upload needs two repo secrets, `FTP_USERNAME` and `FTP_PASSWORD`, for an FTP account
-whose home folder is `public_html`. Files are only added or replaced, so old hashed
-assets stay on the server until someone clears them.
+The upload needs two repo secrets: `CPANEL_USERNAME` (Current User in cPanel) and
+`CPANEL_TOKEN` (from **Manage API Tokens**). Files are only added or replaced, so old
+hashed assets stay on the server until someone clears them.
 
 ### The domain
 

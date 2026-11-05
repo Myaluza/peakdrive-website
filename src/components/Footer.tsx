@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { site, whatsappLink } from "../data/site";
+import { site, whatsappLink, emailLink } from "../data/site";
 import { trackEvent } from "../analytics";
 
 export default function Footer() {
@@ -37,6 +37,9 @@ export default function Footer() {
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   WhatsApp support
                 </a>
+              </li>
+              <li>
+                <a href={emailLink}>Email support</a>
               </li>
             </ul>
           </div>
