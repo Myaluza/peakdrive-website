@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import type { TocItem } from "../components/LegalPage";
-import { site, whatsappLink } from "../data/site";
+import { site, whatsappLink, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 const toc: TocItem[] = [
@@ -47,8 +47,8 @@ export default function Privacy() {
         reach them, and us, on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp {site.supportWhatsAppDisplay}
-        </a>
-        .
+        </a>{" "}
+        or at <a href={emailLink}>{site.supportEmail}</a>.
       </p>
 
       <h2 id="data-we-collect">2. Information we collect</h2>
@@ -291,8 +291,9 @@ export default function Privacy() {
           voucher or bank details on its page, so it processes them and we never receive them.
         </li>
         <li>
-          <strong>Cyber Circuit</strong> — hosting for this website. It receives the standard
-          request details any website sees (your IP address, browser and the page requested).
+          <strong>Cyber Circuit</strong> — hosting for this website and our support email. It
+          receives the standard request details any website sees (your IP address, browser and the
+          page requested), and any emails you send us.
         </li>
         <li>
           <strong>GitHub</strong> — storage for encrypted backups of our database, which include
@@ -554,9 +555,9 @@ export default function Privacy() {
         To exercise any of these, contact our Information Officer, {site.informationOfficer}, on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp {site.supportWhatsAppDisplay}
-        </a>
-        . You can contact the Information Regulator at{" "}
-        <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
+        </a>{" "}
+        or at <a href={emailLink}>{site.supportEmail}</a>. You can contact the Information Regulator
+        at <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
       <h2 id="deletion">14. Deleting your account</h2>
@@ -598,8 +599,8 @@ export default function Privacy() {
         {site.informationOfficer}. Questions about this policy or your data? Message us on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp {site.supportWhatsAppDisplay}
-        </a>
-        .
+        </a>{" "}
+        or email <a href={emailLink}>{site.supportEmail}</a>.
       </p>
     </LegalPage>
   );

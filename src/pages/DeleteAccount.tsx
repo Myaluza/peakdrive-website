@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
-import { site, whatsappLink } from "../data/site";
+import { site, whatsappLink, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 export default function DeleteAccount() {
@@ -100,8 +100,8 @@ export default function DeleteAccount() {
         Questions? Message us on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp
-        </a>
-        .
+        </a>{" "}
+        or email <a href={emailLink}>{site.supportEmail}</a>.
       </p>
     </LegalPage>
   );
