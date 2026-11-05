@@ -14,9 +14,8 @@ export const site = {
   description:
     "Phanda helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
-  // Netlify's default address until Phanda has a domain of its own.
-  domain: "surgedrive.netlify.app",
-  url: "https://surgedrive.netlify.app",
+  domain: "phandadrive.co.za",
+  url: "https://phandadrive.co.za",
 
   // Legal / responsible-party details — PLACEHOLDER, confirm before publishing.
   legalName: "Phanda",
