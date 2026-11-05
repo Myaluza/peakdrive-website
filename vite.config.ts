@@ -15,7 +15,7 @@ const INLINE_SCRIPT =
 
 /**
  * Moves every executable inline script in the generated pages into a
- * same-origin file, so the Content-Security-Policy in netlify.toml can say
+ * same-origin file, so the Content-Security-Policy in public/.htaccess can say
  * `script-src 'self'` without `'unsafe-inline'`.
  *
  * vite-react-ssg writes two inline scripts into each page: the router's
@@ -42,8 +42,7 @@ async function externaliseInlineScripts(outDir: string) {
   }
 }
 
-// The site is served from the root of its Netlify address, so the
-// base is the site root. If you ever host under a sub-path, change `base`.
+// The site is served from the root of its domain, so the base is the site root. If you ever host under a sub-path, change `base`.
 export default defineConfig({
   base: "/",
   plugins: [react()],
@@ -52,8 +51,8 @@ export default defineConfig({
   },
   ssgOptions: {
     // flat: `/privacy` -> `dist/privacy.html`, `/404` -> `dist/404.html`.
-    // Netlify serves `privacy.html` at the clean URL `/privacy` (which the app
-    // hardcodes) and uses `404.html` as its custom not-found page.
+    // public/.htaccess serves `privacy.html` at the clean URL `/privacy` (which
+    // the app hardcodes) and uses `404.html` as the not-found page.
     dirStyle: "flat",
     onFinished: externaliseInlineScripts,
   },

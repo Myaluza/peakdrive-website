@@ -32,7 +32,7 @@ export const site = {
 
   packageId: "com.myaluza.PeakDrive",
   // Not on Google Play yet: drivers download the APK directly. `/download` is
-  // a redirect in netlify.toml to the newest GitHub Release asset on this
+  // a redirect in public/.htaccess to the newest GitHub Release asset on this
   // repo, so a new version is a new release, not a site change.
   downloadPath: "/download",
   // Shown next to the buttons, so drivers know what they're getting. Update

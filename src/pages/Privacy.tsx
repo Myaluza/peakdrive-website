@@ -291,8 +291,8 @@ export default function Privacy() {
           voucher or bank details on its page, so it processes them and we never receive them.
         </li>
         <li>
-          <strong>Netlify</strong> — hosting for this website. It receives the standard request
-          details any website sees (your IP address, browser and the page requested).
+          <strong>Cyber Circuit</strong> — hosting for this website. It receives the standard
+          request details any website sees (your IP address, browser and the page requested).
         </li>
         <li>
           <strong>GitHub</strong> — storage for encrypted backups of our database, which include
@@ -582,8 +582,8 @@ export default function Privacy() {
         on these recipients being bound by laws or agreements that provide protection substantially
         similar to POPIA — the European Union's data protection regime (GDPR) offers a comparable
         standard — and we transfer only the limited data described in this policy. Our encrypted
-        database backups are stored with GitHub, and this website is served by Netlify, both of
-        which may process data in the United States and elsewhere.
+        database backups are stored with GitHub, which may process data in the United States and
+        elsewhere, and this website is hosted by Cyber Circuit on a server in Germany.
       </p>
 
       <h2 id="changes">17. Changes to this policy</h2>

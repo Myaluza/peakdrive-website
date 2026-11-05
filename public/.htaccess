@@ -1,0 +1,48 @@
+# Served by LiteSpeed on Cyber Circuit, which reads this file the way Apache would.
+
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Free-certificate checks must reach the server unredirected.
+RewriteRule ^\.well-known/ - [L]
+
+# One address: https, without www.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://phandadrive.co.za%{REQUEST_URI} [R=301,L]
+
+# The app download. Not on Google Play yet, so every download button links here,
+# and this sends it to the newest GitHub Release on this repo. Releasing a new
+# APK is a new release with an asset named exactly `PeakDrive.apk`; the site
+# doesn't change. 302, not 301: browsers cache a 301 for good, and this target
+# will move when the app reaches the Play Store.
+RewriteRule ^download/?$ https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk [R=302,L]
+
+# vite-react-ssg writes flat files (`/privacy` -> `privacy.html`). The app
+# hardcodes the clean URLs, so they must keep working.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+# Content-Security-Policy, matched to what the built site actually loads:
+#   - scripts: same-origin only. vite-react-ssg's inline scripts are moved into
+#     /assets/inline-*.js at build time (see vite.config.ts), so no
+#     'unsafe-inline'. JSON-LD blocks are data, not script, and CSP ignores them.
+#     GA4's gtag.js comes from googletagmanager.com, and only when
+#     VITE_GA4_MEASUREMENT_ID is set; it reports to google-analytics.com and
+#     analytics.google.com (Google's published GA4 CSP list).
+#   - styles: same-origin stylesheet, plus 'unsafe-inline' for the style="..."
+#     attributes React's `style` prop renders into the pre-built HTML. Styles
+#     can't run script, so this is the usual trade.
+#   - fonts: Poppins is self-hosted via @fontsource, so no Google Fonts.
+#   - images: same-origin screenshots and favicon, data: URIs, and GA4's
+#     fallback pixel.
+# If you add a third-party embed or script, add its origin here or it will be
+# blocked in production (it still works under `npm run dev`, which sends no CSP).
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+Header always set Strict-Transport-Security "max-age=31536000"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "DENY"
