@@ -14,7 +14,7 @@ const toc: TocItem[] = [
   { id: "analytics", label: "Analytics" },
   { id: "location", label: "Location data" },
   { id: "notifications", label: "Push notifications" },
-  { id: "plus", label: "SurgeDrive Plus and payments" },
+  { id: "plus", label: "Phanda Plus and payments" },
   { id: "retention", label: "Data retention" },
   { id: "security", label: "Security" },
   { id: "your-rights", label: "Your rights" },
@@ -52,7 +52,7 @@ export default function Privacy() {
       </p>
 
       <h2 id="data-we-collect">2. Information we collect</h2>
-      <p>We collect only what we need to run SurgeDrive:</p>
+      <p>We collect only what we need to run Phanda:</p>
       <div className="table-scroll">
         <table className="data-table">
           <thead>
@@ -67,8 +67,8 @@ export default function Privacy() {
               <td>Account &amp; profile</td>
               <td>
                 Email address and authentication identifiers (you sign in with Google), display
-                name, home city, whether you use SurgeDrive as a driver or an event organiser, and
-                your notification and location preferences.
+                name, home city, whether you use Phanda as a driver or an event organiser, and your
+                notification and location preferences.
               </td>
               <td>To create, secure and manage your account.</td>
             </tr>
@@ -113,16 +113,16 @@ export default function Privacy() {
             <tr>
               <td>Event organiser profile &amp; listings</td>
               <td>
-                If you use SurgeDrive as an event organiser: your organisation name, a contact
-                person, phone number and email address, an optional website and description, and
-                whether we have verified you. For each event you list: its name, venue, address,
-                date, start and end times, expected attendance, type and map pin.
+                If you use Phanda as an event organiser: your organisation name, a contact person,
+                phone number and email address, an optional website and description, and whether we
+                have verified you. For each event you list: its name, venue, address, date, start
+                and end times, expected attendance, type and map pin.
               </td>
               <td>
                 To confirm you are a genuine organiser and to publish your events on drivers&rsquo;
                 maps. Drivers see your events and, once you are verified, your organisation name.
-                Your contact details are seen only by SurgeDrive staff, for verification, and are
-                never shown to drivers or shared for marketing.
+                Your contact details are seen only by Phanda staff, for verification, and are never
+                shown to drivers or shared for marketing.
               </td>
             </tr>
             <tr>
@@ -267,7 +267,7 @@ export default function Privacy() {
       <h2 id="sharing">5. How we share information</h2>
       <p>
         <strong>We do not sell your personal information.</strong> We share limited data with the
-        operators (sub-processors) that run SurgeDrive:
+        operators (sub-processors) that run Phanda:
       </p>
       <ul>
         <li>
@@ -287,7 +287,7 @@ export default function Privacy() {
           <strong>Sentry</strong> — crash and error reporting.
         </li>
         <li>
-          <strong>Peach Payments</strong> — takes payment for SurgeDrive Plus. You enter your card,
+          <strong>Peach Payments</strong> — takes payment for Phanda Plus. You enter your card,
           voucher or bank details on its page, so it processes them and we never receive them.
         </li>
         <li>
@@ -322,7 +322,7 @@ export default function Privacy() {
       </p>
       <p>
         We may also disclose information where required by law, or to protect the rights, safety and
-        property of SurgeDrive and our users.
+        property of Phanda and our users.
       </p>
       <p>
         Two separate automated systems are involved, and they see different things.{" "}
@@ -351,7 +351,7 @@ export default function Privacy() {
 
       <h2 id="ads">6. Advertising</h2>
       <p>
-        On the free tier, SurgeDrive shows ads through Google AdMob.{" "}
+        On the free tier, Phanda shows ads through Google AdMob.{" "}
         <strong>We request non-personalised ads only.</strong> Every ad the app asks for is flagged
         this way, so what you are shown is not based on a profile of your interests or your
         behaviour in other apps. There is no setting to turn personalisation on, because we never
@@ -462,10 +462,10 @@ export default function Privacy() {
         push tokens.
       </p>
 
-      <h2 id="plus">10. SurgeDrive Plus and payments (coming soon)</h2>
+      <h2 id="plus">10. Phanda Plus and payments (coming soon)</h2>
       <p>
-        <strong>SurgeDrive Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll
-        pay for it in the app on the secure page of <strong>Peach Payments</strong>, our payment
+        <strong>Phanda Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll pay
+        for it in the app on the secure page of <strong>Peach Payments</strong>, our payment
         provider, by bank card, 1Voucher or directly from your bank. You enter those details on
         Peach&rsquo;s page, not ours, so we never see or keep your card number, voucher PIN or bank
         login. We keep only:
@@ -568,14 +568,13 @@ export default function Privacy() {
 
       <h2 id="children">15. Children</h2>
       <p>
-        SurgeDrive is intended for licensed e-hailing drivers and event organisers and is not
-        directed at children under 18. We do not knowingly collect personal information from
-        children.
+        Phanda is intended for licensed e-hailing drivers and event organisers and is not directed
+        at children under 18. We do not knowingly collect personal information from children.
       </p>
 
       <h2 id="transfers">16. International transfers</h2>
       <p>
-        SurgeDrive stores personal information outside South Africa. In particular, our database and
+        Phanda stores personal information outside South Africa. In particular, our database and
         authentication (Supabase) and our events backend (Render) are hosted in the{" "}
         <strong>European Union (Frankfurt, Germany)</strong>, and other processors named above
         (Google, Expo, Sentry) may process data in further countries. Your information is therefore

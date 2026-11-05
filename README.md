@@ -1,10 +1,10 @@
-# SurgeDrive Website
+# Phanda Website
 
-Marketing + legal website for the [SurgeDrive](https://github.com/Myaluza/PeakDrive)
+Marketing + legal website for the [Phanda](https://github.com/Myaluza/PeakDrive)
 app, served at **https://surgedrive.netlify.app** (Netlify's default address;
-SurgeDrive has no domain of its own yet).
+Phanda has no domain of its own yet).
 
-The SurgeDrive app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
+The Phanda app hardcodes these URLs (see `PeakDrive/constants/config.ts`), so the
 routes below must keep working:
 
 | Route             | Purpose                                                                     |
@@ -74,7 +74,7 @@ silently untracked.
 
 ## Releasing the app
 
-SurgeDrive isn't on Google Play yet; drivers download the APK. `/download` is a
+Phanda isn't on Google Play yet; drivers download the APK. `/download` is a
 302 in `netlify.toml` to
 `https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk`,
 so a new version needs no site change:
@@ -159,7 +159,7 @@ inlined at build time). (It's not a secret — a GA4 id is public in the page.)
    if analytics should be on.
 3. Every push to `main` deploys; pull requests get deploy previews.
 
-### When SurgeDrive gets a domain
+### When Phanda gets a domain
 
 `peakdrive.co.za` is registered to someone else, so pick another. In Netlify,
 **Domain management → Add a domain**, then follow its

@@ -28,7 +28,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/plus">SurgeDrive Plus</Link>
+                <Link to="/plus">Phanda Plus</Link>
               </li>
               <li>
                 <Link to="/support">Support &amp; FAQ</Link>

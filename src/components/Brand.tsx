@@ -24,9 +24,7 @@ export default function Brand() {
           />
         </svg>
       </span>
-      <span>
-        SURGE<span className="brand__accent">DRIVE</span>
-      </span>
+      <span>PHANDA</span>
     </Link>
   );
 }

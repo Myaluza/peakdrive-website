@@ -9,8 +9,8 @@ import "../styles/legal.css";
 export default function Plus() {
   return (
     <LegalPage
-      title="SurgeDrive Plus"
-      seoTitle={`SurgeDrive Plus (coming soon) · ${site.appName}`}
+      title="Phanda Plus"
+      seoTitle={`Phanda Plus (coming soon) · ${site.appName}`}
       description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day, paid by card, 1Voucher or bank. Coming soon.`}
       path="/plus"
       showUpdated={false}
@@ -93,8 +93,8 @@ export default function Plus() {
         <li>choosing to watch a rewarded ad.</li>
       </ul>
       <p>
-        Ad-free time also lets you use SurgeDrive offline. When your Plus and ad-free time have both
-        run out, SurgeDrive needs a connection again.
+        Ad-free time also lets you use Phanda offline. When your Plus and ad-free time have both run
+        out, Phanda needs a connection again.
       </p>
 
       <h2 id="small-print">The small print</h2>

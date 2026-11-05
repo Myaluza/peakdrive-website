@@ -272,10 +272,6 @@ hr {
   color: var(--text);
 }
 
-.brand__accent {
-  color: var(--highlight);
-}
-
 h1 {
   font-family: var(--font-display);
   letter-spacing: -0.5px;

@@ -8,18 +8,18 @@ export interface City {
 }
 
 export const site = {
-  appName: "SurgeDrive",
+  appName: "Phanda",
   tagline: "Stop guessing. Start earning.",
   // Blurb reused from the app's About screen (app/(main)/about.tsx).
   description:
-    "SurgeDrive helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
+    "Phanda helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
-  // Netlify's default address until SurgeDrive has a domain of its own.
+  // Netlify's default address until Phanda has a domain of its own.
   domain: "surgedrive.netlify.app",
   url: "https://surgedrive.netlify.app",
 
   // Legal / responsible-party details — PLACEHOLDER, confirm before publishing.
-  legalName: "SurgeDrive",
+  legalName: "Phanda",
   operator: "Myaluza",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
@@ -41,12 +41,12 @@ export const site = {
   apkSizeMb: 34,
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "29 October 2026",
+  lastUpdated: "5 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
   //
-  // Durban only, from 2026-10-23: SurgeDrive is getting Durban and its
+  // Durban only, from 2026-10-23: Phanda is getting Durban and its
   // surrounds working properly before it expands. The other three are paused
   // in the backend and shown as "coming soon" in the app — keep this file
   // matching that, and `serviceArea` below matching the backend's 60 km
@@ -62,7 +62,7 @@ export const site = {
   serviceArea: ["Durban CBD", "Umhlanga", "Ballito", "Pinetown", "Westville", "Amanzimtoti"],
 };
 
-// SurgeDrive Plus (coming soon), paid in the app. Read by the /plus page
+// Phanda Plus (coming soon), paid in the app. Read by the /plus page
 // and Terms §6 so the two can't quote different prices.
 export const plusPlans = [
   { period: "1 day", priceRand: 5 },
