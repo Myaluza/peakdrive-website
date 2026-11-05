@@ -13,6 +13,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # A stuck step must fail, not hold the deploy for hours.
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -39,21 +41,29 @@ jobs:
           VITE_GA4_MEASUREMENT_ID: ${{ vars.VITE_GA4_MEASUREMENT_ID }}
         run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-
-      # The FTP account's home folder is public_html. Files are only added or
-      # replaced, never deleted, so a wrong folder can't remove anything.
+      # Uses cPanel's upload API over HTTPS, because the plan has no SSH and FTP
+      # logins are refused. Files are only added or replaced, never deleted.
+      # Pages go last, so a page never goes up before the files it loads.
       - name: Upload
+        working-directory: dist
         env:
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          CPANEL_USERNAME: ${{ secrets.CPANEL_USERNAME }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
         run: |
-          lftp -c "
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate yes;
-            set net:max-retries 3;
-            open --env-password -u \"$FTP_USERNAME\" epyc.cybercircuit.co.za;
-            mirror --reverse --overwrite --parallel=4 --exclude-glob .vite/ dist .;
-          "
+          rm -rf .vite
+          while IFS= read -r file; do
+            file="${file#./}"
+            folder="$(dirname "$file")"
+            target="public_html"
+            if [ "$folder" != "." ]; then target="public_html/$folder"; fi
+            response="$(curl -sS --max-time 60 --retry 2 \
+              -H "Authorization: cpanel $CPANEL_USERNAME:$CPANEL_TOKEN" \
+              -F "file-1=@$file" \
+              "https://phandadrive.co.za:2083/execute/Fileman/upload_files?dir=$target&overwrite=1&permissions=0644")"
+            if ! jq -e '.status == 1 and .data.failed == 0' <<< "$response" > /dev/null; then
+              echo "::error::Upload failed for $file"
+              jq -c '.errors // .' <<< "$response" || echo "$response" | head -c 300
+              exit 1
+            fi
+            echo "uploaded $file"
+          done < <(find . -type f ! -name '*.html'; find . -type f -name '*.html')
