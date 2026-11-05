@@ -38,6 +38,10 @@ export default function Plus() {
         <li>
           <strong>Extra alert filters</strong>, so you hear only about the events you actually work.
         </li>
+        <li>
+          <strong>Offline use.</strong> The map, events and your settings from the last time you
+          were online keep working when your signal drops.
+        </li>
       </ul>
 
       <h2 id="prices">Prices</h2>
@@ -88,6 +92,10 @@ export default function Plus() {
         <li>contributing to the map: adding events and verifying other drivers&rsquo; ones; or</li>
         <li>choosing to watch a rewarded ad.</li>
       </ul>
+      <p>
+        Ad-free time also lets you use SurgeDrive offline. When your Plus and ad-free time have both
+        run out, SurgeDrive needs a connection again.
+      </p>
 
       <h2 id="small-print">The small print</h2>
       <p>
