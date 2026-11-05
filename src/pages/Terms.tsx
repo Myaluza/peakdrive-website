@@ -125,11 +125,12 @@ export default function Terms() {
         </li>
         <li>
           <strong>What Plus includes:</strong> no ads, earlier surge alerts (about 90 minutes ahead
-          instead of an hour) and extra alert filters.
+          instead of an hour), extra alert filters and offline use.
         </li>
         <li>
           <strong>Ad-free time without paying.</strong> You can also earn ad-free time by
-          contributing to the map or by choosing to watch a rewarded ad.
+          contributing to the map or by choosing to watch a rewarded ad. Ad-free time includes
+          offline use.
         </li>
       </ul>
       <p>

@@ -85,8 +85,8 @@ const features = [
   },
   {
     icon: "📴",
-    title: "Works offline",
-    body: "Your last surge map stays cached, so it keeps working when your signal drops mid-shift.",
+    title: "Offline with Plus",
+    body: "With Plus or ad-free time, your last surge map keeps working when your signal drops mid-shift.",
   },
 ];
 
