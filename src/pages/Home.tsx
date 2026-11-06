@@ -3,10 +3,18 @@ import Seo from "../components/Seo";
 import JsonLd from "../components/JsonLd";
 import DownloadBadge from "../components/DownloadBadge";
 import FaqAccordion from "../components/FaqAccordion";
-import Phone from "../components/Phone";
-import { site, downloadUrl } from "../data/site";
-import { faqs } from "../data/faqs";
 import InstallQr from "../components/InstallQr";
+import Phone from "../components/Phone";
+import {
+  BellIcon,
+  CalendarIcon,
+  MapIcon,
+  OfflineIcon,
+  PeopleIcon,
+  RainIcon,
+} from "../components/FeatureIcons";
+import { site, downloadUrl, whatsappLink } from "../data/site";
+import { faqs } from "../data/faqs";
 import "../styles/home.css";
 
 // Rich-result metadata for the app itself. No aggregateRating — we don't invent
@@ -68,32 +76,32 @@ const steps = [
 
 const features = [
   {
-    icon: "🗺️",
+    icon: <MapIcon />,
     title: "Live surge map",
     body: "Animated demand circles show exactly where and when rides are about to spike near you.",
   },
   {
-    icon: "🤖",
+    icon: <CalendarIcon />,
     title: "Events tracked for you",
     body: "Phanda gathers Durban's events and works out when each one should end and how busy it could be. Some end times are estimates.",
   },
   {
-    icon: "🙌",
+    icon: <PeopleIcon />,
     title: "Built with drivers",
     body: "Add an event we missed, confirm other drivers' events, and report when a spot is busy or dead. Top contributors reach the leaderboard.",
   },
   {
-    icon: "🔔",
+    icon: <BellIcon />,
     title: "Two timed alerts",
     body: "A heads-up about an hour before, then an alert about 15 minutes before if you're nearby. Choose which events you hear about.",
   },
   {
-    icon: "🏆",
+    icon: <RainIcon />,
     title: "Rain alerts and shift log",
     body: "Hear a few hours before rain is due. Log your shifts and earnings privately: that log stays on your phone.",
   },
   {
-    icon: "📴",
+    icon: <OfflineIcon />,
     title: "Offline with Plus",
     body: "With Plus or ad-free time, your last surge map keeps working when your signal drops mid-shift.",
   },
@@ -159,9 +167,19 @@ export default function Home() {
                 circle on the map as each one is about to let out, so you can be there when the
                 requests start.
               </p>
-              <p className="hero__note" style={{ marginTop: 0 }}>
-                Live in {liveCityNames}.
+              <h3>What the circle colours mean</h3>
+              <p>
+                Colour shows expected demand. Size shows the ground the surge covers, so an airport
+                looks wide and a small bar looks tight.
               </p>
+              <div className="legend">
+                {legend.map((l) => (
+                  <span className="legend__item" key={l.label}>
+                    <span className="legend__swatch" style={{ background: l.color }} />
+                    {l.label}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -207,36 +225,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Demand legend */}
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Read the map at a glance</span>
-            <h2>What the circle colours mean</h2>
-            <p>
-              Colour shows expected demand. Size shows the ground the surge covers, so an airport
-              looks wide and a small bar looks tight.
-            </p>
-          </div>
-          <div className="legend">
-            {legend.map((l) => (
-              <span className="legend__item" key={l.label}>
-                <span className="legend__swatch" style={{ background: l.color }} />
-                {l.label}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Cities */}
-      <section className="section" style={{ background: "var(--surface)" }}>
-        <div className="container">
-          <div className="section-head">
+      <section className="section section--tight">
+        <div className="container coverage">
+          <div>
             <span className="eyebrow">Coverage</span>
             <h2>Where Phanda works</h2>
             <p>
-              Live in {liveCityNames} — {site.serviceArea.join(", ")}. More South African cities are
+              Live in {liveCityNames}: {site.serviceArea.join(", ")}. More South African cities are
               coming soon.
             </p>
           </div>
@@ -252,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* Organisers */}
-      <section className="section">
+      <section className="section" style={{ background: "var(--surface)" }}>
         <div className="container" style={{ maxWidth: 780 }}>
           <div className="section-head">
             <span className="eyebrow">For event organisers</span>
@@ -265,6 +261,17 @@ export default function Home() {
               can&rsquo;t confirm it, we review it first. You&rsquo;ll see how many drivers plan to
               be there, and you can change times or cancel at any point. It&rsquo;s free.
             </p>
+          </div>
+          <div className="organiser-cta">
+            <DownloadBadge location="organisers" />
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              Ask us on WhatsApp
+            </a>
           </div>
         </div>
       </section>
