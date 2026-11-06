@@ -35,11 +35,17 @@ export const site = {
   // a redirect in public/.htaccess to the newest GitHub Release asset on this
   // repo, so a new version is a new release, not a site change.
   downloadPath: "/download",
+  installPath: "/install",
   // Shown next to the buttons, so drivers know what they're getting. Update
   // with each release.
   apkSizeMb: 38,
-  // The live release, shown in the structured data. Update with each release.
+  // The live release, shown on /install and in the structured data. Update all
+  // of these with each release.
   appVersion: "1.1.0",
+  appBuild: 9,
+  apkReleased: "6 November 2026",
+  apkFileName: "Phanda.apk",
+  apkSha256: "773174c22ed59c5d8c63e287a06ff905a78131eedf852cfd80c64414334f2978",
 
   // Keep in sync with the date the legal copy was last edited.
   lastUpdated: "6 November 2026",

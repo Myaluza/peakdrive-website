@@ -1,5 +1,5 @@
 import { site } from "../data/site";
-import { trackEvent } from "../analytics";
+import { useDownloadClick } from "../useDownloadClick";
 
 interface Props {
   variant?: "primary" | "light";
@@ -23,6 +23,8 @@ interface Props {
  *
  * The link is `site.downloadPath`, which redirects to the newest APK.
  * Same tab, no `target`: it starts a file download rather than opening a page.
+ * `useDownloadClick` adds the install steps, and sends visitors who aren't on
+ * Android to them instead.
  *
  * `light` renders a white button for use on coloured/dark bands; `primary` is
  * the default indigo button.
@@ -35,11 +37,12 @@ export default function DownloadBadge({
   showIcon = true,
 }: Props) {
   const variantClass = variant === "light" ? "btn-light" : "btn-primary";
+  const onClick = useDownloadClick(location ?? "unknown");
   return (
     <a
       href={site.downloadPath}
       className={`btn ${variantClass} ${className ?? ""}`}
-      onClick={() => trackEvent("click_get_app", { location: location ?? "unknown" })}
+      onClick={onClick}
     >
       {showIcon && (
         <svg

@@ -75,13 +75,16 @@ silently untracked.
 
 Phanda isn't on Google Play yet; drivers download the APK. `/download` is a
 302 in `public/.htaccess` to
-`https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk`,
-so a new version needs no site change:
+`https://github.com/Myaluza/peakdrive-website/releases/latest/download/Phanda.apk`,
+so a new version needs no change to the link:
 
 1. Build `production-apk` in the app repo (`eas build -p android --profile production-apk`).
-2. Create a release on this repo with the APK attached as exactly `PeakDrive.apk`,
-   marked latest. Tag it `app-<version>-<build>`, e.g. `app-1.0.0-3`.
-3. If the size changed by a megabyte or more, update `apkSizeMb` in `site.ts`.
+2. Create a release on this repo with the same APK attached twice, as exactly
+   `Phanda.apk` and `PeakDrive.apk`, marked latest. Tag it `app-<version>-<build>`,
+   e.g. `app-1.0.0-3`. Drivers download `Phanda.apk`. Builds up to 9 were released
+   as `PeakDrive.apk`, and older `apk_url` values point at that name.
+3. Update `appVersion`, `appBuild`, `apkReleased`, `apkSha256` and `apkSizeMb` in
+   `site.ts`, because `/install` shows them.
 4. If older builds must not keep running, raise the minimum in Supabase. From
    1.1.0, builds below it show only an update screen, which downloads this APK
    and opens Android's installer. Use the versioned URL, not `latest`:

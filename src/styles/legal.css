@@ -107,6 +107,10 @@
 }
 
 /* Support contact buttons */
+.break-all {
+  overflow-wrap: anywhere;
+}
+
 .contact-row {
   display: flex;
   gap: var(--space-md);
