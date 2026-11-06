@@ -52,6 +52,11 @@ export default function Terms() {
         Features and supported cities may change over time.
       </p>
       <p>
+        <strong>Independent app.</strong> {site.appName} isn&rsquo;t affiliated with, endorsed by or
+        sponsored by Uber, Bolt or any other ride-hailing company. Those names belong to their
+        owners, and we use them only to say who the app is for.
+      </p>
+      <p>
         <strong>Drive safely.</strong> Never interact with the app while your vehicle is moving.
         Always follow the road rules and prioritise safety over any information the app provides.
       </p>

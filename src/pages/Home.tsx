@@ -19,11 +19,19 @@ const appJsonLd = {
   operatingSystem: "Android",
   url: site.url,
   downloadUrl,
+  softwareVersion: site.appVersion,
+  fileSize: `${site.apkSizeMb} MB`,
   offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
   areaServed: site.cities
     .filter((c) => c.live)
     .map((c) => ({ "@type": "City", name: c.name, containedInPlace: "South Africa" })),
-  publisher: { "@type": "Organization", name: site.legalName, url: site.url },
+  publisher: {
+    "@type": "Organization",
+    name: site.legalName,
+    url: site.url,
+    logo: `${site.url}/icon-512.png`,
+    email: site.supportEmail,
+  },
 };
 
 /**
@@ -45,11 +53,11 @@ const liveCityNames = (() => {
 const steps = [
   {
     title: "Open the live map",
-    body: "Phanda tracks concerts, sports and festivals across your city and drops surge zones on the map in real time.",
+    body: "Phanda tracks concerts, matches, festivals, airport arrivals and club closing times, and drops surge zones on the map.",
   },
   {
     title: "Spot demand before it spikes",
-    body: "Surge circles appear 15 minutes before an event lets out — the brighter and bigger the circle, the more rides to expect.",
+    body: "Surge circles appear 15 minutes before an event lets out. The colour shows how busy it should be, and the size shows the area it covers.",
   },
   {
     title: "Position, and earn",
@@ -65,23 +73,23 @@ const features = [
   },
   {
     icon: "🤖",
-    title: "AI event tracking",
-    body: "Events are scraped, enriched and given a finish time and expected demand automatically — no guesswork.",
+    title: "Events tracked for you",
+    body: "Phanda gathers Durban's events and works out when each one should end and how busy it could be. Some end times are estimates.",
   },
   {
     icon: "🙌",
-    title: "Community verified",
-    body: "Missed an event? Submit it. Drivers verify each other's submissions to keep the map accurate.",
+    title: "Built with drivers",
+    body: "Add an event we missed, confirm other drivers' events, and report when a spot is busy or dead. Top contributors reach the leaderboard.",
   },
   {
     icon: "🔔",
-    title: "City-scoped alerts",
-    body: "Get a push notification for today's high-demand events in your city — and nowhere else.",
+    title: "Two timed alerts",
+    body: "A heads-up about an hour before, then an alert about 15 minutes before if you're nearby. Choose which events you hear about.",
   },
   {
     icon: "🏆",
-    title: "Driver leaderboard",
-    body: "Earn recognition for accurate submissions and climb your city's contributor leaderboard.",
+    title: "Rain alerts and shift log",
+    body: "Hear a few hours before rain is due. Log your shifts and earnings privately: that log stays on your phone.",
   },
   {
     icon: "📴",
@@ -100,7 +108,7 @@ const legend = [
 export default function Home() {
   return (
     <>
-      <Seo title={`${site.appName} — ${site.tagline}`} path="/" />
+      <Seo title={`${site.appName}: surge map for Uber and Bolt drivers in Durban`} path="/" />
       <JsonLd data={appJsonLd} />
 
       {/* Hero */}
@@ -143,11 +151,11 @@ export default function Home() {
             />
             <div className="showcase__text">
               <span className="eyebrow">See it in action</span>
-              <h2>Every event that moves demand, in one view</h2>
+              <h2>The events that move demand, in one view</h2>
               <p>
-                Phanda lists today's concerts, sports and festivals with a demand rating and finish
-                time, and drops a surge circle on the map the moment each one is about to let out —
-                so you're already there when the requests start.
+                Phanda lists what's on today with a demand rating and finish time, and drops a surge
+                circle on the map as each one is about to let out, so you can be there when the
+                requests start.
               </p>
               <p className="hero__note" style={{ marginTop: 0 }}>
                 Live in {liveCityNames}.
@@ -204,8 +212,8 @@ export default function Home() {
             <span className="eyebrow">Read the map at a glance</span>
             <h2>What the circle colours mean</h2>
             <p>
-              Circle colour and size show expected demand. The brighter and larger the circle, the
-              more rides you can expect.
+              Colour shows expected demand. Size shows the ground the surge covers, so an airport
+              looks wide and a small bar looks tight.
             </p>
           </div>
           <div className="legend">
@@ -250,9 +258,10 @@ export default function Home() {
             <p>
               List it on Phanda and drivers will be waiting when your crowd heads home. Choose
               &ldquo;I organise events&rdquo; when you sign up in the app, fill in your organiser
-              profile, and once we&rsquo;ve verified you, your events go live on drivers&rsquo; maps
-              straight away. You&rsquo;ll see how many drivers plan to be there, and you can change
-              times or cancel at any point. It&rsquo;s free.
+              profile, and we&rsquo;ll verify you once. Each event you add is then checked online
+              and goes live on drivers&rsquo; maps as soon as it&rsquo;s confirmed. If we
+              can&rsquo;t confirm it, we review it first. You&rsquo;ll see how many drivers plan to
+              be there, and you can change times or cancel at any point. It&rsquo;s free.
             </p>
           </div>
         </div>
@@ -277,10 +286,7 @@ export default function Home() {
         <div className="container">
           <div className="cta-band">
             <h2>Ready to stop guessing?</h2>
-            <p>
-              Join the drivers turning event schedules into extra trips. Download Phanda and see
-              today's surge zones.
-            </p>
+            <p>Phanda is free to use in Durban. Download it and see what&rsquo;s on today.</p>
             <DownloadBadge variant="light" location="cta_band" />
           </div>
         </div>

@@ -25,7 +25,8 @@ export default function Layout() {
     if (hash) {
       const el = document.querySelector(hash);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        // "auto" follows the CSS: smooth, unless the visitor asks for less motion.
+        el.scrollIntoView({ behavior: "auto" });
         return;
       }
     }

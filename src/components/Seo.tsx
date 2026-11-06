@@ -15,6 +15,8 @@ interface SeoProps {
 export default function Seo({ title, description, path }: SeoProps) {
   const desc = description ?? site.description;
   const canonical = `${site.url}${path === "/" ? "" : path}`;
+  const image = `${site.url}/og-image.png`;
+  const imageAlt = `${site.appName} logo with the words ${site.tagline}`;
 
   return (
     <Head>
@@ -26,10 +28,15 @@ export default function Seo({ title, description, path }: SeoProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={`${site.url}/og-image.png`} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={imageAlt} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={desc} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={imageAlt} />
     </Head>
   );
 }

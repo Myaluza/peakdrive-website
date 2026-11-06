@@ -244,6 +244,16 @@
    unnoticed if either were restyled. */
 
 /* ---- Responsive ---- */
+@media (max-width: 480px) {
+  /* Room for "Download for Android" on one line. */
+  .cta-band {
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  .cta-band .btn {
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 860px) {
   .hero__inner {
     grid-template-columns: 1fr;
