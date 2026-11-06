@@ -33,10 +33,12 @@ export default function Support() {
         event on the map — contact the team directly.
       </p>
 
-      <p>
-        Having trouble getting the app onto your phone? See{" "}
-        <Link to={site.installPath}>how to install {site.appName}</Link>.
-      </p>
+      {site.downloadsOpen && (
+        <p>
+          Having trouble getting the app onto your phone? See{" "}
+          <Link to={site.installPath}>how to install {site.appName}</Link>.
+        </p>
+      )}
 
       <h2 id="faqs">Frequently asked questions</h2>
       <FaqAccordion items={faqs} />

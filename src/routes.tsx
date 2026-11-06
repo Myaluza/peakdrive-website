@@ -8,6 +8,7 @@ import Support from "./pages/Support";
 import Plus from "./pages/Plus";
 import Install from "./pages/Install";
 import NotFound from "./pages/NotFound";
+import { site } from "./data/site";
 
 export const routes: RouteRecord[] = [
   {
@@ -20,7 +21,7 @@ export const routes: RouteRecord[] = [
       { path: "delete-account", element: <DeleteAccount /> },
       { path: "support", element: <Support /> },
       { path: "plus", element: <Plus /> },
-      { path: "install", element: <Install /> },
+      ...(site.downloadsOpen ? [{ path: "install", element: <Install /> }] : []),
       // Static route so SSG emits dist/404.html (the custom 404 in public/.htaccess).
       { path: "404", element: <NotFound /> },
       // Client-side catch-all: any unknown URL renders the same NotFound page.

@@ -27,9 +27,11 @@ const appJsonLd = {
   applicationCategory: "TravelApplication",
   operatingSystem: "Android",
   url: site.url,
-  downloadUrl,
-  softwareVersion: site.appVersion,
-  fileSize: `${site.apkSizeMb} MB`,
+  ...(site.downloadsOpen && {
+    downloadUrl,
+    softwareVersion: site.appVersion,
+    fileSize: `${site.apkSizeMb} MB`,
+  }),
   offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
   areaServed: site.cities
     .filter((c) => c.live)
@@ -135,13 +137,17 @@ export default function Home() {
               </a>
             </div>
             <p className="hero__note">Free to use · Made for South African e-hailing drivers</p>
-            {/* Not from Google Play, so Android asks first. Saying so here
-                means the prompt isn't a surprise. */}
-            <p className="hero__note">
-              Android APK, {site.apkSizeMb} MB, from this site.{" "}
-              <Link to={site.installPath}>How to install it</Link>
-            </p>
-            <InstallQr />
+            {site.downloadsOpen && (
+              <>
+                {/* Not from Google Play, so Android asks first. Saying so here
+                    means the prompt isn't a surprise. */}
+                <p className="hero__note">
+                  Android APK, {site.apkSizeMb} MB, from this site.{" "}
+                  <Link to={site.installPath}>How to install it</Link>
+                </p>
+                <InstallQr />
+              </>
+            )}
           </div>
 
           <Phone
@@ -264,7 +270,7 @@ export default function Home() {
             </p>
           </div>
           <div className="organiser-cta">
-            <DownloadBadge location="organisers" />
+            {site.downloadsOpen && <DownloadBadge location="organisers" />}
             <a
               href={whatsappLink}
               target="_blank"
@@ -296,7 +302,13 @@ export default function Home() {
         <div className="container">
           <div className="cta-band">
             <h2>Ready to stop guessing?</h2>
-            <p>Phanda is free to use in Durban. Download it and see what&rsquo;s on today.</p>
+            <p>
+              {site.downloadsOpen ? (
+                <>Phanda is free to use in Durban. Download it and see what&rsquo;s on today.</>
+              ) : (
+                <>Phanda is coming soon for drivers in Durban, and it will be free to use.</>
+              )}
+            </p>
             <DownloadBadge variant="light" location="cta_band" />
           </div>
         </div>
