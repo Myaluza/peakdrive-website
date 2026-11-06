@@ -483,8 +483,8 @@ h1 {
   .site-header nav {
     gap: var(--space-sm);
   }
-  .site-header__cta {
-    padding: 10px 14px;
-    font-size: 14px;
+  .site-header__inner {
+    padding-left: var(--space-base);
+    padding-right: var(--space-base);
   }
 }
