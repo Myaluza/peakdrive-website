@@ -4,7 +4,7 @@
 // "Verbatim" is load-bearing and was not honoured before: this file had drifted
 // to 7 entries against the app's 14, with every shared answer rewritten. It is
 // also published as FAQPage JSON-LD from the Support page, so a stale answer
-// here is stale structured data served to Google. Re-synced 2026-08-10.
+// here is stale structured data served to Google. Re-synced 2026-11-06.
 //
 // The app is the source of truth. Edit there, then copy the whole array across —
 // do not edit answers here.
@@ -102,9 +102,39 @@ export const faqs: Faq[] = [
   },
   {
     id: 15,
+    question: "What are the dots on the map?",
+    answer:
+      "Live reports from other drivers: an orange flame means someone said it's busy there now, a grey moon means it's dead. Tap Report on the map to add yours — it shows for 30 minutes with an approximate spot and never your name, and your first three reports a day each earn an hour without ads.",
+  },
+  {
+    id: 16,
+    question: "How do invite codes work?",
+    answer:
+      "Your code is on your Profile. When a new driver enters it in their first 14 days, you both get a day without ads (up to 10 invites a month for you).",
+  },
+  {
+    id: 17,
+    question: "Who can see my shifts and earnings?",
+    answer:
+      "Nobody but you. The shift log is stored only on your phone and is never sent to Phanda. Uninstalling the app deletes it.",
+  },
+  {
+    id: 18,
+    question: "Where do rain alerts come from?",
+    answer:
+      "From the MET Norway weather forecast for Durban. You get at most one a day, a few hours before rain is due. Turn it off in Alert preferences.",
+  },
+  {
+    id: 19,
     question: "I organise events. Can I list them?",
     answer:
-      "Yes. Choose 'I organise events' when you sign up in the app, or switch in Settings. Fill in your organiser profile and we'll verify you once; after that your events go live on drivers' maps as soon as you add them, and you can change times or cancel. Drivers only see your organisation name.",
+      "Yes. Choose 'I organise events' when you sign up, or switch in Settings. Fill in your organiser profile and we'll verify you once. After that, each event you add is checked online and goes live on drivers' maps as soon as it's confirmed. If we can't confirm it, we review it first. You can change times or cancel. Drivers only see your organisation name.",
+  },
+  {
+    id: 20,
+    question: "Can I use Phanda offline?",
+    answer:
+      "Yes, while you have Phanda Plus or ad-free time. The map, events and your settings open from the last time you were online, and changes like 'I'm going' send when you're back online. Adding events, live reports and buying Plus need a connection. When your Plus and ad-free time have both run out, Phanda needs a connection again.",
   },
 ];
 
