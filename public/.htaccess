@@ -14,12 +14,16 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://phandadrive.co.za%{REQUEST_URI} [R=301,L]
 
-# The app download. Not on Google Play yet, so every download button links here,
-# and this sends it to the newest GitHub Release on this repo. Releasing a new
-# APK is a new release with an asset named exactly `Phanda.apk`; the site
-# doesn't change. 302, not 301: browsers cache a 301 for good, and this target
-# will move when the app reaches the Play Store.
-RewriteRule ^download/?$ https://github.com/Myaluza/peakdrive-website/releases/latest/download/Phanda.apk [R=302,L]
+# The app isn't open to the public yet (`downloadsOpen` in src/data/site.ts), so
+# both of these go to the home page. /install needs its own rule because deploys
+# never delete files, so the old install.html is still on the server.
+# 302, not 301: browsers cache a 301 for good, and these will change.
+RewriteRule ^download/?$ / [R=302,L]
+RewriteRule ^install(\.html)?/?$ / [R=302,L]
+
+# To open downloads, replace both rules above with this one. Every download
+# button links here, and it sends them to the newest GitHub Release on this repo:
+# RewriteRule ^download/?$ https://github.com/Myaluza/peakdrive-website/releases/latest/download/Phanda.apk [R=302,L]
 
 # vite-react-ssg writes flat files (`/privacy` -> `privacy.html`). The app
 # hardcodes the clean URLs, so they must keep working.

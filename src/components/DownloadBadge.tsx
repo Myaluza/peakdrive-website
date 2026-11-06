@@ -38,6 +38,9 @@ export default function DownloadBadge({
 }: Props) {
   const variantClass = variant === "light" ? "btn-light" : "btn-primary";
   const onClick = useDownloadClick(location ?? "unknown");
+  if (!site.downloadsOpen) {
+    return <span className={`btn btn-soon ${className ?? ""}`}>Coming soon</span>;
+  }
   return (
     <a
       href={site.downloadPath}

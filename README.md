@@ -73,6 +73,11 @@ silently untracked.
 
 ## Releasing the app
 
+**Downloads are closed for now.** `downloadsOpen` is false in `src/data/site.ts`,
+so the site says "Coming soon" and `/download` and `/install` go to the home page.
+The steps to open them are next to that setting and in `public/.htaccess`. The
+GitHub releases stay up, because the app's update screen downloads from them.
+
 Phanda isn't on Google Play yet; drivers download the APK. `/download` is a
 302 in `public/.htaccess` to
 `https://github.com/Myaluza/peakdrive-website/releases/latest/download/Phanda.apk`,

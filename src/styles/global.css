@@ -143,6 +143,16 @@ hr {
 }
 
 /* Light button for use on coloured/dark bands (e.g. the CTA band). */
+/* Not a link, so it mustn't look clickable. */
+.btn-soon,
+.btn-soon:hover {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--muted);
+  cursor: default;
+  transform: none;
+}
+
 .btn-light {
   background: #fff;
   color: var(--primary-deep);

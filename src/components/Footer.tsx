@@ -18,16 +18,20 @@ export default function Footer() {
           <div>
             <h4>Product</h4>
             <ul>
-              <li>
-                {/* A plain text link, but tracked like every other download
-                    CTA. */}
-                <a href={site.downloadPath} onClick={onDownload}>
-                  Download
-                </a>
-              </li>
-              <li>
-                <Link to={site.installPath}>How to install</Link>
-              </li>
+              {site.downloadsOpen && (
+                <>
+                  <li>
+                    {/* A plain text link, but tracked like every other download
+                        CTA. */}
+                    <a href={site.downloadPath} onClick={onDownload}>
+                      Download
+                    </a>
+                  </li>
+                  <li>
+                    <Link to={site.installPath}>How to install</Link>
+                  </li>
+                </>
+              )}
               <li>
                 <Link to="/plus">Phanda Plus</Link>
               </li>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "./Brand";
 import DownloadBadge from "./DownloadBadge";
+import { site } from "../data/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,12 +24,14 @@ export default function Header() {
               Support
             </Link>
           </div>
-          <DownloadBadge
-            className="site-header__cta"
-            location="header"
-            label="Get the app"
-            showIcon={false}
-          />
+          {site.downloadsOpen && (
+            <DownloadBadge
+              className="site-header__cta"
+              location="header"
+              label="Get the app"
+              showIcon={false}
+            />
+          )}
           {/* Shown only under 720px (CSS); reveals the links above as a dropdown. */}
           <button
             type="button"

@@ -31,6 +31,10 @@ export const site = {
   supportEmail: "support@phandadrive.co.za",
 
   packageId: "com.myaluza.PeakDrive",
+  // False until the app opens to the public: buttons say "Coming soon" and the
+  // install page is left out. To open, set this to true and restore the
+  // `/download` and `/install` rules in public/.htaccess and the sitemap entry.
+  downloadsOpen: false,
   // Not on Google Play yet: drivers download the APK directly. `/download` is
   // a redirect in public/.htaccess to the newest GitHub Release asset on this
   // repo, so a new version is a new release, not a site change.
