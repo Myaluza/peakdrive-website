@@ -6,6 +6,7 @@ import FaqAccordion from "../components/FaqAccordion";
 import Phone from "../components/Phone";
 import { site, downloadUrl } from "../data/site";
 import { faqs } from "../data/faqs";
+import InstallQr from "../components/InstallQr";
 import "../styles/home.css";
 
 // Rich-result metadata for the app itself. No aggregateRating — we don't invent
@@ -128,9 +129,10 @@ export default function Home() {
             {/* Not from Google Play, so Android asks first. Saying so here
                 means the prompt isn't a surprise. */}
             <p className="hero__note">
-              Android APK, {site.apkSizeMb} MB. When you open it, allow your browser to install apps
-              if Android asks.
+              Android APK, {site.apkSizeMb} MB, from this site.{" "}
+              <Link to={site.installPath}>How to install it</Link>
             </p>
+            <InstallQr />
           </div>
 
           <Phone

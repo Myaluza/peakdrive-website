@@ -16,10 +16,10 @@ RewriteRule ^ https://phandadrive.co.za%{REQUEST_URI} [R=301,L]
 
 # The app download. Not on Google Play yet, so every download button links here,
 # and this sends it to the newest GitHub Release on this repo. Releasing a new
-# APK is a new release with an asset named exactly `PeakDrive.apk`; the site
+# APK is a new release with an asset named exactly `Phanda.apk`; the site
 # doesn't change. 302, not 301: browsers cache a 301 for good, and this target
 # will move when the app reaches the Play Store.
-RewriteRule ^download/?$ https://github.com/Myaluza/peakdrive-website/releases/latest/download/PeakDrive.apk [R=302,L]
+RewriteRule ^download/?$ https://github.com/Myaluza/peakdrive-website/releases/latest/download/Phanda.apk [R=302,L]
 
 # vite-react-ssg writes flat files (`/privacy` -> `privacy.html`). The app
 # hardcodes the clean URLs, so they must keep working.

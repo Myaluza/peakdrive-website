@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { site, whatsappLink, emailLink } from "../data/site";
-import { trackEvent } from "../analytics";
+import { useDownloadClick } from "../useDownloadClick";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const onDownload = useDownloadClick("footer");
 
   return (
     <footer className="site-footer">
@@ -20,12 +21,12 @@ export default function Footer() {
               <li>
                 {/* A plain text link, but tracked like every other download
                     CTA. */}
-                <a
-                  href={site.downloadPath}
-                  onClick={() => trackEvent("click_get_app", { location: "footer" })}
-                >
+                <a href={site.downloadPath} onClick={onDownload}>
                   Download
                 </a>
+              </li>
+              <li>
+                <Link to={site.installPath}>How to install</Link>
               </li>
               <li>
                 <Link to="/plus">Phanda Plus</Link>

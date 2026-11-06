@@ -395,6 +395,36 @@ h1 {
   margin: var(--space-md) 0 var(--space-xs);
 }
 
+/* ---- Install QR code ---- */
+/* Computers only: on a phone, the download button already does the job. The
+   white backing keeps the code scannable in the dark theme. */
+.qr-block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-base);
+  margin-top: var(--space-lg);
+  max-width: 40ch;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.qr-block img {
+  flex: none;
+  padding: 6px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+}
+
+.qr-block p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .qr-block {
+    display: none;
+  }
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   html {
