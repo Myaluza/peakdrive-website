@@ -11,7 +11,7 @@ import {
   MapIcon,
   OfflineIcon,
   PeopleIcon,
-  RainIcon,
+  WalletIcon,
 } from "../components/FeatureIcons";
 import { site, downloadUrl, whatsappLink } from "../data/site";
 import { faqs } from "../data/faqs";
@@ -74,36 +74,37 @@ const steps = [
   },
 ];
 
+// Each card says what the driver gets, not how Phanda works behind the scenes.
 const features = [
   {
     icon: <MapIcon />,
-    title: "Live surge map",
-    body: "Animated demand circles show exactly where and when rides are about to spike near you.",
+    title: "Know where to head next",
+    body: "The live map shows where rides should pick up near you, so you spend less time driving around empty.",
   },
   {
     icon: <CalendarIcon />,
-    title: "Events tracked for you",
-    body: "Phanda gathers Durban's events and works out when each one should end and how busy it could be. Some end times are estimates.",
-  },
-  {
-    icon: <PeopleIcon />,
-    title: "Built with drivers",
-    body: "Add an event we missed, confirm other drivers' events, and report when a spot is busy or dead. Top contributors reach the leaderboard.",
+    title: "Plan your shift around what's on",
+    body: "See when concerts, matches and festivals should finish and how busy each could get. Some finish times are estimates.",
   },
   {
     icon: <BellIcon />,
-    title: "Two timed alerts",
-    body: "A heads-up about an hour before, then an alert about 15 minutes before if you're nearby. Choose which events you hear about.",
+    title: "Get there in time",
+    body: "Get a heads-up about an hour before, a second alert about 15 minutes before if you're nearby, and a warning a few hours before rain.",
   },
   {
-    icon: <RainIcon />,
-    title: "Rain alerts and shift log",
-    body: "Hear a few hours before rain is due. Log your shifts and earnings privately: that log stays on your phone.",
+    icon: <PeopleIcon />,
+    title: "Skip the dead spots",
+    body: "Other drivers' live reports show where it's busy or dead right now. Add yours and earn time without ads.",
+  },
+  {
+    icon: <WalletIcon />,
+    title: "See what you really earned",
+    body: "Log your shifts and earnings to see how each one went. The log stays on your phone, so nobody else can see it.",
   },
   {
     icon: <OfflineIcon />,
-    title: "Offline with Plus",
-    body: "With Plus or ad-free time, your last surge map keeps working when your signal drops mid-shift.",
+    title: "Keep going when signal drops",
+    body: "With Plus or ad-free time, your last surge map keeps working on your phone.",
   },
 ];
 

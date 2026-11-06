@@ -48,10 +48,11 @@ export const BellIcon = () => (
   </Icon>
 );
 
-export const RainIcon = () => (
+export const WalletIcon = () => (
   <Icon>
-    <path d="M7 15a4.5 4.5 0 0 1-.5-9A5.5 5.5 0 0 1 17 7a4 4 0 0 1 .5 8z" />
-    <path d="m8 18-1 3M12.5 18l-1 3M17 18l-1 3" />
+    <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3" />
+    <rect x="4" y="8" width="17" height="12" rx="2" />
+    <path d="M16.5 14h.01" />
   </Icon>
 );
 
