@@ -37,10 +37,12 @@ export const site = {
   downloadPath: "/download",
   // Shown next to the buttons, so drivers know what they're getting. Update
   // with each release.
-  apkSizeMb: 34,
+  apkSizeMb: 38,
+  // The live release, shown in the structured data. Update with each release.
+  appVersion: "1.1.0",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "5 November 2026",
+  lastUpdated: "6 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.

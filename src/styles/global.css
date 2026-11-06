@@ -293,6 +293,13 @@ h1 {
 }
 
 /* ---- Footer ---- */
+.site-footer__notice {
+  max-width: 70ch;
+  margin: var(--space-xl) 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .site-footer {
   border-top: 1px solid var(--hairline);
   background: var(--surface);
@@ -358,6 +365,7 @@ h1 {
 
 .faq summary {
   cursor: pointer;
+  min-height: 44px;
   font-weight: 600;
   color: var(--text);
   list-style: none;
@@ -385,6 +393,20 @@ h1 {
 
 .faq details p {
   margin: var(--space-md) 0 var(--space-xs);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 /* ---- Mobile nav ---- */
@@ -445,5 +467,24 @@ h1 {
 
   .site-footer__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* The narrowest phones: keep the wordmark clear of the header button. */
+@media (max-width: 340px) {
+  .brand {
+    font-size: 15px;
+    gap: 6px;
+  }
+  .brand__mark {
+    width: 26px;
+    height: 26px;
+  }
+  .site-header nav {
+    gap: var(--space-sm);
+  }
+  .site-header__cta {
+    padding: 10px 14px;
+    font-size: 14px;
   }
 }

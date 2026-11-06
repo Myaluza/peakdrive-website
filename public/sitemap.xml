@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://phandadrive.co.za/</loc><priority>1.0</priority></url>
-  <url><loc>https://phandadrive.co.za/support</loc><priority>0.8</priority></url>
-  <url><loc>https://phandadrive.co.za/plus</loc><priority>0.6</priority></url>
-  <url><loc>https://phandadrive.co.za/privacy</loc><priority>0.5</priority></url>
-  <url><loc>https://phandadrive.co.za/terms</loc><priority>0.5</priority></url>
-  <url><loc>https://phandadrive.co.za/delete-account</loc><priority>0.5</priority></url>
+  <url><loc>https://phandadrive.co.za/</loc><lastmod>2026-11-06</lastmod><priority>1.0</priority></url>
+  <url><loc>https://phandadrive.co.za/support</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://phandadrive.co.za/plus</loc><lastmod>2026-11-05</lastmod><priority>0.6</priority></url>
+  <url><loc>https://phandadrive.co.za/privacy</loc><lastmod>2026-11-06</lastmod><priority>0.5</priority></url>
+  <url><loc>https://phandadrive.co.za/terms</loc><lastmod>2026-11-06</lastmod><priority>0.5</priority></url>
+  <url><loc>https://phandadrive.co.za/delete-account</loc><lastmod>2026-11-05</lastmod><priority>0.5</priority></url>
 </urlset>

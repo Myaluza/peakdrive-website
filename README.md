@@ -136,9 +136,8 @@ inserted. **Cross-reference legal sections by their `id`** (`#location`,
 
 Analytics is **off until you set a measurement id** (`.env.example` → `VITE_GA4_MEASUREMENT_ID`,
 inlined at build time). When set, `src/analytics.ts` loads gtag.js, sends one `page_view`
-per client-side route change, and fires a `click_get_app` event on the Play CTAs. Those
-CTAs also carry an install `referrer` (`utm_source=peakdrive_web…`) so installs are
-attributable in the Play Console.
+per client-side route change, and fires a `click_get_app` event on the download buttons.
+Until then, count downloads from the GitHub release asset's download count.
 
 To enable on the live site: in this GitHub repo, **Settings → Secrets and variables →
 Actions → Variables**, add `VITE_GA4_MEASUREMENT_ID = G-XXXXXXXXXX`, then re-run the
