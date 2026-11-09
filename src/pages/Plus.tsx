@@ -3,7 +3,7 @@ import LegalPage from "../components/LegalPage";
 import { site, plusPlans } from "../data/site";
 import "../styles/legal.css";
 
-// Information only. Plus is paid for in the app, on Peach Payments' hosted
+// Information only. Plus is paid for in the app, on a payment provider's hosted
 // page — nothing is sold on this site, so this page must never grow a
 // checkout, price button or payment link.
 export default function Plus() {
@@ -11,7 +11,7 @@ export default function Plus() {
     <LegalPage
       title="Phanda Plus"
       seoTitle={`Phanda Plus (coming soon) · ${site.appName}`}
-      description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day, paid by card, 1Voucher or bank. Coming soon.`}
+      description={`${site.appName} Plus: no ads, earlier surge alerts and extra alert filters, from R5 a day. Coming soon.`}
       path="/plus"
       showUpdated={false}
     >
@@ -70,20 +70,13 @@ export default function Plus() {
 
       <h2 id="paying">How to pay</h2>
       <p>
-        In the {site.appName} app, choose a plan and pay on the secure page of{" "}
-        <strong>Peach Payments</strong>, our payment provider. You can pay with:
+        In the {site.appName} app, you&rsquo;ll choose a plan and pay on the secure page of a
+        payment provider. We&rsquo;ll name the provider and list the ways to pay here before Plus
+        goes on sale.
       </p>
-      <ul>
-        <li>a bank card;</li>
-        <li>
-          <strong>1Voucher</strong>, bought with cash at any shop or spaza, so no card or bank
-          account is needed; or
-        </li>
-        <li>straight from your bank account.</li>
-      </ul>
       <p>
-        You enter your card, voucher or bank details on Peach&rsquo;s page, not ours. {site.appName}{" "}
-        never sees them. There&rsquo;s no debit order: you pay once for each plan.
+        You&rsquo;ll enter your payment details on the provider&rsquo;s page, not ours.{" "}
+        {site.appName} never sees them. There&rsquo;s no debit order: you pay once for each plan.
       </p>
 
       <h2 id="earn">Earn ad-free time for free</h2>

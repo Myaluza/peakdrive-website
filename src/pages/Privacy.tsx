@@ -287,10 +287,6 @@ export default function Privacy() {
           <strong>Sentry</strong> — crash and error reporting.
         </li>
         <li>
-          <strong>Peach Payments</strong> — takes payment for Phanda Plus. You enter your card,
-          voucher or bank details on its page, so it processes them and we never receive them.
-        </li>
-        <li>
           <strong>Cyber Circuit</strong> — hosting for this website and our support email. It
           receives the standard request details any website sees (your IP address, browser and the
           page requested), and any emails you send us.
@@ -308,10 +304,6 @@ export default function Privacy() {
           example estimating a finish time). It is sent only public event details, never user data.
         </li>
         <li>
-          <strong>DataForSEO</strong> — searching public event listings. It is sent only search
-          terms such as a city and date, never user data.
-        </li>
-        <li>
           <strong>WhatsApp (Meta)</strong> — only if you contact support there. Meta then processes
           your phone number and the messages you send us under its own terms.
         </li>
@@ -326,15 +318,15 @@ export default function Privacy() {
         property of Phanda and our users.
       </p>
       <p>
-        Two separate automated systems are involved, and they see different things.{" "}
-        <strong>DataForSEO</strong> (Google Events results) and <strong>Google Gemini</strong> build
-        the public event feed from publicly listed events; they do not process your personal account
-        information. When <strong>you submit an event yourself</strong>, the details you type —
-        event name, venue, address, date and expected finish time — are sent to{" "}
-        <strong>Anthropic</strong> to check for duplicates and spam before your submission reaches
-        the review queue. That check also sees the names and venues of other pending submissions, so
-        it can recognise a duplicate. It is not sent your name, your email address or your account
-        identifier.
+        Two separate automated systems are involved, and they see different things. The public event
+        feed is built from events listed publicly on ticketing sites, event listings and sports
+        fixture lists, with <strong>Google Gemini</strong> filling in details such as a finish time;
+        none of that touches your personal account information. When{" "}
+        <strong>you submit an event yourself</strong>, the details you type — event name, venue,
+        address, date and expected finish time — are sent to <strong>Anthropic</strong> to check for
+        duplicates and spam before your submission reaches the review queue. That check also sees
+        the names and venues of other pending submissions, so it can recognise a duplicate. It is
+        not sent your name, your email address or your account identifier.
       </p>
       <p>
         Some submissions are screened automatically and can be turned away without a person looking
@@ -466,15 +458,15 @@ export default function Privacy() {
       <h2 id="plus">10. Phanda Plus and payments (coming soon)</h2>
       <p>
         <strong>Phanda Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll pay
-        for it in the app on the secure page of <strong>Peach Payments</strong>, our payment
-        provider, by bank card, 1Voucher or directly from your bank. You enter those details on
-        Peach&rsquo;s page, not ours, so we never see or keep your card number, voucher PIN or bank
-        login. We keep only:
+        for it in the app on the secure page of a payment provider. We haven&rsquo;t appointed one
+        yet, and we&rsquo;ll name it here and in section 5 before Plus goes on sale. You&rsquo;ll
+        enter your payment details on the provider&rsquo;s page, not ours, so we never see or keep
+        your card number or bank login. We&rsquo;ll keep only:
       </p>
       <ul>
         <li>
           a record of each <strong>payment</strong>: the plan, the amount, when it was made, whether
-          it went through, and Peach Payments&rsquo; reference for it; and
+          it went through, and the provider&rsquo;s reference for it; and
         </li>
         <li>
           a <strong>ledger</strong> of your plans: Plus days, weeks or months bought, and when each

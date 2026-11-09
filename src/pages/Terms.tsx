@@ -98,11 +98,11 @@ export default function Terms() {
       </p>
       <ul>
         <li>
-          <strong>Paying.</strong> You pay for Plus in the app, on the secure page of Peach
-          Payments, our payment provider: by bank card, 1Voucher or directly from your bank. Peach
-          Payments processes the payment under its own terms, and we never see your card, voucher or
-          bank details. A 1Voucher itself is sold by its retailer and governed by its issuer&rsquo;s
-          terms.
+          <strong>Paying.</strong> You pay for Plus in the app, on the secure page of a payment
+          provider, which we&rsquo;ll name here and in the Privacy Policy before Plus goes on sale.
+          The provider processes the payment under its own terms, and we never see your card or bank
+          details. If you pay with a voucher, the voucher itself is sold by its retailer and
+          governed by its issuer&rsquo;s terms.
         </li>
         <li>
           <strong>Prices.</strong> Plus costs{" "}

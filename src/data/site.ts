@@ -52,7 +52,7 @@ export const site = {
   apkSha256: "773174c22ed59c5d8c63e287a06ff905a78131eedf852cfd80c64414334f2978",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "6 November 2026",
+  lastUpdated: "9 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
