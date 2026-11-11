@@ -68,7 +68,7 @@ const steps = [
   },
   {
     title: "Spot demand before it spikes",
-    body: "Surge circles appear 15 minutes before an event lets out. The colour shows how busy it should be, and the size shows the area it covers.",
+    body: "Surge circles appear 10 to 30 minutes before an event lets out, earlier for busier ones. The colour shows how busy it should be, and the size shows the area it covers.",
   },
   {
     title: "Position, and earn",
@@ -91,7 +91,7 @@ const features = [
   {
     icon: <BellIcon />,
     title: "Get there in time",
-    body: "Get a heads-up about an hour before, a second alert about 15 minutes before if you're nearby, and a warning a few hours before rain.",
+    body: "Get a heads-up an hour before an event ends, a second alert as the surge starts if you're nearby, and a warning a few hours before rain.",
   },
   {
     icon: <PeopleIcon />,

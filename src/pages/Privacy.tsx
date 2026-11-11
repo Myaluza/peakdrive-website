@@ -180,7 +180,10 @@ export default function Privacy() {
                 Your device's push notification token, the city it's registered to, and — while
                 Location is on — the latest approximate position described above.
               </td>
-              <td>To send surge alerts scoped to your city and timed to your travel time.</td>
+              <td>
+                To send surge alerts for your city, and the alert as a surge starts only when you're
+                close by.
+              </td>
             </tr>
             <tr>
               <td>Advertising identifiers</td>
@@ -411,9 +414,9 @@ export default function Privacy() {
       </p>
       <p>
         Third, if you have both Location and Notifications switched on, we store your{" "}
-        <strong>latest approximate position</strong> against your device so surge alerts can be
-        timed to reach you with enough notice to actually drive there. Without it we can only send
-        the same alert to everyone in a city at the same moment, which is rarely useful to anyone.
+        <strong>latest approximate position</strong> against your device so the alert as a surge
+        starts only reaches drivers close enough to get there in time. Without it you still get the
+        alert an hour before, which goes to every driver in the city, but not that one.
       </p>
       <p>What that does and doesn't mean:</p>
       <ul>
