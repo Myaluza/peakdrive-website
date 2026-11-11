@@ -67,7 +67,7 @@ export default function Footer() {
 
         <p className="site-footer__notice">
           {site.appName} is an independent app. It isn&rsquo;t affiliated with, endorsed by or
-          sponsored by Uber, Bolt or any other ride-hailing company.
+          sponsored by any e-hailing company.
         </p>
 
         <div className="site-footer__bottom">

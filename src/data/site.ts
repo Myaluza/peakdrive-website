@@ -12,7 +12,7 @@ export const site = {
   tagline: "Stop guessing. Start earning.",
   // Blurb reused from the app's About screen (app/(main)/about.tsx).
   description:
-    "Phanda helps Uber and Bolt drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
+    "Phanda helps e-hailing drivers in Durban and the surrounding areas find high-demand spots by tracking local events in real time. Position yourself smarter, earn more, waste less time.",
 
   domain: "phandadrive.co.za",
   url: "https://phandadrive.co.za",
@@ -52,7 +52,7 @@ export const site = {
   apkSha256: "773174c22ed59c5d8c63e287a06ff905a78131eedf852cfd80c64414334f2978",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "9 November 2026",
+  lastUpdated: "11 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.

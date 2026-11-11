@@ -26,13 +26,13 @@ export const faqs: Faq[] = [
     id: 2,
     question: "Why can't I see any surge circles on the map?",
     answer:
-      "A circle only appears during an event's surge window: from 15 minutes before it ends until an hour after. If nothing is showing, nothing is in that window right now. Drag the events sheet up from the bottom to see what's coming later today.",
+      "A circle only appears during an event's surge window, which grows with how busy it's expected to be: from 10 minutes before a quiet event ends until 30 minutes after, up to 30 minutes before and two hours after for a very busy one. If nothing is showing, nothing is in that window right now. Drag the events sheet up from the bottom to see what's coming later today, with each event's surge times.",
   },
   {
     id: 3,
     question: "What do the circle's colour and size mean?",
     answer:
-      "Colour is expected demand — yellow is low, orange medium, deep orange high, red very high. Size is the actual ground the surge covers, measured from the venue: an airport's circle is genuinely wide, a small bar's is tight. The circle also shrinks as the hour passes, so what you see is how much of the surge is left.",
+      "Colour is expected demand — yellow is low, orange medium, deep orange high, red very high. Size is the actual ground the surge covers, measured from the venue: an airport's circle is genuinely wide, a small bar's is tight. The circle also shrinks as the surge passes, so what you see is how much of it is left.",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const faqs: Faq[] = [
     id: 5,
     question: "When do surge alerts arrive?",
     answer:
-      "There are two, and you can switch either off under Settings → Alert preferences. The first comes about an hour ahead, wherever you are in the city, so you have time to move. The second comes roughly 15 minutes before, and only if you're already close by — that one needs Location switched on.",
+      "There are two, and you can switch either off under Settings → Alert preferences. The first comes an hour before an event ends, wherever you are in the city, so you have time to move. The second comes as the surge starts, 15 to 30 minutes before the end (earlier for busier events), and only if you're already close by. That one needs Location switched on. Phanda Plus adds a third, 90 minutes before the end.",
   },
   {
     id: 6,
@@ -56,13 +56,13 @@ export const faqs: Faq[] = [
     id: 7,
     question: "Why does the app ask how busy it was?",
     answer:
-      'Because our estimate for a venue is only a guess until a driver who was there tells us otherwise. The questions appear an hour after a surge ends, never during it, and you can always tap "Not now". Answers feed straight back into what that venue is rated next week, so the map gets more accurate the more drivers answer.',
+      'Because our estimate for a venue is only a guess until a driver who was there tells us otherwise. The questions appear about two hours after an event you said you were going to ends, never during the surge, and you can always tap "Not now". Answers feed back into how busy we expect that venue to be next time, so the map gets more accurate the more drivers answer.',
   },
   {
     id: 8,
     question: "How do I add an event we've missed?",
     answer:
-      "Tap \"Add event\" on the map. The end time is the important field — a surge happens when an event lets out, not when it starts — and if you don't know it, leave it blank and we'll estimate. Once three other drivers confirm it's real, it goes live for everyone and you earn contributor points.",
+      'Tap "Add event" on the map, or add screenshots of event listings there. Fill in both times: the end time matters most, because a surge happens when an event lets out, not when it starts. Once three other drivers confirm it\'s real, or we check it ourselves, it goes live for everyone and you earn contributor points.',
   },
   {
     id: 9,
@@ -86,7 +86,7 @@ export const faqs: Faq[] = [
     id: 12,
     question: "Why does the app need my location?",
     answer:
-      "For two things: centring the map on you, and timing the 15-minute alert to where you actually are rather than blasting it city-wide. We store an approximate position only, we never sell it, and switching Location off in Settings deletes what we've stored straight away. If you pin an event when submitting it, that pin is saved with the event so other drivers can find it.",
+      "For two things: centring the map on you, and sending the alert as a surge starts only when you're close by, rather than to the whole city. We store an approximate position only, we never sell it, and switching Location off in Settings deletes what we've stored straight away. If you pin an event when submitting it, that pin is saved with the event so other drivers can find it.",
   },
   {
     id: 13,

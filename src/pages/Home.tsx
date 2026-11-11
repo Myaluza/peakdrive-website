@@ -68,7 +68,7 @@ const steps = [
   },
   {
     title: "Spot demand before it spikes",
-    body: "Surge circles appear 15 minutes before an event lets out. The colour shows how busy it should be, and the size shows the area it covers.",
+    body: "Surge circles appear 10 to 30 minutes before an event lets out, earlier for busier ones. The colour shows how busy it should be, and the size shows the area it covers.",
   },
   {
     title: "Position, and earn",
@@ -91,7 +91,7 @@ const features = [
   {
     icon: <BellIcon />,
     title: "Get there in time",
-    body: "Get a heads-up about an hour before, a second alert about 15 minutes before if you're nearby, and a warning a few hours before rain.",
+    body: "Get a heads-up an hour before an event ends, a second alert as the surge starts if you're nearby, and a warning a few hours before rain.",
   },
   {
     icon: <PeopleIcon />,
@@ -120,14 +120,14 @@ const legend = [
 export default function Home() {
   return (
     <>
-      <Seo title={`${site.appName}: surge map for Uber and Bolt drivers in Durban`} path="/" />
+      <Seo title={`${site.appName}: surge map for e-hailing drivers in Durban`} path="/" />
       <JsonLd data={appJsonLd} />
 
       {/* Hero */}
       <section className="hero">
         <div className="container hero__inner">
           <div>
-            <span className="eyebrow">For Uber &amp; Bolt drivers · {liveCityNames}</span>
+            <span className="eyebrow">For e-hailing drivers · {liveCityNames}</span>
             <h1>{site.tagline}</h1>
             <p className="lead">{site.description}</p>
             <div className="hero__cta">
@@ -136,7 +136,7 @@ export default function Home() {
                 See how it works
               </a>
             </div>
-            <p className="hero__note">Free to use · Made for South African e-hailing drivers</p>
+            <p className="hero__note">Free to use · Works whichever platform you drive for</p>
             {site.downloadsOpen && (
               <>
                 {/* Not from Google Play, so Android asks first. Saying so here

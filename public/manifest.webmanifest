@@ -1,7 +1,7 @@
 {
   "name": "Phanda",
   "short_name": "Phanda",
-  "description": "Surge map for Uber and Bolt drivers in Durban.",
+  "description": "Surge map for e-hailing drivers in Durban.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#0B0814",
