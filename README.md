@@ -112,7 +112,7 @@ definition — that marker is the live record; this list is only a summary.
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | `legalName` / `operator` | Needs the real legal/company name (and registered address, if there is one) for the responsible-party block in the legal pages. |
 | `lastUpdated`            | Bumped by hand; nothing enforces it when legal copy changes.                                                                    |
-| `public/og-image.png`    | Auto-generated placeholder; swap for a real social card.                                                                        |
+| `public/og-image.png`    | Social card. No e-hailing company is named on it or anywhere on the site (decided 2026-11-11).                                  |
 
 **Brand colour is genuinely undecided.** The site uses Electric Indigo `#6366F1`,
 the accent documented in the app's `constants/theme.ts`, but the app's own splash

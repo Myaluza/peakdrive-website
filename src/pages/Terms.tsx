@@ -53,8 +53,7 @@ export default function Terms() {
       </p>
       <p>
         <strong>Independent app.</strong> {site.appName} isn&rsquo;t affiliated with, endorsed by or
-        sponsored by Uber, Bolt or any other ride-hailing company. Those names belong to their
-        owners, and we use them only to say who the app is for.
+        sponsored by any e-hailing company, and works alongside whichever platforms you drive for.
       </p>
       <p>
         <strong>Drive safely.</strong> Never interact with the app while your vehicle is moving.
