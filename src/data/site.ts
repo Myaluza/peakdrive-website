@@ -21,6 +21,8 @@ export const site = {
   // (COR 14.3, 12 November 2026). Phanda is the app's name, not a separate entity.
   legalName: "Kubongwa Isibusiso (Pty) Ltd",
   registrationNumber: "2026/913810/07",
+  // Registered office as filed with CIPC; shown so the site meets ECTA s43.
+  registeredAddress: "18 Bhubesi Place, Umlazi AA, Umlazi, KwaZulu-Natal, 4089",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
   // WhatsApp or email support.

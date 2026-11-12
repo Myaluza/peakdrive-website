@@ -591,9 +591,9 @@ export default function Privacy() {
 
       <h2 id="contact">18. Contact us</h2>
       <p>
-        Responsible party: {site.legalName} (registration number {site.registrationNumber}).
-        Information Officer: {site.informationOfficer}. Questions about this policy or your data?
-        Message us on{" "}
+        Responsible party: {site.legalName} (registration number {site.registrationNumber}),{" "}
+        {site.registeredAddress}. Information Officer: {site.informationOfficer}. Questions about
+        this policy or your data? Message us on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp {site.supportWhatsAppDisplay}
         </a>{" "}
