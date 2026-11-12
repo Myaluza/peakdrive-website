@@ -36,10 +36,11 @@ export default function Privacy() {
       <h2 id="who-we-are">1. Who we are</h2>
       <p>
         {site.appName} (&ldquo;{site.appName}&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;), operated
-        by {site.operator}, provides a mobile app that helps e-hailing drivers in South Africa find
-        high-demand areas by tracking local events in real time. This policy explains what personal
-        information we process when you use the {site.appName} app and website, and your rights
-        under the <strong>Protection of Personal Information Act, 2013 (POPIA)</strong>.
+        by {site.legalName} (registration number {site.registrationNumber}), provides a mobile app
+        that helps e-hailing drivers in South Africa find high-demand areas by tracking local events
+        in real time. This policy explains what personal information we process when you use the{" "}
+        {site.appName} app and website, and your rights under the{" "}
+        <strong>Protection of Personal Information Act, 2013 (POPIA)</strong>.
       </p>
       <p>
         The responsible party for your personal information is {site.legalName}. Our Information
@@ -590,8 +591,9 @@ export default function Privacy() {
 
       <h2 id="contact">18. Contact us</h2>
       <p>
-        Responsible party: {site.legalName}, operated by {site.operator}. Information Officer:{" "}
-        {site.informationOfficer}. Questions about this policy or your data? Message us on{" "}
+        Responsible party: {site.legalName} (registration number {site.registrationNumber}).
+        Information Officer: {site.informationOfficer}. Questions about this policy or your data?
+        Message us on{" "}
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
           WhatsApp {site.supportWhatsAppDisplay}
         </a>{" "}

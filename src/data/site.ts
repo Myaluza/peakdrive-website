@@ -17,9 +17,10 @@ export const site = {
   domain: "phandadrive.co.za",
   url: "https://phandadrive.co.za",
 
-  // Legal / responsible-party details — PLACEHOLDER, confirm before publishing.
-  legalName: "Phanda",
-  operator: "Myaluza",
+  // Legal / responsible-party details, from the CIPC registration certificate
+  // (COR 14.3, 12 November 2026). Phanda is the app's name, not a separate entity.
+  legalName: "Kubongwa Isibusiso (Pty) Ltd",
+  registrationNumber: "2026/913810/07",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
   // WhatsApp or email support.
@@ -52,7 +53,7 @@ export const site = {
   apkSha256: "773174c22ed59c5d8c63e287a06ff905a78131eedf852cfd80c64414334f2978",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "11 November 2026",
+  lastUpdated: "12 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.

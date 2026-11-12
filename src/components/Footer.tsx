@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className="site-footer__bottom">
           <span>
-            © {year} {site.legalName}. All rights reserved.
+            © {year} {site.legalName} (Reg. {site.registrationNumber}). All rights reserved.
           </span>
           <span>Made for South African e-hailing drivers.</span>
         </div>
