@@ -208,6 +208,10 @@ export default function Terms() {
         or email <a href={emailLink}>{site.supportEmail}</a>. See also our{" "}
         <Link to="/privacy">Privacy Policy</Link>.
       </p>
+      <p>
+        {site.legalName} (registration number {site.registrationNumber}). Registered office and
+        address for legal notices: {site.registeredAddress}.
+      </p>
     </LegalPage>
   );
 }

@@ -70,6 +70,8 @@ export default function Footer() {
           sponsored by any e-hailing company.
         </p>
 
+        <p className="site-footer__notice">Registered office: {site.registeredAddress}.</p>
+
         <div className="site-footer__bottom">
           <span>
             © {year} {site.legalName} (Reg. {site.registrationNumber}). All rights reserved.
