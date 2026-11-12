@@ -32,9 +32,9 @@ export default function Terms() {
       <h2 id="acceptance">1. Acceptance of these terms</h2>
       <p>
         These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the {site.appName} mobile
-        app and website (together, the &ldquo;Service&rdquo;), operated by {site.operator}. By
-        downloading, accessing or using the Service, you agree to these Terms. If you don't agree,
-        please don't use the Service.
+        app and website (together, the &ldquo;Service&rdquo;), operated by {site.legalName}{" "}
+        (registration number {site.registrationNumber}). By downloading, accessing or using the
+        Service, you agree to these Terms. If you don't agree, please don't use the Service.
       </p>
 
       <h2 id="eligibility">2. Eligibility</h2>
