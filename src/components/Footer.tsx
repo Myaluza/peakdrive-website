@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { site, whatsappLink, emailLink } from "../data/site";
+import { site, emailLink } from "../data/site";
 import { useDownloadClick } from "../useDownloadClick";
 
 export default function Footer() {
@@ -37,11 +37,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/support">Support &amp; FAQ</Link>
-              </li>
-              <li>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  WhatsApp support
-                </a>
               </li>
               <li>
                 <a href={emailLink}>Email support</a>

@@ -25,12 +25,10 @@ export const site = {
   registeredAddress: "18 Bhubesi Place, Umlazi AA, Umlazi, KwaZulu-Natal, 4089",
   jurisdiction: "the Republic of South Africa",
   // Registered with the Information Regulator (POPIA s55). Reached through
-  // WhatsApp or email support.
+  // email support.
   informationOfficer: "Thuthukani Ngubane",
 
-  // International format, no leading "+", for wa.me links.
-  supportWhatsApp: "27671884585",
-  supportWhatsAppDisplay: "+27 67 188 4585",
+  // Email is the only support channel.
   supportEmail: "support@phandadrive.co.za",
 
   packageId: "com.myaluza.PeakDrive",
@@ -55,7 +53,7 @@ export const site = {
   apkSha256: "773174c22ed59c5d8c63e287a06ff905a78131eedf852cfd80c64414334f2978",
 
   // Keep in sync with the date the legal copy was last edited.
-  lastUpdated: "12 November 2026",
+  lastUpdated: "13 November 2026",
 
   // The single statement of coverage on this site — the home page reads these
   // flags rather than restating coverage in prose.
@@ -84,7 +82,6 @@ export const plusPlans = [
   { period: "1 month", priceRand: 50 },
 ];
 
-export const whatsappLink = `https://wa.me/${site.supportWhatsApp}`;
 export const emailLink = `mailto:${site.supportEmail}`;
 
 // Absolute, for JSON-LD; the buttons use the relative `site.downloadPath`.

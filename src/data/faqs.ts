@@ -68,7 +68,7 @@ export const faqs: Faq[] = [
     id: 9,
     question: "How do I report an event that's wrong or isn't real?",
     answer:
-      "Open the menu → Verify Events and tap \"Not real\" on it. That flags it for review rather than deleting it, so one tap can't remove a real event. For an event that's real but has the wrong time or place, use WhatsApp Support at the bottom of this screen.",
+      "Open the menu → Verify Events and tap \"Not real\" on it. That flags it for review rather than deleting it, so one tap can't remove a real event. For an event that's real but has the wrong time or place, use Email Support at the bottom of this screen.",
   },
   {
     id: 10,

@@ -3,7 +3,7 @@ import LegalPage from "../components/LegalPage";
 import JsonLd from "../components/JsonLd";
 import FaqAccordion from "../components/FaqAccordion";
 import { faqs } from "../data/faqs";
-import { site, whatsappLink, emailLink } from "../data/site";
+import { site, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 // FAQPage rich result — mirrors the visible accordion below (Google requires the
@@ -45,17 +45,12 @@ export default function Support() {
 
       <h2 id="contact">Contact support</h2>
       <p>
-        We're a small team building for South African drivers. WhatsApp is the fastest way to reach
-        us, or you can email <a href={emailLink}>{site.supportEmail}</a>.
+        We're a small team building for South African drivers. Email us at{" "}
+        <a href={emailLink}>{site.supportEmail}</a> and a real person will reply.
       </p>
       <div className="contact-row">
-        <a
-          className="btn btn-whatsapp"
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp support
+        <a className="btn btn-primary" href={emailLink}>
+          Email support
         </a>
       </div>
 

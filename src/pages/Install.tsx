@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import DownloadBadge from "../components/DownloadBadge";
 import InstallQr from "../components/InstallQr";
 import LegalPage from "../components/LegalPage";
-import { site, whatsappLink, emailLink } from "../data/site";
+import { site, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 // Android's wording differs between phones and versions, so these steps describe
@@ -119,11 +119,8 @@ export default function Install() {
 
       <h2 id="help">Still stuck?</h2>
       <p>
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp us
-        </a>{" "}
-        or email <a href={emailLink}>{site.supportEmail}</a> and tell us your phone model and what
-        the screen says. There&rsquo;s more help on the <Link to="/support">Support page</Link>.
+        Email <a href={emailLink}>{site.supportEmail}</a> and tell us your phone model and what the
+        screen says. There&rsquo;s more help on the <Link to="/support">Support page</Link>.
       </p>
     </LegalPage>
   );
