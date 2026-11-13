@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
-import { site, whatsappLink, emailLink } from "../data/site";
+import { site, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 export default function DeleteAccount() {
@@ -35,18 +35,14 @@ export default function DeleteAccount() {
         action cannot be undone.
       </p>
 
-      <h2 id="by-whatsapp">Option 2 — Ask us on WhatsApp</h2>
-      <p>
-        If you can't access the app, message us on WhatsApp and we'll delete your account for you:
-      </p>
+      <h2 id="by-email">Option 2 — Email us</h2>
+      <p>If you can't access the app, email us and we'll delete your account for you:</p>
       <p>
         <a
-          className="btn btn-whatsapp"
-          href={`${whatsappLink}?text=Please%20delete%20my%20Phanda%20account`}
-          target="_blank"
-          rel="noopener noreferrer"
+          className="btn btn-primary"
+          href={`${emailLink}?subject=Please%20delete%20my%20Phanda%20account`}
         >
-          WhatsApp {site.supportWhatsAppDisplay}
+          Email {site.supportEmail}
         </a>
       </p>
       <p>
@@ -97,11 +93,7 @@ export default function DeleteAccount() {
       <h2 id="more">More information</h2>
       <p>
         For how we handle your data generally, see our <Link to="/privacy">Privacy Policy</Link>.
-        Questions? Message us on{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp
-        </a>{" "}
-        or email <a href={emailLink}>{site.supportEmail}</a>.
+        Questions? Email <a href={emailLink}>{site.supportEmail}</a>.
       </p>
     </LegalPage>
   );

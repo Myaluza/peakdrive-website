@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LegalPage from "../components/LegalPage";
 import type { TocItem } from "../components/LegalPage";
-import { site, whatsappLink, emailLink } from "../data/site";
+import { site, emailLink } from "../data/site";
 import "../styles/legal.css";
 
 const toc: TocItem[] = [
@@ -45,11 +45,7 @@ export default function Privacy() {
       <p>
         The responsible party for your personal information is {site.legalName}. Our Information
         Officer, registered with the Information Regulator, is {site.informationOfficer}. You can
-        reach them, and us, on{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp {site.supportWhatsAppDisplay}
-        </a>{" "}
-        or at <a href={emailLink}>{site.supportEmail}</a>.
+        reach them, and us, at <a href={emailLink}>{site.supportEmail}</a>.
       </p>
 
       <h2 id="data-we-collect">2. Information we collect</h2>
@@ -213,7 +209,7 @@ export default function Privacy() {
             </tr>
             <tr>
               <td>Support messages</td>
-              <td>The content of messages you send us on WhatsApp or email.</td>
+              <td>The content of emails you send us.</td>
               <td>To respond to and support you.</td>
             </tr>
           </tbody>
@@ -307,10 +303,6 @@ export default function Privacy() {
           <strong>Google Gemini</strong> — enriching events found in public event listings (for
           example estimating a finish time). It is sent only public event details, never user data.
         </li>
-        <li>
-          <strong>WhatsApp (Meta)</strong> — only if you contact support there. Meta then processes
-          your phone number and the messages you send us under its own terms.
-        </li>
       </ul>
       <p>
         <strong>Other drivers</strong> see a limited amount too: the events you submit, and your
@@ -335,11 +327,8 @@ export default function Privacy() {
       <p>
         Some submissions are screened automatically and can be turned away without a person looking
         at them — for example a likely duplicate of an event already on the map, or an event without
-        a reliable end time. If you think one of yours was wrongly turned away, message us on{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp {site.supportWhatsAppDisplay}
-        </a>{" "}
-        and ask for a human review.
+        a reliable end time. If you think one of yours was wrongly turned away, email{" "}
+        <a href={emailLink}>{site.supportEmail}</a> and ask for a human review.
       </p>
       <p>
         Rain alerts use the <strong>MET Norway</strong> weather forecast. Our server asks it for the
@@ -548,12 +537,9 @@ export default function Privacy() {
         <li>lodge a complaint with the Information Regulator (South Africa).</li>
       </ul>
       <p>
-        To exercise any of these, contact our Information Officer, {site.informationOfficer}, on{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp {site.supportWhatsAppDisplay}
-        </a>{" "}
-        or at <a href={emailLink}>{site.supportEmail}</a>. You can contact the Information Regulator
-        at <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
+        To exercise any of these, contact our Information Officer, {site.informationOfficer}, at{" "}
+        <a href={emailLink}>{site.supportEmail}</a>. You can contact the Information Regulator at{" "}
+        <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a>.
       </p>
 
       <h2 id="deletion">14. Deleting your account</h2>
@@ -593,11 +579,7 @@ export default function Privacy() {
       <p>
         Responsible party: {site.legalName} (registration number {site.registrationNumber}),{" "}
         {site.registeredAddress}. Information Officer: {site.informationOfficer}. Questions about
-        this policy or your data? Message us on{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          WhatsApp {site.supportWhatsAppDisplay}
-        </a>{" "}
-        or email <a href={emailLink}>{site.supportEmail}</a>.
+        this policy or your data? Email <a href={emailLink}>{site.supportEmail}</a>.
       </p>
     </LegalPage>
   );

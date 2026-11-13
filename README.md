@@ -12,7 +12,7 @@ routes below must keep working:
 | `/privacy`        | Privacy Policy — Play Store requirement, linked from the app's About screen |
 | `/terms`          | Terms of Service — linked from the app's About screen                       |
 | `/delete-account` | Account & data deletion — Google Play data-deletion URL                     |
-| `/support`        | FAQ + WhatsApp/email support                                                |
+| `/support`        | FAQ + email support                                                         |
 
 ## Stack
 

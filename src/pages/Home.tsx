@@ -13,7 +13,7 @@ import {
   PeopleIcon,
   WalletIcon,
 } from "../components/FeatureIcons";
-import { site, downloadUrl, whatsappLink } from "../data/site";
+import { site, downloadUrl, emailLink } from "../data/site";
 import { faqs } from "../data/faqs";
 import "../styles/home.css";
 
@@ -271,13 +271,8 @@ export default function Home() {
           </div>
           <div className="organiser-cta">
             {site.downloadsOpen && <DownloadBadge location="organisers" />}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Ask us on WhatsApp
+            <a href={emailLink} className="btn btn-secondary">
+              Email us
             </a>
           </div>
         </div>
