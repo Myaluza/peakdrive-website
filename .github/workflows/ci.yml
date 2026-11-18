@@ -31,3 +31,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # Every page renders, with its title and support email, no company
+      # names or download links, and the full FAQ (scripts/check-pages.mjs).
+      - name: Check the built pages
+        run: npm run check:pages
