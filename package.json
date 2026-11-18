@@ -10,6 +10,7 @@
     "build": "vite-react-ssg build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "check:pages": "node scripts/check-pages.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
