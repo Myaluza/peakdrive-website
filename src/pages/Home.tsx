@@ -152,7 +152,7 @@ export default function Home() {
 
           <Phone
             src="/screenshots/surge-circle.jpg"
-            alt="Phanda app showing a live surge circle around Moses Mabhida Stadium in Durban"
+            alt="Phanda app at night showing a live surge circle over King Shaka International Airport, north of Durban"
             priority
           />
         </div>
