@@ -279,7 +279,8 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Google</strong> — Maps (map display &amp; geocoding), AdMob (ads), Analytics
-          (usage measurement), Firebase Cloud Messaging (push delivery) and Google Sign-In.
+          (usage measurement), Firebase Cloud Messaging (push delivery), Google Sign-In and, once
+          Plus is on sale, Google Play billing (payments for Plus, see section 10).
         </li>
         <li>
           <strong>Anthropic</strong> — automated screening of events you submit.
@@ -449,22 +450,26 @@ export default function Privacy() {
         push tokens.
       </p>
 
-      <h2 id="plus">10. Phanda Plus and payments (coming soon)</h2>
+      <h2 id="plus">10. Phanda Plus and payments</h2>
       <p>
-        <strong>Phanda Plus isn&rsquo;t available yet.</strong> When it launches, you&rsquo;ll pay
-        for it in the app on the secure page of a payment provider. We haven&rsquo;t appointed one
-        yet, and we&rsquo;ll name it here and in section 5 before Plus goes on sale. You&rsquo;ll
-        enter your payment details on the provider&rsquo;s page, not ours, so we never see or keep
-        your card number or bank login. We&rsquo;ll keep only:
+        Plus can be given free, and isn&rsquo;t on sale yet. When it goes on sale, you&rsquo;ll buy
+        it in the app installed from Google Play, through{" "}
+        <strong>Google Play&rsquo;s billing</strong>. Google processes the payment under its own
+        terms and privacy policy. You pay Google, not us, so we never see or keep your card number
+        or bank details. We keep only:
       </p>
       <ul>
         <li>
-          a record of each <strong>payment</strong>: the plan, the amount, when it was made, whether
-          it went through, and the provider&rsquo;s reference for it; and
+          a record of each <strong>purchase</strong>: the plan, the amount, when it was made,
+          whether it went through, and Google&rsquo;s order reference for it, which we check with
+          Google before switching Plus on;
         </li>
         <li>
-          a <strong>ledger</strong> of your plans: Plus days, weeks or months bought, and when each
-          started and ends.
+          a record of each <strong>free gift</strong> of Plus: whether it was your free first week
+          or an invite day, how many days, and when; and
+        </li>
+        <li>
+          when your <strong>Plus ends</strong>.
         </li>
       </ul>
       <p>

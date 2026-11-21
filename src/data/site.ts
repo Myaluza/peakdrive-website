@@ -74,7 +74,7 @@ export const site = {
   serviceArea: ["Durban CBD", "Umhlanga", "Ballito", "Pinetown", "Westville", "Amanzimtoti"],
 };
 
-// Phanda Plus (coming soon), paid in the app. Read by the /plus page
+// Phanda Plus prices, paid in the Play Store app through Google Play billing. Read by the /plus page
 // and Terms §6 so the two can't quote different prices.
 export const plusPlans = [
   { period: "1 day", priceRand: 5 },
