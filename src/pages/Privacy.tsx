@@ -164,11 +164,12 @@ export default function Privacy() {
               <td>Invite codes</td>
               <td>
                 Your invite code and, if you joined with someone&rsquo;s code, which account invited
-                you.
+                you, when you used it, and when your inviter&rsquo;s day was given.
               </td>
               <td>
-                To give you both the ad-free day and to stop the same invite being used twice.
-                Neither of you can see the other&rsquo;s details through it.
+                To give you each a day of Phanda Plus, your inviter&rsquo;s once you open the app
+                again on another day, and to stop the same invite being used twice. Neither of you
+                can see the other&rsquo;s details through it.
               </td>
             </tr>
             <tr>
