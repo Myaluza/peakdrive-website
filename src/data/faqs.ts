@@ -110,7 +110,7 @@ export const faqs: Faq[] = [
     id: 16,
     question: "How do invite codes work?",
     answer:
-      "Your code is on your Profile. When a new driver enters it in their first 14 days, you both get a day without ads (up to 10 invites a month for you).",
+      "Your code is on your Profile. When a new driver enters it in their first 14 days, they get a day of Phanda Plus straight away, and you get one when they open Phanda again on another day (up to 10 a month for you).",
   },
   {
     id: 17,
