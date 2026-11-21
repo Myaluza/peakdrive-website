@@ -86,7 +86,7 @@ const features = [
   {
     icon: <CalendarIcon />,
     title: "Plan your shift around what's on",
-    body: "See when concerts, matches and festivals should finish and how busy each could get. Some finish times are estimates.",
+    body: "See when concerts, matches and festivals should finish and how busy each could get. With Plus, the shift planner puts every surge until 06:00 on one timeline. Some finish times are estimates.",
   },
   {
     icon: <BellIcon />,
@@ -101,7 +101,7 @@ const features = [
   {
     icon: <WalletIcon />,
     title: "See what you really earned",
-    body: "Log your shifts and earnings to see how each one went. The log stays on your phone, so nobody else can see it.",
+    body: "Log your shifts and earnings for free. With Plus, see which parts of your week pay and how surge shifts compare with quiet ones. The log stays on your phone.",
   },
   {
     icon: <OfflineIcon />,

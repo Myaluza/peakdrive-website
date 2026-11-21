@@ -136,6 +136,12 @@ export const faqs: Faq[] = [
     answer:
       "Yes, while you have Phanda Plus or ad-free time. The map, events and your settings open from the last time you were online, and changes like 'I'm going' send when you're back online. Adding events, live reports and buying Plus need a connection. When your Plus and ad-free time have both run out, Phanda needs a connection again.",
   },
+  {
+    id: 21,
+    question: "What's free, and what does Phanda Plus add?",
+    answer:
+      "Free for everyone: the live map with surge circles, the events list, the hour-before and surge-start alerts, live reports, and your shift log with this week's totals and best hours. Plus adds the shift planner, earnings insights, a 90-minute alert, quiet hours and a distance limit for alerts, offline use and no ads. New drivers get their first week of Plus free, and each driver you invite adds a day.",
+  },
 ];
 
 export default faqs;
