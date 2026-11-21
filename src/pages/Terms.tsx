@@ -101,8 +101,7 @@ export default function Terms() {
           <strong>Paying.</strong> You buy Plus in the {site.appName} app installed from Google
           Play, through Google Play&rsquo;s billing. Google processes the payment under the Google
           Play terms, and we never see your card or bank details. Plus isn&rsquo;t sold anywhere
-          else: not on this website, not in the app downloaded from this site, and not with vouchers
-          or credit.
+          else: not on this website, and not in the app downloaded from this site.
         </li>
         <li>
           <strong>Prices.</strong> Plus costs{" "}
