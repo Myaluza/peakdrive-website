@@ -88,21 +88,20 @@ export default function Terms() {
         your account for false, misleading or duplicate listings.
       </p>
 
-      <h2 id="membership">6. Phanda Plus (coming soon)</h2>
+      <h2 id="membership">6. Phanda Plus</h2>
       <p>
-        <strong>Phanda Plus isn&rsquo;t available yet.</strong> {site.appName} is free to use and
-        supported by ads. The free tier keeps the live surge map, the events list, event alerts,
-        live reports, community submissions and verification, and the shift log. Plus adds the
-        features listed on the <Link to="/plus">Phanda Plus</Link> page. When Plus launches, these
-        terms will apply to it:
+        {site.appName} is free to use and supported by ads. The free tier keeps the live surge map,
+        the events list, event alerts, live reports, community submissions and verification, and the
+        shift log. Phanda Plus adds the features listed on the <Link to="/plus">Phanda Plus</Link>{" "}
+        page, such as the shift planner and earnings insights. Plus can be given free (below), and
+        isn&rsquo;t on sale yet. When it goes on sale, these terms will apply to buying it:
       </p>
       <ul>
         <li>
-          <strong>Paying.</strong> You pay for Plus in the app, on the secure page of a payment
-          provider, which we&rsquo;ll name here and in the Privacy Policy before Plus goes on sale.
-          The provider processes the payment under its own terms, and we never see your card or bank
-          details. If you pay with a voucher, the voucher itself is sold by its retailer and
-          governed by its issuer&rsquo;s terms.
+          <strong>Paying.</strong> You buy Plus in the {site.appName} app installed from Google
+          Play, through Google Play&rsquo;s billing. Google processes the payment under the Google
+          Play terms, and we never see your card or bank details. Plus isn&rsquo;t sold anywhere
+          else: not on this website, and not in the app downloaded from this site.
         </li>
         <li>
           <strong>Prices.</strong> Plus costs{" "}
@@ -114,23 +113,33 @@ export default function Terms() {
               </strong>
             </span>
           ))}
-          , paid when you choose the plan. We&rsquo;ll show any price change in the app before it
-          applies to you.
+          , paid when you choose the plan. Google Play shows the final price before you pay.
+          We&rsquo;ll show any price change in the app before it applies to you.
         </li>
         <li>
-          <strong>No auto-renew.</strong> Plus runs for the period you choose and then stops. We
-          never charge you for a new period unless you choose and pay for it.
+          <strong>No auto-renew.</strong> Each plan is a single purchase, not a subscription. Plus
+          runs for the period you choose and then stops. You&rsquo;re never charged for a new period
+          unless you choose and pay for it.
         </li>
         <li>
-          <strong>Refunds.</strong> Plus starts as soon as your payment is confirmed, so a period
-          that has already started isn&rsquo;t refunded. This doesn&rsquo;t limit any right you have
-          under the Consumer Protection Act or the Electronic Communications and Transactions Act.
-          If you&rsquo;re charged but Plus doesn&rsquo;t switch on, or you&rsquo;re charged twice,
-          contact us and we&rsquo;ll put it right.
+          <strong>Refunds.</strong> Plus starts as soon as Google confirms your payment. You can ask
+          for a refund through Google Play, under Google Play&rsquo;s refund policy. If a purchase
+          is refunded, we may remove the Plus time it bought. This doesn&rsquo;t limit any right you
+          have under the Consumer Protection Act or the Electronic Communications and Transactions
+          Act. If you&rsquo;re charged but Plus doesn&rsquo;t switch on, contact us and we&rsquo;ll
+          put it right.
         </li>
         <li>
-          <strong>What Plus includes:</strong> no ads, earlier surge alerts (about 90 minutes ahead
-          instead of an hour), extra alert filters and offline use.
+          <strong>Plus given free.</strong> Each new account gets 7 days of Plus when it signs up,
+          once per driver. When a new driver enters your invite code, they get a day of Plus, and
+          you get a day when they open {site.appName} again on a later day, up to 10 days a month.
+          Free days have no cash value and can&rsquo;t be exchanged. We may remove free days, and
+          suspend invite rewards, where accounts were created or used to collect them unfairly, for
+          example several accounts for one person.
+        </li>
+        <li>
+          <strong>Plus belongs to your account.</strong> It stays with you if you change phones or
+          reinstall, and ends if you delete your account.
         </li>
         <li>
           <strong>Ad-free time without paying.</strong> You can also earn ad-free time by
@@ -140,7 +149,7 @@ export default function Terms() {
       </ul>
       <p>
         See <Link to="/plus">Phanda Plus</Link> for a plain-language summary, and our{" "}
-        <Link to="/privacy#plus">Privacy Policy</Link> for what we keep when you pay.
+        <Link to="/privacy#plus">Privacy Policy</Link> for what we keep about your Plus.
       </p>
 
       <h2 id="acceptable-use">7. Acceptable use</h2>
