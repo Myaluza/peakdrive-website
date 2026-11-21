@@ -91,9 +91,10 @@ export default function Terms() {
       <h2 id="membership">6. Phanda Plus (coming soon)</h2>
       <p>
         <strong>Phanda Plus isn&rsquo;t available yet.</strong> {site.appName} is free to use and
-        supported by ads, and the free tier keeps every feature that helps you earn: the live surge
-        map, event alerts, community submissions and verification. When Plus launches, these terms
-        will apply to it:
+        supported by ads. The free tier keeps the live surge map, the events list, event alerts,
+        live reports, community submissions and verification, and the shift log. Plus adds the
+        features listed on the <Link to="/plus">Phanda Plus</Link> page. When Plus launches, these
+        terms will apply to it:
       </p>
       <ul>
         <li>
