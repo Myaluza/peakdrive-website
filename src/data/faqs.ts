@@ -140,7 +140,13 @@ export const faqs: Faq[] = [
     id: 21,
     question: "What's free, and what does Phanda Plus add?",
     answer:
-      "Free for everyone: the live map with surge circles, the events list, the hour-before and surge-start alerts, live reports, and your shift log with this week's totals and best hours. Plus adds the shift planner, earnings insights, a 90-minute alert, quiet hours and a distance limit for alerts, offline use and no ads. New drivers get their first week of Plus free, and each driver you invite adds a day.",
+      "Free for everyone: the live map with surge circles, the events list with each event's details, the hour-before and surge-start alerts, live reports, and your shift log with this week's totals and best hours. Plus adds the shift planner, a worth-it verdict on each event, earnings insights, a 90-minute alert, quiet hours and a distance limit for alerts, offline use and no ads. New drivers get their first week of Plus free, and each driver you invite adds a day.",
+  },
+  {
+    id: 22,
+    question: "How do I see more about an event?",
+    answer:
+      "Tap an event's name, or Details, in the events sheet. In the shift planner, press and hold a surge. You'll see what the event is, when it starts and finishes and whether the finish time is confirmed or estimated, the surge window, the venue and address, how busy drivers found the venue before, and how many drivers are going. With Phanda Plus you also get a verdict, Worth it, Maybe or Probably skip, with the reasons behind it and what your own shifts earned during surges there. Without Plus or ad-free time, an ad may show before the details open.",
   },
 ];
 

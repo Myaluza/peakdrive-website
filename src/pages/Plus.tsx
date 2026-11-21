@@ -14,7 +14,7 @@ export default function Plus() {
     <LegalPage
       title="Phanda Plus"
       seoTitle={`Phanda Plus · ${site.appName}`}
-      description={`${site.appName} Plus: the shift planner, earnings insights, a 90-minute surge alert, offline use and no ads. Your first week is free.`}
+      description={`${site.appName} Plus: the shift planner, a worth-it verdict on each event, earnings insights, a 90-minute surge alert, offline use and no ads. Your first week is free.`}
       path="/plus"
       showUpdated={false}
     >
@@ -44,6 +44,11 @@ export default function Plus() {
         <li>
           <strong>Shift planner.</strong> Every surge until 06:00 on one timeline, so you pick when
           to start instead of chasing whatever comes next.
+        </li>
+        <li>
+          <strong>Is it worth it?</strong> On each event&rsquo;s details, a verdict (Worth it, Maybe
+          or Probably skip) that weighs the crowd, what drivers found there before, how many are
+          going, the weather and the drive, with your own earnings there once you have them.
         </li>
         <li>
           <strong>Earnings insights.</strong> Which parts of your week pay, the hours that
