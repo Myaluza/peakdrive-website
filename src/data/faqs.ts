@@ -38,7 +38,7 @@ export const faqs: Faq[] = [
     id: 4,
     question: 'What does "I\'m going" do?',
     answer:
-      "It adds you to the count on that event, and every other driver sees it. That's deliberate. If twelve drivers have already said they're heading to one venue, you're joining a queue, not a surge — and you'll usually earn more at the quieter event three kilometres away. Tap it again to remove yourself.",
+      "It adds you to the count on that event, and every other driver sees it. That's deliberate. If twelve drivers have already said they're heading to one venue, you're joining a queue, not a surge — and you'll usually earn more at the quieter event three kilometres away. About 30 minutes before the surge starts, we send you a reminder in place of the hour-before alert, even if your alert settings would skip that event. Quiet hours still apply. Tap it again to remove yourself.",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ export const faqs: Faq[] = [
     id: 7,
     question: "Why does the app ask how busy it was?",
     answer:
-      'Because our estimate for a venue is only a guess until a driver who was there tells us otherwise. The questions appear about two hours after an event you said you were going to ends, never during the surge, and you can always tap "Not now". Answers feed back into how busy we expect that venue to be next time, so the map gets more accurate the more drivers answer.',
+      'Because our estimate for a venue is only a guess until a driver who was there tells us otherwise. The questions appear about two hours after an event you said you were going to ends, never during the surge. They show in the events sheet and on the event\'s details, and you can always tap "Not now". Answers feed back into how busy we expect that venue to be next time, so the map gets more accurate the more drivers answer.',
   },
   {
     id: 8,
@@ -146,7 +146,7 @@ export const faqs: Faq[] = [
     id: 22,
     question: "How do I see more about an event?",
     answer:
-      "Tap an event's name, or Details, in the events sheet. In the shift planner, press and hold a surge. You'll see what the event is, when it starts and finishes and whether the finish time is confirmed or estimated, the surge window, the venue and address, how busy drivers found the venue before, and how many drivers are going. With Phanda Plus you also get a verdict, Worth it, Maybe or Probably skip, with the reasons behind it and what your own shifts earned during surges there. Without Plus or ad-free time, an ad may show before the details open.",
+      "Tap an event's name, or Details, in the events sheet. In the shift planner, press and hold a surge. Tapping a surge alert opens them too. You'll see what the event is, when it starts and finishes and whether the finish time is confirmed or estimated, the surge window, the venue and address, how busy drivers found the venue before, and how many drivers are going. With Phanda Plus you also get a verdict, Worth it, Maybe or Probably skip, with the reasons behind it and what your own shifts earned during surges there. Without Plus or ad-free time, an ad may show before the details open, but never when you come from an alert.",
   },
 ];
 
