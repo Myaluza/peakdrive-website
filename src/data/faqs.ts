@@ -140,13 +140,25 @@ export const faqs: Faq[] = [
     id: 21,
     question: "What's free, and what does Phanda Plus add?",
     answer:
-      "Free for everyone: the live map with surge circles, the events list with each event's details, the hour-before and surge-start alerts, live reports, and your shift log with this week's totals and best hours. Plus adds the shift planner, a worth-it verdict on each event, earnings insights, a 90-minute alert, quiet hours and a distance limit for alerts, offline use and no ads. New drivers get their first week of Plus free, and each driver you invite adds a day.",
+      "Free for everyone: the live map with surge circles, the events list with each event's details, the hour-before and surge-start alerts, live reports, the SOS button and danger reports, and your shift log with this week's totals and best hours. Plus adds the shift planner, a worth-it verdict on each event, earnings insights, a 90-minute alert, quiet hours and a distance limit for alerts, offline use and no ads. New drivers get their first week of Plus free, and each driver you invite adds a day.",
   },
   {
     id: 22,
     question: "How do I see more about an event?",
     answer:
       "Tap an event's name, or Details, in the events sheet. In the shift planner, press and hold a surge. Tapping a surge alert opens them too. You'll see what the event is, when it starts and finishes and whether the finish time is confirmed or estimated, the surge window, the venue and address, how busy drivers found the venue before, and how many drivers are going. With Phanda Plus you also get a verdict, Worth it, Maybe or Probably skip, with the reasons behind it and what your own shifts earned during surges there. Without Plus or ad-free time, an ad may show before the details open, but never when you come from an alert.",
+  },
+  {
+    id: 23,
+    question: "How do I warn other drivers about danger?",
+    answer:
+      "Pull over first. Tap Report on the map, then Report danger, and pick a hijacking, robbery, blocked road, protest or other danger. It marks where you are, without your name, for 6 hours for a hijacking or robbery and 3 hours for the rest. Other drivers can tap it and say it's still there or not. Once another driver confirms it, drivers within 3 km get a warning, even in quiet hours (turn it off in Alert preferences). Reports that more drivers dispute disappear. Reports come from drivers and aren't checked by Phanda, so if you're in danger, call for help first.",
+  },
+  {
+    id: 24,
+    question: "What does the SOS button do?",
+    answer:
+      "The red SOS button on the map opens your phone app ready to call the police (10111), 112 or an ambulance (10177). It can also send someone a map link to where you are, through any app you choose, or straight to your trusted contact on WhatsApp if you've added one in Safety. Phanda never calls anyone for you and doesn't keep your location from it. It's free for everyone.",
   },
 ];
 

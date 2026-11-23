@@ -88,6 +88,14 @@ export default function Terms() {
         your account for false, misleading or duplicate listings.
       </p>
 
+      <p>
+        <strong>Danger reports.</strong> Report only danger you have seen yourself, where you are,
+        and only once you have stopped safely. A false or malicious report can put people at risk
+        and harm a place&rsquo;s name, and we may remove it and suspend your account. Danger reports
+        come from drivers and are not checked by {site.appName}: they may be wrong, out of date or
+        missing, and the absence of a report doesn&rsquo;t mean a place is safe.
+      </p>
+
       <h2 id="membership">6. Phanda Plus</h2>
       <p>
         {site.appName} is free to use and supported by ads. The free tier keeps the live surge map,
@@ -178,6 +186,14 @@ export default function Terms() {
         warranties of any kind, whether express or implied, to the fullest extent permitted by law.
         We do not warrant that the Service will be uninterrupted, error-free, or that event
         information will be accurate.
+      </p>
+      <p>
+        <strong>Safety features.</strong> The SOS button opens your phone&rsquo;s dialer or the app
+        you choose; {site.appName} does not contact the police, an ambulance or anyone else for you.
+        Shift check-in depends on your phone, its connection, WhatsApp and our servers working, and
+        can only report where your phone was when {site.appName} was last open. Use these features
+        as an extra, not as your only way of staying safe, and in an emergency call for help
+        directly.
       </p>
 
       <h2 id="liability">10. Limitation of liability</h2>
