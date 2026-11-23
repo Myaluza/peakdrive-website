@@ -161,6 +161,45 @@ export default function Privacy() {
               </td>
             </tr>
             <tr>
+              <td>Danger reports</td>
+              <td>
+                When you report danger, what kind it is (for example a hijacking), the time, and
+                your position rounded to about 110 metres — linked to your account. When you say a
+                report is still there or not, your answer, linked to your account.
+              </td>
+              <td>
+                To warn other drivers. They see a marker, its kind, its age and how many drivers
+                confirmed or disputed it, never who reported it. Your account is used to limit how
+                often you can report, to stop one driver voting twice, and to look into false
+                reports.
+              </td>
+            </tr>
+            <tr>
+              <td>Trusted contact</td>
+              <td>
+                If you add one in Safety: their name and mobile number, and whether they have agreed
+                to messages from Phanda on WhatsApp.
+              </td>
+              <td>
+                So the SOS button can open WhatsApp to them, and, if you use shift check-in, so we
+                can message them when you miss one. Add only someone who is happy to be your
+                contact; they can reply STOP at any time.
+              </td>
+            </tr>
+            <tr>
+              <td>Shift check-in</td>
+              <td>
+                If you ask Phanda to check on you during a shift: the time you&rsquo;ll check in by,
+                and your latest position while Phanda is open (one position, overwritten, not a
+                trail).
+              </td>
+              <td>
+                To remind you before the time and, if you haven&rsquo;t checked in, to send your
+                contact a WhatsApp with your name, the check-in time, when your phone was last seen
+                and a map link to where.
+              </td>
+            </tr>
+            <tr>
               <td>Invite codes</td>
               <td>
                 Your invite code and, if you joined with someone&rsquo;s code, which account invited
@@ -302,14 +341,21 @@ export default function Privacy() {
           your device&rsquo;s push token and the alert text.
         </li>
         <li>
+          <strong>Meta (WhatsApp)</strong> — only if you use shift check-in: your trusted
+          contact&rsquo;s number and, if you miss a check-in, the message we send them (your name,
+          the check-in time, when your phone was last seen and a map link). Also any message your
+          contact sends Phanda&rsquo;s WhatsApp number, such as agreeing or replying STOP.
+        </li>
+        <li>
           <strong>Google Gemini</strong> — enriching events found in public event listings (for
           example estimating a finish time). It is sent only public event details, never user data.
         </li>
       </ul>
       <p>
-        <strong>Other drivers</strong> see a limited amount too: the events you submit, and your
-        display name and points on the Contributors leaderboard (visible to signed-in users only).
-        Your account identifier and email address are not shared with them.
+        <strong>Other drivers</strong> see a limited amount too: the events you submit, your display
+        name and points on the Contributors leaderboard (visible to signed-in users only), and the
+        danger reports you make, without your name. Your account identifier and email address are
+        not shared with them.
       </p>
       <p>
         We may also disclose information where required by law, or to protect the rights, safety and
@@ -391,8 +437,8 @@ export default function Privacy() {
 
       <h2 id="location">8. Location data</h2>
       <p>
-        We use your location for three things. First, to centre the map on you and show nearby surge
-        zones while you're using the app — that use is live and nothing is retained.
+        We use your location for the things below. First, to centre the map on you and show nearby
+        surge zones while you're using the app — that use is live and nothing is retained.
       </p>
       <p>
         Second, when you <strong>submit an event</strong>, the screen opens with a map pin already
@@ -407,8 +453,21 @@ export default function Privacy() {
       <p>
         Third, if you have both Location and Notifications switched on, we store your{" "}
         <strong>latest approximate position</strong> against your device so the alert as a surge
-        starts only reaches drivers close enough to get there in time. Without it you still get the
-        alert an hour before, which goes to every driver in the city, but not that one.
+        starts only reaches drivers close enough to get there in time, and so a danger warning only
+        reaches drivers within 3 km of it. Without it you still get the alert an hour before, which
+        goes to every driver in the city, but not the other two.
+      </p>
+      <p>
+        Fourth, when you <strong>report danger</strong>, your position at that moment, rounded to
+        about 110 metres, is saved with the report and shown to other drivers as a marker, without
+        your name.
+      </p>
+      <p>
+        Fifth, if you start a <strong>shift check-in</strong>, your latest position is saved against
+        it every few minutes while Phanda is open, overwritten each time, so your contact can be
+        told where your phone was last seen if you miss the check-in. Phanda never reads your
+        location in the background for this. The <strong>SOS button</strong> reads your position
+        only to put it in a message you send yourself; we don&rsquo;t receive it.
       </p>
       <p>What that does and doesn't mean:</p>
       <ul>
@@ -504,6 +563,18 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Live reports</strong> — shown for 30 minutes and deleted after 24 hours.
+        </li>
+        <li>
+          <strong>Danger reports and the answers to them</strong> — shown for 3 to 6 hours and
+          deleted after 30 days, so false reports can be looked into.
+        </li>
+        <li>
+          <strong>Shift check-ins</strong>, with their saved position — deleted 7 days after they
+          start.
+        </li>
+        <li>
+          <strong>Trusted contact</strong> — kept until you remove or change them in Safety, or
+          delete your account.
         </li>
         <li>
           <strong>Ride reports and surge ratings</strong> — kept while your account exists, and
