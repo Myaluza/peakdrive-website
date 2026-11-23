@@ -3,7 +3,7 @@
 // Checks every page the build should produce, without a browser:
 //   - it exists, with a title and exactly one <h1>;
 //   - no rendering slips ("undefined", "NaN", "[object Object]") in the text;
-//   - the support address is on it, and WhatsApp isn't (support is email only);
+//   - the support address is on it, and no WhatsApp support (support is email only);
 //   - no e-hailing company is named (the site says "e-hailing drivers");
 //   - while downloads are closed, nothing links to an APK, /download or /install;
 //   - the Support page shows every FAQ question, and its FAQPage structured
@@ -74,7 +74,14 @@ for (const page of pages) {
     }
   }
   if (email && !html.includes(email)) problems.push(`${file}: no ${email}`);
-  if (/whatsapp/i.test(text)) problems.push(`${file}: mentions WhatsApp (support is email only)`);
+  // Support is email only: no WhatsApp link or "WhatsApp us". Naming WhatsApp
+  // for the safety features (a contact's check-in message) is fine.
+  if (
+    /wa\.me\/|api\.whatsapp\.com|whatsapp:\/\//i.test(html) ||
+    /whatsapp (us|support)|support (on|via) whatsapp/i.test(text)
+  ) {
+    problems.push(`${file}: offers WhatsApp support (support is email only)`);
+  }
   const company = text.match(/\b(Uber|Bolt|DiDi|inDrive|InDriver)\b/i);
   if (company) problems.push(`${file}: names "${company[0]}" (say e-hailing drivers instead)`);
   if (!downloadsOpen) {
